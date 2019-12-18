@@ -52,9 +52,9 @@ namespace thatboy
 		// 文件读取
 		virtual std::istream& read(std::istream&);
 		// 校验CRC
-		virtual bool checkCrcCode(BYTE crcEncodeType = defaultCrcType)const;
+		virtual bool checkCrcCode(BYTE crcEncodeType)const;
 		// 完成设置
-		virtual void doFigure(BYTE crcEncodeType = defaultCrcType);
+		virtual void doFigure(BYTE crcEncodeType);
 	};
 
 	// 署名域
