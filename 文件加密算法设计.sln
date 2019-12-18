@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThatboyEncryptFileClass", "ThatboyEncryptFileClass\ThatboyEncryptFileClass.vcxproj", "{3C18F581-F773-42C0-8EA9-5B53F57E2174}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThatboyEncryptFileEncoder", "ThatboyEncryptFileEncoder\ThatboyEncryptFileEncoder.vcxproj", "{A4518787-216F-48F2-9CFB-518705A2FDA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Debug|x64.ActiveCfg = Debug|x64
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Debug|x64.Build.0 = Debug|x64
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Debug|x86.ActiveCfg = Debug|Win32
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Debug|x86.Build.0 = Debug|Win32
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Release|x64.ActiveCfg = Release|x64
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Release|x64.Build.0 = Release|x64
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Release|x86.ActiveCfg = Release|Win32
+		{3C18F581-F773-42C0-8EA9-5B53F57E2174}.Release|x86.Build.0 = Release|Win32
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Debug|x64.ActiveCfg = Debug|x64
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Debug|x64.Build.0 = Debug|x64
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Debug|x86.ActiveCfg = Debug|Win32
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Debug|x86.Build.0 = Debug|Win32
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Release|x64.ActiveCfg = Release|x64
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Release|x64.Build.0 = Release|x64
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Release|x86.ActiveCfg = Release|Win32
+		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7145DA65-FB03-4468-A30E-B36152281B84}
+	EndGlobalSection
+EndGlobal

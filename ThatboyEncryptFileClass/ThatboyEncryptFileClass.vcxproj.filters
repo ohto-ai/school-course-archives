@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{0bffcd90-265d-4f09-bab0-94f660c1fada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encrypt">
+      <UniqueIdentifier>{6b670e7c-7765-42c8-b171-a48af7e2ba15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CriticalChunk">
+      <UniqueIdentifier>{539e7934-d145-4560-8bf1-81ef788b1fb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="压缩与校验">
+      <UniqueIdentifier>{39bbc565-7b67-47be-841c-baf7e033f9fa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ThatboyEncryptBase.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ThatboyEncrypt.h">
+      <Filter>Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="ThatboyCriticalChunk.h">
+      <Filter>CriticalChunk</Filter>
+    </ClInclude>
+    <ClInclude Include="CRC.h">
+      <Filter>压缩与校验</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5.h">
+      <Filter>压缩与校验</Filter>
+    </ClInclude>
+    <ClInclude Include="RSA.h">
+      <Filter>压缩与校验</Filter>
+    </ClInclude>
+    <ClInclude Include="LZW.h">
+      <Filter>压缩与校验</Filter>
+    </ClInclude>
+    <ClInclude Include="AES.h">
+      <Filter>压缩与校验</Filter>
+    </ClInclude>
+    <ClInclude Include="Base64.h">
+      <Filter>压缩与校验</Filter>
+    </ClInclude>
+    <ClInclude Include="USBMassStorageDeviceSerial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ThatboyEncryptBase.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ThatboyEncrypt.cpp">
+      <Filter>Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ThatboyCriticalChunk.cpp">
+      <Filter>CriticalChunk</Filter>
+    </ClCompile>
+    <ClCompile Include="CRC.cpp">
+      <Filter>压缩与校验</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5.cpp">
+      <Filter>压缩与校验</Filter>
+    </ClCompile>
+    <ClCompile Include="RSA.cpp">
+      <Filter>压缩与校验</Filter>
+    </ClCompile>
+    <ClCompile Include="AES.cpp">
+      <Filter>压缩与校验</Filter>
+    </ClCompile>
+    <ClCompile Include="Base64.cpp">
+      <Filter>压缩与校验</Filter>
+    </ClCompile>
+    <ClCompile Include="USBMassStorageDeviceSerial.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
