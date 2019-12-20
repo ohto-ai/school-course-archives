@@ -77,5 +77,4 @@ namespace thatboy
 		BYTE reserve[3] = { NULL };											// 保留位置
 		BYTE oriFileName[260] = { NULL };									// 原始文件名
 	};
-	constexpr size_t size = sizeof(SignatureDomain);
 }

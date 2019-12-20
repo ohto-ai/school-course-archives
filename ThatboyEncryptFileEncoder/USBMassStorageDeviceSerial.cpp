@@ -2,9 +2,6 @@
 #include "pch.h"
 #include "USBMassStorageDeviceSerial.h"
 
-// IOCTL¿ØÖÆÂë
-#define IOCTL_STORAGE_QUERY_PROPERTY   CTL_CODE(IOCTL_STORAGE_BASE, 0x0500, METHOD_BUFFERED, FILE_ANY_ACCESS)
-
 void getDevicePath(LPGUID lpGuid, std::vector<std::string>& devicePathVector)
 {
     using namespace thatboy::USBMassStorageDeviceSerial;

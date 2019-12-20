@@ -19,7 +19,7 @@ namespace thatboy
 
 
 		BYTE crcEncodeType;		// CRC校验类型
-		BYTE reserve[3];		// 保留zhaiyao
+		BYTE reserve[3];		// 保留
 	};
 
 	/********************************** 文件尾 **********************************/
