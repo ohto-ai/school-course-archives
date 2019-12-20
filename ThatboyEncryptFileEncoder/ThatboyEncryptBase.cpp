@@ -1,4 +1,3 @@
-
 #include "pch.h"
 #include "ThatboyEncryptBase.h"
 
@@ -25,7 +24,6 @@ void thatboy::Chunk::doFigure(BYTE crcType)
 	CRC32 crc = CRC32(CRC32::CRC32_TYPE(crcType));
 	Chunk::crcCode = crc.crcCompute((BYTE_CPTR)&typeCode, dataLength + sizeof(DWORD));
 }
-
 
 bool thatboy::Chunk::checkCrcCode(BYTE crcEncodeType)const
 {

@@ -18,7 +18,7 @@ namespace thatboy
 	using DWORD_CPTR = const DWORD*;
 	using LPCSTR = const char*;
 	using LPSTR = char*;
-	
+
 	// Ä¬ÈÏCRCÀàÐÍ
 	constexpr CRC32::CRC32_TYPE defaultCrcType = CRC32::CRC32_TYPE::eMPEG2;
 

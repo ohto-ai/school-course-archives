@@ -1,31 +1,30 @@
-//MD5.cpp  
+//MD5.cpp
 
 #include "pch.h"
-#include "MD5.h"  
+#include "MD5.h"
 
 // 常量
-constexpr int S11 = 7	;
-constexpr int S12 = 12 ;
-constexpr int S13 = 17 ;
-constexpr int S14 = 22 ;
-constexpr int S21 = 5  ;
-constexpr int S22 = 9  ;
-constexpr int S23 = 14 ;
-constexpr int S24 = 20 ;
-constexpr int S31 = 4  ;
-constexpr int S32 = 11 ;
-constexpr int S33 = 16 ;
-constexpr int S34 = 23 ;
-constexpr int S41 = 6  ;
-constexpr int S42 = 10 ;
-constexpr int S43 = 15 ;
-constexpr int S44 = 21 ;
+constexpr int S11 = 7;
+constexpr int S12 = 12;
+constexpr int S13 = 17;
+constexpr int S14 = 22;
+constexpr int S21 = 5;
+constexpr int S22 = 9;
+constexpr int S23 = 14;
+constexpr int S24 = 20;
+constexpr int S31 = 4;
+constexpr int S32 = 11;
+constexpr int S33 = 16;
+constexpr int S34 = 23;
+constexpr int S41 = 6;
+constexpr int S42 = 10;
+constexpr int S43 = 15;
+constexpr int S44 = 21;
 
-///////////////////////////////////////////////  
-
+///////////////////////////////////////////////
 
 inline thatboy::MD5::uint4 thatboy::MD5::F(uint4 x, uint4 y, uint4 z) {
-	return x & y | ~x&z;
+	return x & y | ~x & z;
 }
 
 inline thatboy::MD5::uint4 thatboy::MD5::G(uint4 x, uint4 y, uint4 z) {
@@ -33,7 +32,7 @@ inline thatboy::MD5::uint4 thatboy::MD5::G(uint4 x, uint4 y, uint4 z) {
 }
 
 inline thatboy::MD5::uint4 thatboy::MD5::H(uint4 x, uint4 y, uint4 z) {
-	return x ^ y^z;
+	return x ^ y ^ z;
 }
 
 inline thatboy::MD5::uint4 thatboy::MD5::I(uint4 x, uint4 y, uint4 z) {
@@ -44,40 +43,40 @@ inline thatboy::MD5::uint4 thatboy::MD5::rotate_left(uint4 x, int n) {
 	return (x << n) | (x >> (32 - n));
 }
 
-inline void thatboy::MD5::FF(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
+inline void thatboy::MD5::FF(uint4& a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
 	a = rotate_left(a + F(b, c, d) + x + ac, s) + b;
 }
 
-inline void thatboy::MD5::GG(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
+inline void thatboy::MD5::GG(uint4& a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
 	a = rotate_left(a + G(b, c, d) + x + ac, s) + b;
 }
 
-inline void thatboy::MD5::HH(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
+inline void thatboy::MD5::HH(uint4& a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
 	a = rotate_left(a + H(b, c, d) + x + ac, s) + b;
 }
 
-inline void thatboy::MD5::II(uint4 &a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
+inline void thatboy::MD5::II(uint4& a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac) {
 	a = rotate_left(a + I(b, c, d) + x + ac, s) + b;
 }
 
-//////////////////////////////////////////////  
+//////////////////////////////////////////////
 
 thatboy::MD5::MD5()
 {
 	init();
 }
 
-//////////////////////////////////////////////  
+//////////////////////////////////////////////
 
-// nifty shortcut ctor, compute MD5 for string and finalize it right away  
-thatboy::MD5::MD5(const std::string &text)
+// nifty shortcut ctor, compute MD5 for string and finalize it right away
+thatboy::MD5::MD5(const std::string& text)
 {
 	init();
 	update(text.c_str(), (size_type)text.length());
 	finalize();
 }
 
-//////////////////////////////  
+//////////////////////////////
 
 void thatboy::MD5::init()
 {
@@ -86,16 +85,16 @@ void thatboy::MD5::init()
 	count[0] = 0;
 	count[1] = 0;
 
-	// load magic initialization constants.  
+	// load magic initialization constants.
 	state[0] = 0x67452301;
 	state[1] = 0xefcdab89;
 	state[2] = 0x98badcfe;
 	state[3] = 0x10325476;
 }
 
-//////////////////////////////  
+//////////////////////////////
 
-// decodes input (unsigned char) into output (uint4). Assumes len is a multiple of 4.  
+// decodes input (unsigned char) into output (uint4). Assumes len is a multiple of 4.
 void thatboy::MD5::decode(uint4 output[], const uint1 input[], size_type len)
 {
 	for (unsigned int i = 0, j = 0; j < len; i++, j += 4)
@@ -103,10 +102,10 @@ void thatboy::MD5::decode(uint4 output[], const uint1 input[], size_type len)
 		(((uint4)input[j + 2]) << 16) | (((uint4)input[j + 3]) << 24);
 }
 
-//////////////////////////////  
+//////////////////////////////
 
-// encodes input (uint4) into output (unsigned char). Assumes len is  
-// a multiple of 4.  
+// encodes input (uint4) into output (unsigned char). Assumes len is
+// a multiple of 4.
 void thatboy::MD5::encode(uint1 output[], const uint4 input[], size_type len)
 {
 	for (size_type i = 0, j = 0; j < len; i++, j += 4) {
@@ -117,9 +116,9 @@ void thatboy::MD5::encode(uint1 output[], const uint4 input[], size_type len)
 	}
 }
 
-//////////////////////////////  
+//////////////////////////////
 
-// apply MD5 algo on a block  
+// apply MD5 algo on a block
 void thatboy::MD5::transform(const uint1 block[blocksize])
 {
 	uint4 a = state[0], b = state[1], c = state[2], d = state[3], x[16];
@@ -202,14 +201,14 @@ void thatboy::MD5::transform(const uint1 block[blocksize])
 	state[2] += c;
 	state[3] += d;
 
-	// Zeroize sensitive information.  
+	// Zeroize sensitive information.
 	memset(x, 0, sizeof x);
 }
 
-//////////////////////////////  
+//////////////////////////////
 
 // 更新
-void thatboy::MD5::update(const unsigned char*input, size_type length)
+void thatboy::MD5::update(const unsigned char* input, size_type length)
 {
 	// 计算字节数对64取模
 	size_type index = count[0] / 8 % blocksize;
@@ -241,13 +240,13 @@ void thatboy::MD5::update(const unsigned char*input, size_type length)
 	memcpy(&buffer[index], &input[i], length - i);
 }
 
-//////////////////////////////  
-void thatboy::MD5::update(const char*input, size_type length)
+//////////////////////////////
+void thatboy::MD5::update(const char* input, size_type length)
 {
 	update((const unsigned char*)input, length);
 }
 
-//////////////////////////////  
+//////////////////////////////
 thatboy::MD5& thatboy::MD5::finalize()
 {
 	static unsigned char padding[64] = {
@@ -257,7 +256,7 @@ thatboy::MD5& thatboy::MD5::finalize()
 	};
 
 	if (!finalized) {
-		// 保存位数 
+		// 保存位数
 		unsigned char bits[8];
 		encode(bits, count, 8);
 
@@ -272,7 +271,7 @@ thatboy::MD5& thatboy::MD5::finalize()
 		// 存储状态
 		encode(digest, state, 16);
 
-		// 清零  
+		// 清零
 		memset(buffer, 0, sizeof buffer);
 		memset(count, 0, sizeof count);
 
@@ -282,7 +281,7 @@ thatboy::MD5& thatboy::MD5::finalize()
 	return *this;
 }
 
-//////////////////////////////  
+//////////////////////////////
 
 //返回16进制字符串
 std::string thatboy::MD5::hexdigest() const
@@ -292,21 +291,21 @@ std::string thatboy::MD5::hexdigest() const
 
 	char buf[33];
 	sprintf_s(buf, 33, "%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
-			  digest[0], digest[1], digest[2], digest[3], digest[4], digest[5], digest[6], digest[7],
-			  digest[8], digest[9], digest[10], digest[11], digest[12], digest[13], digest[14], digest[15]);
+		digest[0], digest[1], digest[2], digest[3], digest[4], digest[5], digest[6], digest[7],
+		digest[8], digest[9], digest[10], digest[11], digest[12], digest[13], digest[14], digest[15]);
 	buf[32] = 0;
 
 	return std::string(buf);
 }
 
-//////////////////////////////  
+//////////////////////////////
 
 std::ostream& operator<<(std::ostream& out, thatboy::MD5 md5)
 {
 	return out << md5.hexdigest();
 }
 
-//////////////////////////////  
+//////////////////////////////
 
 std::string thatboy::md5(const std::string str)
 {
@@ -314,7 +313,7 @@ std::string thatboy::md5(const std::string str)
 	return md5.hexdigest();
 }
 
-std::string thatboy::operator ""_md5(const char*str, size_t len)
+std::string thatboy::operator ""_md5(const char* str, size_t len)
 {
 	MD5 md5(str);
 	return md5.hexdigest();

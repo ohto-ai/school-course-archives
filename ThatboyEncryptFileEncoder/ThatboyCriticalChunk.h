@@ -3,7 +3,6 @@
 
 namespace thatboy
 {
-
 	/********************************** 文件头 **********************************/
 	class THDR_Chunk final
 		: public Chunk
@@ -16,7 +15,6 @@ namespace thatboy
 		std::istream& read(std::istream&);
 		bool checkCrcCode(BYTE crcEncodeType)const;
 		void doFigure(BYTE crcEncodeType);
-
 
 		BYTE crcEncodeType;		// CRC校验类型
 		BYTE reserve[3];		// 保留
@@ -36,7 +34,7 @@ namespace thatboy
 	};
 
 	/********************************** 数据块 **********************************/
-	class TDAT_Chunk 
+	class TDAT_Chunk
 		: public Chunk
 	{
 	public:
@@ -50,6 +48,4 @@ namespace thatboy
 
 		std::vector<BYTE> compressData;// zib压缩数据
 	};
-
-
 }

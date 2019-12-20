@@ -1,12 +1,11 @@
-
 //MD5.h
-#pragma once 
-#ifndef MD5_H  
-#define MD5_H  
+#pragma once
+#ifndef MD5_H
+#define MD5_H
 
-#include <string>  
+#include <string>
 #include <iostream>
- 
+
 namespace thatboy
 {
 	//MD计算
@@ -24,8 +23,8 @@ namespace thatboy
 
 	private:
 		void init();
-		typedef unsigned char uint1;// 8位 
-		typedef unsigned int uint4;	// 32位  
+		typedef unsigned char uint1;// 8位
+		typedef unsigned int uint4;	// 32位
 		enum { blocksize = 64 };	//
 
 		void transform(const uint1 block[blocksize]);

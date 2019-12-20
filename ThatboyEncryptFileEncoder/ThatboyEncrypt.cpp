@@ -1,11 +1,9 @@
-
 #include "pch.h"
 #include "ThatboyEncrypt.h"
 
 std::function<bool(int, int)> thatboy::EncryptFileDoModal::callBackSetProcessBarRange;
 std::function<bool(int)> thatboy::EncryptFileDoModal::callBackSetProcessBarPos;
 std::function<bool(std::string)> thatboy::EncryptFileDoModal::callBackStatusUpdate;
-
 
 thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encrypt(
 	std::string file				// 输入文件路径
@@ -15,7 +13,7 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	, DWORD chunkDataSize			// 块大小=defaultChunkDataSize
 	, CRC32::CRC32_TYPE crcType		// CRC校验类型=eMPEG2
 	, bool flushChunkWrite			// 强制刷新输出块
-)	
+)
 {
 	using namespace std;
 #define callBackSetProcessBarRange(a,b) if(callBackSetProcessBarRange) if(!callBackSetProcessBarRange(a,b)) return EncryptErrorCode::ENCRYPT_TERMINOL;
@@ -29,7 +27,6 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	THDR_Chunk thdrChunk;
 	TEND_Chunk tendChunk;
 	TDAT_Chunk tdatChunk;
-
 
 	DWORD pwdCRC = 0;
 	size_t fileSize = [](std::string file) {
@@ -62,7 +59,7 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 		callBackStatusUpdate("生成密码摘要信息...");
 		_memccpy(signature.passwordMD5, md5(password).c_str(), '\0', 32);
 		CRC32 crc(CRC32::CRC32_TYPE::eMPEG2);
-		pwdCRC= crc.crcCompute((BYTE_CPTR)password.c_str(), password.size());
+		pwdCRC = crc.crcCompute((BYTE_CPTR)password.c_str(), password.size());
 	}
 	if (signature.attributeMark & (BYTE)SignatureDomain::ENCRYPT_ATTRIBUTE::DEVICEBIND)
 	{
@@ -77,11 +74,10 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	char ext[MAX_PATH];
 	_splitpath_s(file.c_str(), nullptr, 0, nullptr, 0, fileNameNoExt, MAX_PATH, ext, MAX_PATH);
 	sprintf_s((LPSTR)signature.oriFileName, MAX_PATH, "%s%s", fileNameNoExt, ext);
-	for (size_t i = strlen((LPSTR)signature.oriFileName)+1; i < sizeof(signature.oriFileName); i++)
+	for (size_t i = strlen((LPSTR)signature.oriFileName) + 1; i < sizeof(signature.oriFileName); i++)
 		signature.oriFileName[i] = rand() % 256;
 	for (size_t i = 0; i < sizeof(signature.oriFileName) / 4; i++)
 		((DWORD_PTR)signature.oriFileName)[i] ^= signature.magicNumber ^ XORCode ^ signature.RXORCode;
-
 
 	callBackStatusUpdate("正在处理文件内容...");
 	// 分块写入
@@ -101,7 +97,6 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	/********************** 数据块 **************************/
 	std::vector<BYTE> fileContentBuff(chunkDataSize);
 	DWORD curXORCode = XORCode ^ signature.RXORCode ^ pwdCRC;
-
 
 	callBackStatusUpdate("正在处理数据块，请耐心等待...");
 	for (size_t i = 0; i < signature.chunkCount; i++)
@@ -141,7 +136,6 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	ofs.close();
 
 	return EncryptErrorCode::ENCRYPT_SUCCESS;
-
 
 #undef callBackSetProcessBarRange
 #undef callBackSetProcessBarPos
@@ -242,7 +236,7 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Decry
 
 	callBackStatusUpdate("正在处理数据块，请耐心等待...");
 	int curChunkPtr = 0;
-	while (getChunkType(ifs)== TDAT_Chunk::dataChunkType)
+	while (getChunkType(ifs) == TDAT_Chunk::dataChunkType)
 	{
 		DWORD thisChunkType = getChunkType(ifs);
 		if (thisChunkType == TEND_Chunk::endChunkType)
