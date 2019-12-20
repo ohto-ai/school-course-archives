@@ -1,3 +1,4 @@
+
 #include "pch.h"
 #include "ThatboyCriticalChunk.h"
 
@@ -46,7 +47,7 @@ void thatboy::THDR_Chunk::doFigure(BYTE crcType)
 	BYTE crcBuff[sizeof(crcEncodeType) + sizeof(reserve) + sizeof(DWORD)];
 
 	memcpy(crcBuff, (LPCSTR)&typeCode, sizeof(typeCode));
-	memcpy(crcBuff + sizeof(typeCode), (LPCSTR)&crcEncodeType, sizeof(crcEncodeType));
+	memcpy(crcBuff+ sizeof(typeCode), (LPCSTR)&crcEncodeType, sizeof(crcEncodeType));
 	memcpy(crcBuff + sizeof(typeCode) + sizeof(crcEncodeType), reserve, sizeof(reserve));
 
 	Chunk::crcCode = crc.crcCompute(crcBuff, dataLength + sizeof(DWORD));
@@ -87,13 +88,13 @@ thatboy::TDAT_Chunk::TDAT_Chunk()
 	Chunk::crcCode = 0;
 }
 
-std::ostream& thatboy::TDAT_Chunk::write(std::ostream& os) const
+std::ostream& thatboy::TDAT_Chunk::write(std::ostream&os) const
 {
 	Chunk::write(os);
 	return os.write((LPCSTR)compressData.data(), dataLength);
 }
 
-std::istream& thatboy::TDAT_Chunk::read(std::istream& is)
+std::istream& thatboy::TDAT_Chunk::read(std::istream&is)
 {
 	Chunk::read(is);
 	compressData.resize(dataLength / sizeof(BYTE));

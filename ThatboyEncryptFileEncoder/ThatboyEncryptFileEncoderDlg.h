@@ -1,12 +1,14 @@
-﻿// ThatboyEncryptFileEncoderDlg.h: 头文件
+﻿
+// ThatboyEncryptFileEncoderDlg.h: 头文件
 //
 
 #pragma once
 
+
 // CThatboyEncryptFileEncoderDlg 对话框
 class CThatboyEncryptFileEncoderDlg : public CDialogEx
 {
-	// 构造
+// 构造
 public:
 	CThatboyEncryptFileEncoderDlg(CWnd* pParent = nullptr);	// 标准构造函数
 
@@ -15,8 +17,9 @@ public:
 	enum { IDD = IDDTEF_THATBOYENCRYPTFILEENCODER_DIALOG };
 #endif
 
-protected:
+	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 支持
+
 
 // 实现
 protected:

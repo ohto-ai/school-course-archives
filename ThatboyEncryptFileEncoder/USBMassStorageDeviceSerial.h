@@ -16,3 +16,4 @@ namespace thatboy
 		void getUSBMassStorageDeviceList(std::vector<std::string>& usbMSDSerialVector);
 	}
 }
+

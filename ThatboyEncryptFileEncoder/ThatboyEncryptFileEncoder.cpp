@@ -1,4 +1,5 @@
-﻿// ThatboyEncryptFileEncoder.cpp: 定义应用程序的类行为。
+﻿
+// ThatboyEncryptFileEncoder.cpp: 定义应用程序的类行为。
 //
 #include "pch.h"
 #include "framework.h"
@@ -9,11 +10,13 @@
 #define new DEBUG_NEW
 #endif
 
+
 // CThatboyEncryptFileEncoderApp
 
 BEGIN_MESSAGE_MAP(CThatboyEncryptFileEncoderApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
+
 
 // CThatboyEncryptFileEncoderApp 构造
 
@@ -23,9 +26,11 @@ CThatboyEncryptFileEncoderApp::CThatboyEncryptFileEncoderApp()
 	// 将所有重要的初始化放置在 InitInstance 中
 }
 
+
 // 唯一的 CThatboyEncryptFileEncoderApp 对象
 
 CThatboyEncryptFileEncoderApp theApp;
+
 
 // CThatboyEncryptFileEncoderApp 初始化
 
@@ -33,9 +38,10 @@ BOOL CThatboyEncryptFileEncoderApp::InitInstance()
 {
 	CWinApp::InitInstance();
 
+
 	// 创建 shell 管理器，以防对话框包含
 	// 任何 shell 树视图控件或 shell 列表视图控件。
-	CShellManager* pShellManager = new CShellManager;
+	CShellManager *pShellManager = new CShellManager;
 
 	// 激活“Windows Native”视觉管理器，以便在 MFC 控件中启用主题
 	CMFCVisualManager::SetDefaultManager(RUNTIME_CLASS(CMFCVisualManagerWindows));
@@ -82,3 +88,4 @@ BOOL CThatboyEncryptFileEncoderApp::InitInstance()
 	//  而不是启动应用程序的消息泵。
 	return FALSE;
 }
+

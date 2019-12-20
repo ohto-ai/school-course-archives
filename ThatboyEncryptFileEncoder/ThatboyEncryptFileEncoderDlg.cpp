@@ -1,4 +1,5 @@
-﻿// ThatboyEncryptFileEncoderDlg.cpp: 实现文件
+﻿
+// ThatboyEncryptFileEncoderDlg.cpp: 实现文件
 //
 
 #include "pch.h"
@@ -11,7 +12,10 @@
 #define new DEBUG_NEW
 #endif
 
+
 // CThatboyEncryptFileEncoderDlg 对话框
+
+
 
 CThatboyEncryptFileEncoderDlg::CThatboyEncryptFileEncoderDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDDTEF_THATBOYENCRYPTFILEENCODER_DIALOG, pParent)
@@ -34,6 +38,7 @@ BEGIN_MESSAGE_MAP(CThatboyEncryptFileEncoderDlg, CDialogEx)
 	ON_BN_CLICKED(IDCTEF_DECRYPT, &CThatboyEncryptFileEncoderDlg::OnBnClickedDecrypt)
 	ON_WM_DROPFILES()
 END_MESSAGE_MAP()
+
 
 // CThatboyEncryptFileEncoderDlg 消息处理程序
 
@@ -112,6 +117,8 @@ HCURSOR CThatboyEncryptFileEncoderDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
 void CThatboyEncryptFileEncoderDlg::OnBnClickedBrower()
 {
 	UpdateData(TRUE);
@@ -125,11 +132,13 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedBrower()
 	}
 }
 
+
 void CThatboyEncryptFileEncoderDlg::OnBnClickedNeedPassword()
 {
 	UpdateData(TRUE);
 	GetDlgItem(IDCTEF_PASSWORD)->EnableWindow(IsDlgButtonChecked(IDCTEF_NEEDPASSWORD) == BST_CHECKED);
 }
+
 
 void CThatboyEncryptFileEncoderDlg::OnBnClickedNeedDeviceBind()
 {
@@ -146,6 +155,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedNeedDeviceBind()
 		UpdateData(FALSE);
 	}
 }
+
 
 void CThatboyEncryptFileEncoderDlg::OnBnClickedEncrypt()
 {
@@ -229,6 +239,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedEncrypt()
 	}
 }
 
+
 void CThatboyEncryptFileEncoderDlg::OnBnClickedDecrypt()
 {
 	const CString EncryptErrorCodeString[]
@@ -264,6 +275,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedDecrypt()
 		return;
 	}
 	try {
+
 		code = thatboy::EncryptFileDoModal::Verify(
 			filePath.GetString()
 			, IsDlgButtonChecked(IDCTEF_NEEDPASSWORD) == BST_CHECKED ? password.GetString() : ""
@@ -342,6 +354,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedDecrypt()
 	}
 }
 
+
 void CThatboyEncryptFileEncoderDlg::pushInfo(CString info)
 {
 	CTime now = CTime::GetCurrentTime();
@@ -351,11 +364,12 @@ void CThatboyEncryptFileEncoderDlg::pushInfo(CString info)
 	((CListBox*)GetDlgItem(IDCTEF_INFOBOX))->UpdateWindow();
 }
 
+
 void CThatboyEncryptFileEncoderDlg::OnDropFiles(HDROP hDropInfo)
 {
 	char szFilePathName[MAX_PATH] = { 0 };
 
-	//得到文件个数
+	//得到文件个数      
 	DragQueryFile(hDropInfo, 0, szFilePathName, MAX_PATH);
 	updateFilePath(szFilePathName);
 	UpdateData(FALSE);
@@ -363,12 +377,14 @@ void CThatboyEncryptFileEncoderDlg::OnDropFiles(HDROP hDropInfo)
 	CDialogEx::OnDropFiles(hDropInfo);
 }
 
+
 BOOL CThatboyEncryptFileEncoderDlg::PreTranslateMessage(MSG* pMsg)
 {
 	if (toolTip.m_hWnd != NULL)
 		toolTip.RelayEvent(pMsg);
 	return CDialogEx::PreTranslateMessage(pMsg);
 }
+
 
 void CThatboyEncryptFileEncoderDlg::updateFilePath(LPCSTR szFilePathName)
 {
