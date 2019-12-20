@@ -102,7 +102,7 @@ namespace thatboy
     class CRC8 : public CRC<uint8_t>
     {
     public:
-        enum CRC8_TYPE : uint8_t {
+        enum class CRC8_TYPE : uint8_t {
             eCRC8, eAUTOSAR, eCDMA2000, eDARC, eDVB_S2, eEBU, eAES, eGSM_A, eGSM_B, eI_CODE,
             eITU, eLTE, eMAXIM, eOPENSAFETY, eROHC, eSAE_J1850, eWCDMA
         };
@@ -114,7 +114,7 @@ namespace thatboy
     class CRC16 : public CRC<uint16_t>
     {
     public:
-        enum CRC16_TYPE : uint8_t {
+        enum class CRC16_TYPE : uint8_t {
             eCCITT, eKERMIT, eCCITT_FALSE, eIBM, eARC, eLHA, eSPI_FUJITSU,
             eBUYPASS, eVERIFONE, eUMTS, eCDMA2000, eCMS, eDDS_110, eDECT_R,
             eDECT_X, eDNP, eEN_13757, eGENIBUS, eEPC, eDARC, eI_CODE, eGSM,
@@ -131,7 +131,7 @@ namespace thatboy
     class CRC32 : public CRC<uint32_t>
     {
     public:
-        enum CRC32_TYPE : uint8_t {
+        enum class CRC32_TYPE : uint8_t {
             eADCCP, ePKZIP, eCRC32, eAAL5, eDECT_B, eB_CRC32, eBZIP2, eAUTOSAR,
             eCRC32C, eCRC32D, eMPEG2, ePOSIX, eCKSUM, eCRC32Q, eJAMCRC, eXFER
         };

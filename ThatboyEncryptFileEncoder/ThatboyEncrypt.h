@@ -9,7 +9,7 @@ namespace thatboy
 {
 	namespace EncryptFileDoModal
 	{
-		enum EncryptErrorCode
+		enum class EncryptErrorCode
 		{
 			ENCRYPT_SUCCESS				// 成功
 			, ENCRYPT_TERMINOL			// 终止
@@ -26,6 +26,7 @@ namespace thatboy
 			, ENCRYPT_UNKNOWCHUNK	 	// 未知区块
 			, ENCRYPT_UNKNOWERROR		// 未知错误
 		};
+
 		constexpr size_t defaultChunkDataSize = 3 * 4 * 256;	// 方便base64编码，同时4字节对齐
 		constexpr DWORD XORCode = 0B101010101010101010101010;
 

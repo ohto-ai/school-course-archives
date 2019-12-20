@@ -36,7 +36,7 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 		ifstream ifs(file, ios::binary);
 		size_t fileSize;
 		ifs.seekg(0, ios::end);
-		fileSize = ifs.tellg();
+		fileSize = static_cast<size_t>(ifs.tellg());
 		ifs.seekg(0);
 		ifs.close();
 		return fileSize;
@@ -60,7 +60,7 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	// 密码MD5摘要 设备的CRC校验
 	if (signature.attributeMark & (BYTE)SignatureDomain::ENCRYPT_ATTRIBUTE::PASSWORD) {
 		callBackStatusUpdate("生成密码摘要信息...");
-		memccpy(signature.passwordMD5, md5(password).c_str(), '\0', 32);
+		_memccpy(signature.passwordMD5, md5(password).c_str(), '\0', 32);
 		CRC32 crc(CRC32::CRC32_TYPE::eMPEG2);
 		pwdCRC= crc.crcCompute((BYTE_CPTR)password.c_str(), password.size());
 	}
@@ -75,8 +75,8 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	callBackStatusUpdate("处理原始文件名...");
 	char fileNameNoExt[MAX_PATH];
 	char ext[MAX_PATH];
-	_splitpath(file.c_str(), nullptr, nullptr, fileNameNoExt, ext);
-	sprintf((LPSTR)signature.oriFileName, "%s%s", fileNameNoExt, ext);
+	_splitpath_s(file.c_str(), nullptr, 0, nullptr, 0, fileNameNoExt, MAX_PATH, ext, MAX_PATH);
+	sprintf_s((LPSTR)signature.oriFileName, MAX_PATH, "%s%s", fileNameNoExt, ext);
 	for (size_t i = strlen((LPSTR)signature.oriFileName)+1; i < sizeof(signature.oriFileName); i++)
 		signature.oriFileName[i] = rand() % 256;
 	for (size_t i = 0; i < sizeof(signature.oriFileName) / 4; i++)
@@ -94,7 +94,7 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 	/********************** 文件署名域 **************************/
 	ofs.write((LPCSTR)&signature, sizeof(signature));
 	/********************** 文件头块 **************************/
-	thdrChunk.doFigure(crcType);
+	thdrChunk.doFigure(static_cast<BYTE>(crcType));
 	thdrChunk.write(ofs);
 	ofs.flush();
 	callBackStatusUpdate("已写入署名域和文件头...");
@@ -111,7 +111,7 @@ thatboy::EncryptFileDoModal::EncryptErrorCode thatboy::EncryptFileDoModal::Encry
 
 		fileContentBuff.resize(chunkDataSize);
 		ifs.read((LPSTR)fileContentBuff.data(), chunkDataSize);
-		fileContentSize = ifs.gcount();
+		fileContentSize = static_cast<size_t>(ifs.gcount());
 		fileContentBuff.resize(fileContentSize);
 		/*********** 加密 ***********/
 		if (!Base64::encode(fileContentBuff, chunkBuff))

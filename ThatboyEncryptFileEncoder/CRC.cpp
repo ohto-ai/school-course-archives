@@ -35,83 +35,83 @@ thatboy::CRC8::CRC8(CRC8_TYPE type)
 {
     switch (type)
     {
-    case eCRC8:
+    case CRC8_TYPE::eCRC8:
         m_polynomial = 0x07;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
         break;
-    case eAUTOSAR:
+    case CRC8_TYPE::eAUTOSAR:
         m_polynomial = 0x2f;
         m_initial_remainder = 0xff;
         m_final_xor_value = 0xff;
         break;
-    case eCDMA2000:
+    case CRC8_TYPE::eCDMA2000:
         m_polynomial = 0x9b;
         m_initial_remainder = 0xFF;
         m_final_xor_value = 0x00;
         break;
-    case eDARC:
+    case CRC8_TYPE::eDARC:
         m_polynomial = 0x39;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
         break;
-    case eDVB_S2:
+    case CRC8_TYPE::eDVB_S2:
         m_polynomial = 0xd5;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
         break;
-    case eEBU:
-    case eAES:
+    case CRC8_TYPE::eEBU:
+    case CRC8_TYPE::eAES:
         m_polynomial = 0x1d;
         m_initial_remainder = 0xFF;
         m_final_xor_value = 0x00;
         break;
-    case eGSM_A:
+    case CRC8_TYPE::eGSM_A:
         m_polynomial = 0x1d;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
         break;
-    case eGSM_B:
+    case CRC8_TYPE::eGSM_B:
         m_polynomial = 0x49;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0xFF;
         break;
-    case eI_CODE:
+    case CRC8_TYPE::eI_CODE:
         m_polynomial = 0x1d;
         m_initial_remainder = 0xFD;
         m_final_xor_value = 0x00;
         break;
-    case eITU:
+    case CRC8_TYPE::eITU:
         m_polynomial = 0x07;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x55;
         break;
-    case eLTE:
+    case CRC8_TYPE::eLTE:
         m_polynomial = 0x9b;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
         break;
-    case eMAXIM:
+    case CRC8_TYPE::eMAXIM:
         m_polynomial = 0x31;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
         break;
-    case eOPENSAFETY:
+    case CRC8_TYPE::eOPENSAFETY:
         m_polynomial = 0x2f;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
         break;
-    case eROHC:
+    case CRC8_TYPE::eROHC:
         m_polynomial = 0x07;
         m_initial_remainder = 0xff;
         m_final_xor_value = 0x00;
         break;
-    case eSAE_J1850:
+    case CRC8_TYPE::eSAE_J1850:
         m_polynomial = 0x1d;
         m_initial_remainder = 0xff;
         m_final_xor_value = 0xff;
         break;
-    case eWCDMA:
+    case CRC8_TYPE::eWCDMA:
         m_polynomial = 0x9b;
         m_initial_remainder = 0x00;
         m_final_xor_value = 0x00;
@@ -130,138 +130,138 @@ thatboy::CRC16::CRC16(CRC16_TYPE type)
 {
     switch (type)
     {
-    case eCCITT_FALSE:
-    case eMCRF4XX:
+    case CRC16_TYPE::eCCITT_FALSE:
+    case CRC16_TYPE::eMCRF4XX:
         m_polynomial = 0x1021;
         m_initial_remainder = 0xFFFF;
         m_final_xor_value = 0x0000;
         break;
-    case eIBM:
-    case eARC:
-    case eLHA:
-    case eBUYPASS:
-    case eVERIFONE:
-    case eUMTS:
+    case CRC16_TYPE::eIBM:
+    case CRC16_TYPE::eARC:
+    case CRC16_TYPE::eLHA:
+    case CRC16_TYPE::eBUYPASS:
+    case CRC16_TYPE::eVERIFONE:
+    case CRC16_TYPE::eUMTS:
         m_polynomial = 0x8005;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case eSPI_FUJITSU:
+    case CRC16_TYPE::eSPI_FUJITSU:
         m_polynomial = 0x1021;
         m_initial_remainder = 0x1d0f;
         m_final_xor_value = 0x0000;
         break;
-    case eCCITT:
-    case eKERMIT:
-    case eXMODEM:
-    case eZMODEM:
-    case eACORN:
-    case eLTE:
+    case CRC16_TYPE::eCCITT:
+    case CRC16_TYPE::eKERMIT:
+    case CRC16_TYPE::eXMODEM:
+    case CRC16_TYPE::eZMODEM:
+    case CRC16_TYPE::eACORN:
+    case CRC16_TYPE::eLTE:
         m_polynomial = 0x1021;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case eCDMA2000:
+    case CRC16_TYPE::eCDMA2000:
         m_polynomial = 0xc867;
         m_initial_remainder = 0xffff;
         m_final_xor_value = 0x0000;
         break;
-    case eCMS:
-    case eMODBUS:
+    case CRC16_TYPE::eCMS:
+    case CRC16_TYPE::eMODBUS:
         m_polynomial = 0x8005;
         m_initial_remainder = 0xffff;
         m_final_xor_value = 0x0000;
         break;
-    case eDDS_110:
+    case CRC16_TYPE::eDDS_110:
         m_polynomial = 0x8005;
         m_initial_remainder = 0x800d;
         m_final_xor_value = 0x0000;
         break;
-    case eDECT_R:
+    case CRC16_TYPE::eDECT_R:
         m_polynomial = 0x0589;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0001;
         break;
-    case eDECT_X:
+    case CRC16_TYPE::eDECT_X:
         m_polynomial = 0x0589;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case eDNP:
-    case eEN_13757:
+    case CRC16_TYPE::eDNP:
+    case CRC16_TYPE::eEN_13757:
         m_polynomial = 0x3d65;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0xffff;
         break;
-    case eGENIBUS:
-    case eEPC:
-    case eDARC:
-    case eI_CODE:
-    case eX_25:
-    case eCRC_B:
-    case eISO_HDLC:
-    case eIBM_SDLC:
+    case CRC16_TYPE::eGENIBUS:
+    case CRC16_TYPE::eEPC:
+    case CRC16_TYPE::eDARC:
+    case CRC16_TYPE::eI_CODE:
+    case CRC16_TYPE::eX_25:
+    case CRC16_TYPE::eCRC_B:
+    case CRC16_TYPE::eISO_HDLC:
+    case CRC16_TYPE::eIBM_SDLC:
         m_polynomial = 0x1021;
         m_initial_remainder = 0xffff;
         m_final_xor_value = 0xffff;
         break;
-    case eGSM:
+    case CRC16_TYPE::eGSM:
         m_polynomial = 0x1021;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0xffff;
         break;
-    case eLJ1200:
+    case CRC16_TYPE::eLJ1200:
         m_polynomial = 0x6f63;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case eMAXIM:
+    case CRC16_TYPE::eMAXIM:
         m_polynomial = 0x8005;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0xffff;
         break;
-    case eOPENSAFETY_A:
+    case CRC16_TYPE::eOPENSAFETY_A:
         m_polynomial = 0x5935;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case eOPENSAFETY_B:
+    case CRC16_TYPE::eOPENSAFETY_B:
         m_polynomial = 0x755b;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case ePROFIBUS:
-    case eIEC_61158_2:
+    case CRC16_TYPE::ePROFIBUS:
+    case CRC16_TYPE::eIEC_61158_2:
         m_polynomial = 0x1dcf;
         m_initial_remainder = 0xffff;
         m_final_xor_value = 0xffff;
         break;
-    case eRIELLO:
+    case CRC16_TYPE::eRIELLO:
         m_polynomial = 0x1021;
         m_initial_remainder = 0xb2aa;
         m_final_xor_value = 0x0000;
         break;
-    case eT10_DIF:
+    case CRC16_TYPE::eT10_DIF:
         m_polynomial = 0x8bb7;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case eTELEDISK:
+    case CRC16_TYPE::eTELEDISK:
         m_polynomial = 0xa097;
         m_initial_remainder = 0x0000;
         m_final_xor_value = 0x0000;
         break;
-    case eTMS37157:
+    case CRC16_TYPE::eTMS37157:
         m_polynomial = 0x1021;
         m_initial_remainder = 0x89ec;
         m_final_xor_value = 0x0000;
         break;
-    case eUSB:
+    case CRC16_TYPE::eUSB:
         m_polynomial = 0x8005;
         m_initial_remainder = 0xffff;
         m_final_xor_value = 0xffff;
         break;
-    case eCRC_A:
+    case CRC16_TYPE::eCRC_A:
         m_polynomial = 0x1021;
         m_initial_remainder = 0xc6c6;
         m_final_xor_value = 0x0000;
@@ -279,50 +279,50 @@ thatboy::CRC32::CRC32(CRC32_TYPE type)
 {
     switch (type)
     {
-    case eADCCP:
-    case ePKZIP:
-    case eCRC32:
-    case eBZIP2:
-    case eAAL5:
-    case eDECT_B:
-    case eB_CRC32:
+    case CRC32_TYPE::eADCCP:
+    case CRC32_TYPE::ePKZIP:
+    case CRC32_TYPE::eCRC32:
+    case CRC32_TYPE::eBZIP2:
+    case CRC32_TYPE::eAAL5:
+    case CRC32_TYPE::eDECT_B:
+    case CRC32_TYPE::eB_CRC32:
         m_polynomial = 0x04c11db7;
         m_initial_remainder = 0xFFFFFFFF;
         m_final_xor_value = 0xFFFFFFFF;
         break;
-    case eAUTOSAR:
+    case CRC32_TYPE::eAUTOSAR:
         m_polynomial = 0xf4acfb13;
         m_initial_remainder = 0xFFFFFFFF;
         m_final_xor_value = 0xFFFFFFFF;
         break;
-    case eCRC32C:
+    case CRC32_TYPE::eCRC32C:
         m_polynomial = 0x1edc6f41;
         m_initial_remainder = 0xFFFFFFFF;
         m_final_xor_value = 0xFFFFFFFF;
         break;
-    case eCRC32D:
+    case CRC32_TYPE::eCRC32D:
         m_polynomial = 0xa833982b;
         m_initial_remainder = 0xFFFFFFFF;
         m_final_xor_value = 0xFFFFFFFF;
         break;
-    case eMPEG2:
-    case eJAMCRC:
+    case CRC32_TYPE::eMPEG2:
+    case CRC32_TYPE::eJAMCRC:
         m_polynomial = 0x04c11db7;
         m_initial_remainder = 0xFFFFFFFF;
         m_final_xor_value = 0x00000000;
         break;
-    case ePOSIX:
-    case eCKSUM:
+    case CRC32_TYPE::ePOSIX:
+    case CRC32_TYPE::eCKSUM:
         m_polynomial = 0x04c11db7;
         m_initial_remainder = 0x00000000;
         m_final_xor_value = 0xFFFFFFFF;
         break;
-    case eCRC32Q:
+    case CRC32_TYPE::eCRC32Q:
         m_polynomial = 0x814141ab;
         m_initial_remainder = 0x00000000;
         m_final_xor_value = 0x00000000;
         break;
-    case eXFER:
+    case CRC32_TYPE::eXFER:
         m_polynomial = 0x000000af;
         m_initial_remainder = 0x00000000;
         m_final_xor_value = 0x00000000;

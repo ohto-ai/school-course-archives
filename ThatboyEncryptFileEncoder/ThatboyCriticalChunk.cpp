@@ -9,7 +9,7 @@ thatboy::THDR_Chunk::THDR_Chunk()
 	Chunk::dataLength = sizeof(crcEncodeType) + sizeof(reserve);
 	Chunk::typeCode = hdrChunkType;
 	Chunk::crcCode = 0;
-	crcEncodeType = CRC32::CRC32_TYPE::eMPEG2;
+	crcEncodeType = static_cast<BYTE>(CRC32::CRC32_TYPE::eMPEG2);
 	reserve[0] = reserve[1] = reserve[2] = 0;
 }
 
@@ -40,7 +40,7 @@ void thatboy::THDR_Chunk::doFigure(BYTE crcType)
 {
 	Chunk::dataLength = sizeof(crcEncodeType) + sizeof(reserve);
 	Chunk::typeCode = hdrChunkType;
-	crcEncodeType = CRC32::CRC32_TYPE(crcType);
+	crcEncodeType = static_cast<BYTE>(CRC32::CRC32_TYPE(crcType));
 	reserve[0] = reserve[1] = reserve[2] = 0;
 
 	CRC32 crc = CRC32(CRC32::CRC32_TYPE(crcEncodeType));

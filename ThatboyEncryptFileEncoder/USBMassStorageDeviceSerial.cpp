@@ -20,6 +20,8 @@ void getDevicePath(LPGUID lpGuid, std::vector<std::string>& devicePathVector)
         return;
     // 申请设备接口数据空间
     pDetail = (PSP_DEVICE_INTERFACE_DETAIL_DATA)::GlobalAlloc(LMEM_ZEROINIT, 1024);
+    if (pDetail == NULL)
+        return;
     pDetail->cbSize = sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA);
 
     // 逐一测试设备接口
@@ -51,7 +53,7 @@ void thatboy::USBMassStorageDeviceSerial::getUSBMassStorageDeviceList(std::vecto
     for (auto& devicePath : devicePathList)
     {
         char pdg[1024];
-        char serial[256] = { NULL };
+        char serial[MAX_PATH] = { NULL };
         ::DWORD junk;
         // 打开设备
         HANDLE hDevice = CreateFile(devicePath.c_str(), GENERIC_READ && GENERIC_WRITE, FILE_SHARE_READ && FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, NULL);
@@ -59,9 +61,9 @@ void thatboy::USBMassStorageDeviceSerial::getUSBMassStorageDeviceList(std::vecto
         if (hDevice == INVALID_HANDLE_VALUE || !::DeviceIoControl(hDevice, IOCTL_STORAGE_GET_MEDIA_TYPES, NULL, 0, pdg, 1024, &junk, NULL))
             continue;
         // 取得序列号
-        sscanf(devicePath.c_str(), "%*[^#]#vid_%[^&]", serial);
-        sscanf(devicePath.c_str() + 17, "pid_%[^#]", serial + 4);
-        sscanf(devicePath.c_str() + 25, "#%[^#]", serial + 8);
+        sscanf_s(devicePath.c_str(), "%*[^#]#vid_%[^&]", serial, MAX_PATH);
+        sscanf_s(devicePath.c_str() + 17, "pid_%[^#]", serial + 4, MAX_PATH - 4);
+        sscanf_s(devicePath.c_str() + 25, "#%[^#]", serial + 8, MAX_PATH - 8);
         ::CloseHandle(hDevice);
 
         usbMSDSerialVector.push_back(serial);

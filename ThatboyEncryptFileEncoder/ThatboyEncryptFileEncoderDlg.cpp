@@ -231,7 +231,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedEncrypt()
 		case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_ERRORCHUNK:
 		case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_UNKNOWCHUNK:
 		case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_UNKNOWERROR:
-			pushInfo("文件加密失败，错误原因：" + EncryptErrorCodeString[code]);
+			pushInfo("文件加密失败，错误原因：" + EncryptErrorCodeString[static_cast<BYTE>(code)]);
 		default:
 			break;
 		}
@@ -275,7 +275,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedDecrypt()
 		return;
 	}
 	try {
-		
+
 		code = thatboy::EncryptFileDoModal::Verify(
 			filePath.GetString()
 			, IsDlgButtonChecked(IDCTEF_NEEDPASSWORD) == BST_CHECKED ? password.GetString() : ""
@@ -303,7 +303,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedDecrypt()
 	case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_ERRORCHUNK:
 	case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_UNKNOWCHUNK:
 	case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_UNKNOWERROR:
-		pushInfo("文件验证失败，错误原因："+ EncryptErrorCodeString[code]);
+		pushInfo("文件验证失败，错误原因：" + EncryptErrorCodeString[static_cast<BYTE>(code)]);
 		return;
 	default:
 		break;
@@ -346,7 +346,7 @@ void CThatboyEncryptFileEncoderDlg::OnBnClickedDecrypt()
 		case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_ERRORCHUNK:
 		case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_UNKNOWCHUNK:
 		case thatboy::EncryptFileDoModal::EncryptErrorCode::ENCRYPT_UNKNOWERROR:
-			pushInfo("文件解密失败，错误原因：" + EncryptErrorCodeString[code]);
+			pushInfo("文件解密失败，错误原因：" + EncryptErrorCodeString[static_cast<BYTE>(code)]);
 		default:
 			break;
 		}
@@ -393,7 +393,7 @@ void CThatboyEncryptFileEncoderDlg::updateFilePath(LPCSTR szFilePathName)
 	char fileName[MAX_PATH];
 	char fileExt[MAX_PATH];
 	CString title;
-	_splitpath(szFilePathName, nullptr, nullptr, fileName, fileExt);
+	_splitpath_s(szFilePathName, nullptr, 0, nullptr, 0, fileName, MAX_PATH, fileExt, MAX_PATH);
 	title.Format("Thatboy Encrypt File Encoder - %s%s", fileName, fileExt);
 	SetWindowText(title);
 

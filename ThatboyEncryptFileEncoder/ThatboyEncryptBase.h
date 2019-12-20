@@ -41,9 +41,9 @@ namespace thatboy
 	// 数据块
 	struct Chunk
 	{
-		DWORD dataLength;	// 数据长度
-		DWORD typeCode;		// 类型
-		DWORD crcCode;		// CRC校验码【typeCode+data】
+		DWORD dataLength = 0;	// 数据长度
+		DWORD typeCode = 0;		// 类型
+		DWORD crcCode = 0;		// CRC校验码【typeCode+data】
 
 	public:
 		/******** 接口 ********/
@@ -68,14 +68,14 @@ namespace thatboy
 		};
 		DWORD magicNumber = makeDWORD('T', 'E', 'F', 255);
 		DWORD version = makeDWORD(0, 0, 0, 1);
-		DWORD chunkCount = 0;				// 所有区块大小
-		DWORD oriFileSize = 0;					// 原始文件大小
-		DWORD deviceIDCrc;						// 绑定设备IDCRC
-		DWORD RXORCode;							// 混淆标志
-		BYTE passwordMD5[32];					// 密码MD5
-		BYTE attributeMark;						// 属性标志
-		BYTE reserve[3];						// 保留位置
-		BYTE oriFileName[260];					// 原始文件名	// 被magicNumber加密
+		DWORD chunkCount = 0;												// 所有区块大小
+		DWORD oriFileSize = 0;												// 原始文件大小
+		DWORD deviceIDCrc = 0;												// 绑定设备IDCRC
+		DWORD RXORCode = 0;													// 混淆标志
+		BYTE passwordMD5[32] = { NULL };									// 密码MD5
+		BYTE attributeMark = static_cast<BYTE>(ENCRYPT_ATTRIBUTE::NORMAL);	// 属性标志
+		BYTE reserve[3] = { NULL };											// 保留位置
+		BYTE oriFileName[260] = { NULL };									// 原始文件名
 	};
 	constexpr size_t size = sizeof(SignatureDomain);
 }
