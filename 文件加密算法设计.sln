@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThatboyEncryptFileClass", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThatboyEncryptFileEncoder", "ThatboyEncryptFileEncoder\ThatboyEncryptFileEncoder.vcxproj", "{A4518787-216F-48F2-9CFB-518705A2FDA9}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ThatboyEncryptFileEncoderInstaller", "ThatboyEncryptFileEncoderInstaller\ThatboyEncryptFileEncoderInstaller.vdproj", "{ED54838E-93C0-4555-AD98-16F1660794AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,10 @@ Global
 		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Release|x64.Build.0 = Release|x64
 		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Release|x86.ActiveCfg = Release|Win32
 		{A4518787-216F-48F2-9CFB-518705A2FDA9}.Release|x86.Build.0 = Release|Win32
+		{ED54838E-93C0-4555-AD98-16F1660794AD}.Debug|x64.ActiveCfg = Debug
+		{ED54838E-93C0-4555-AD98-16F1660794AD}.Debug|x86.ActiveCfg = Debug
+		{ED54838E-93C0-4555-AD98-16F1660794AD}.Release|x64.ActiveCfg = Release
+		{ED54838E-93C0-4555-AD98-16F1660794AD}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

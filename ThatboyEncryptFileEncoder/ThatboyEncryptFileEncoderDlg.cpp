@@ -78,6 +78,11 @@ BOOL CThatboyEncryptFileEncoderDlg::OnInitDialog()
 		pushInfo(str.c_str());
 		return true;
 	};
+
+	// 打开文件
+	updateFilePath(AfxGetApp()->m_lpCmdLine);
+
+
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
@@ -386,25 +391,43 @@ BOOL CThatboyEncryptFileEncoderDlg::PreTranslateMessage(MSG* pMsg)
 }
 
 
-void CThatboyEncryptFileEncoderDlg::updateFilePath(LPCSTR szFilePathName)
+void CThatboyEncryptFileEncoderDlg::updateFilePath(CString filePath)
 {
-	SetDlgItemText(IDCTEF_FILEPATH, szFilePathName);
-	toolTip.AddTool(GetDlgItem(IDCTEF_FILEPATH), szFilePathName);
-	char fileName[MAX_PATH];
-	char fileExt[MAX_PATH];
-	CString title;
-	_splitpath_s(szFilePathName, nullptr, 0, nullptr, 0, fileName, MAX_PATH, fileExt, MAX_PATH);
-	title.Format("Thatboy Encrypt File Encoder - %s%s", fileName, fileExt);
-	SetWindowText(title);
+	char fileFullPath[MAX_PATH] = { NULL };
 
-	CString oriFileName = thatboy::EncryptFileDoModal::getEncryptFileOriginalFilename(szFilePathName).c_str();
-	if (!oriFileName.IsEmpty()) {
-		pushInfo("文件原始名为：" + oriFileName);
-		GetDlgItem(IDCTEF_DECRYPT)->EnableWindow();
+	if (filePath.IsEmpty())
+	{
+		SetDlgItemText(IDCTEF_FILEPATH, "");
+		toolTip.AddTool(GetDlgItem(IDCTEF_FILEPATH));
+		SetWindowText("Thatboy Encrypt File Encoder");
+		GetDlgItem(IDCTEF_DECRYPT)->EnableWindow(FALSE);
+		GetDlgItem(IDCTEF_ENCRYPT)->EnableWindow(FALSE);
 	}
 	else
 	{
-		GetDlgItem(IDCTEF_DECRYPT)->EnableWindow(FALSE);
+		if (filePath[0] == '\"')
+			sscanf_s(filePath.GetString(), "\"%[^\"]", fileFullPath, MAX_PATH);
+		else
+			sscanf_s(filePath.GetString(), "%[^\n]", fileFullPath, MAX_PATH);
+
+		SetDlgItemText(IDCTEF_FILEPATH, fileFullPath);
+		toolTip.AddTool(GetDlgItem(IDCTEF_FILEPATH), fileFullPath);
+		char fileName[MAX_PATH];
+		char fileExt[MAX_PATH];
+		CString title;
+		_splitpath_s(fileFullPath, nullptr, 0, nullptr, 0, fileName, MAX_PATH, fileExt, MAX_PATH);
+		title.Format("Thatboy Encrypt File Encoder - %s%s", fileName, fileExt);
+		SetWindowText(title);
+
+		CString oriFileName = thatboy::EncryptFileDoModal::getEncryptFileOriginalFilename(fileFullPath).c_str();
+		if (!oriFileName.IsEmpty()) {
+			pushInfo("文件原始名为：" + oriFileName);
+			GetDlgItem(IDCTEF_DECRYPT)->EnableWindow();
+		}
+		else
+		{
+			GetDlgItem(IDCTEF_DECRYPT)->EnableWindow(FALSE);
+		}
+		GetDlgItem(IDCTEF_ENCRYPT)->EnableWindow();
 	}
-	GetDlgItem(IDCTEF_ENCRYPT)->EnableWindow();
 }

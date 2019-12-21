@@ -43,5 +43,5 @@ protected:
 public:
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
 protected:
-	void updateFilePath(LPCSTR);
+	void updateFilePath(CString filePath);
 };
