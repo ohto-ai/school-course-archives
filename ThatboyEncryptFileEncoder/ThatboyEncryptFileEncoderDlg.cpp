@@ -80,9 +80,8 @@ BOOL CThatboyEncryptFileEncoderDlg::OnInitDialog()
 	};
 
 	// 打开文件
-	updateFilePath(AfxGetApp()->m_lpCmdLine);
-
-
+	updateFilePath(AfxGetApp()->m_lpCmdLine);	
+	SkinH_AttachEx(TEXT(R"(Wood.she)"), nullptr);
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 

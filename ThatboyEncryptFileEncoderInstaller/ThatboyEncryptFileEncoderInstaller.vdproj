@@ -15,7 +15,19 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_4AA7C9A1AFCF429CB2450DDC395CF23D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_780B59880629428C8EF0CDDF785ADFCB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9ACEAD0D3DD6432FA7C38CF0B1FFB97C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -56,6 +68,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -80,6 +100,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -102,10 +130,50 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4AA7C9A1AFCF429CB2450DDC395CF23D"
+            {
+            "SourcePath" = "8:..\\Release\\SkinH.dll"
+            "TargetName" = "8:SkinH.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_17E3CA8F24CD4DFEB66AD4FF8B3B6DDD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_780B59880629428C8EF0CDDF785ADFCB"
             {
             "SourcePath" = "8:..\\ThatboyEncryptFileEncoder\\res\\ThatboyEncryptFile.ico"
             "TargetName" = "8:ThatboyEncryptFile.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_17E3CA8F24CD4DFEB66AD4FF8B3B6DDD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9ACEAD0D3DD6432FA7C38CF0B1FFB97C"
+            {
+            "SourcePath" = "8:..\\Release\\Wood.she"
+            "TargetName" = "8:Wood.she"
             "Tag" = "8:"
             "Folder" = "8:_17E3CA8F24CD4DFEB66AD4FF8B3B6DDD"
             "Condition" = "8:"
@@ -233,7 +301,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ThatboyEncryptFileEncoder"
         "ProductCode" = "8:{40224EBA-49B9-45EE-BCE7-8DBED8918BA9}"
-        "PackageCode" = "8:{597B33BA-E799-42BD-B2DD-1315B816F3D0}"
+        "PackageCode" = "8:{8A4F578A-04D9-4DB4-95C8-0DB9ACCEC537}"
         "UpgradeCode" = "8:{5844F464-48E2-4E79-9B86-54FCADB6FAAC}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

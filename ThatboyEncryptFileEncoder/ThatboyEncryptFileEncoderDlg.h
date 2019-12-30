@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "SkinH.h"
 
 // CThatboyEncryptFileEncoderDlg 对话框
 class CThatboyEncryptFileEncoderDlg : public CDialogEx
