@@ -79,9 +79,16 @@ BOOL CThatboyEncryptFileEncoderDlg::OnInitDialog()
 		return true;
 	};
 
+	// 设置皮肤
+	TCHAR moduleName[MAX_PATH], modulePath[MAX_PATH], moduleDrive[MAX_PATH], skinPath[MAX_PATH];
+	GetModuleFileName(NULL, moduleName, MAX_PATH);
+	_splitpath_s(moduleName, moduleDrive, MAX_PATH, modulePath, MAX_PATH, nullptr, 0, nullptr, 0);
+	_makepath_s(skinPath, MAX_PATH, moduleDrive, modulePath, TEXT("Wood"), TEXT(".she"));
+	SkinH_AttachEx(skinPath, nullptr);
+
 	// 打开文件
 	updateFilePath(AfxGetApp()->m_lpCmdLine);	
-	SkinH_AttachEx(TEXT(R"(Wood.she)"), nullptr);
+
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
