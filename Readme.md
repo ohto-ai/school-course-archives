@@ -3,6 +3,8 @@
 > *朱广锋*
 >
 > 2020/1/9
+>
+> https://github.com/thatboy-zero/Color-Quantization
 
 ```cpp
 ColorCube::loadImage(源图像);
