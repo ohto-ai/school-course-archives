@@ -7,7 +7,7 @@ int main()
 	using namespace thatboy;
 
 	Mat srcImage, dstImage;
-	srcImage = imread("color3.png");	/* "baboon.jpg" */
+	srcImage = imread("baboon.jpg");	/* "baboon.jpg" */
 	if (srcImage.empty())
 		throw std::bad_exception();
 	dstImage = srcImage.clone();
