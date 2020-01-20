@@ -16,6 +16,6 @@ ColorCube::write8bIndexBmp(目标文件名);
 
 但是实践中存在一些转换错误。如测试样本中的color3，转换后出现三到四条违和的色条。
 
-![color3](.\颜色量化\测试样本\color3.png)
+![color3](https://raw.githubusercontent.com/thatboy-zero/Color-Quantization/master/颜色量化/测试样本/color3.png)
 
-![color3r](.\颜色量化\测试样本\color3.bmp)
+![color3r](https://raw.githubusercontent.com/thatboy-zero/Color-Quantization/master/颜色量化/测试样本/color3.bmp)
