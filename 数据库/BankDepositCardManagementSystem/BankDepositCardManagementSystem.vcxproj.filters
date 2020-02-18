@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Bank">
+      <UniqueIdentifier>{c820f9c4-ac32-4de0-bc93-28fc18ab580c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{69f94327-ead5-4b47-a461-12976fc225a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\注册">
+      <UniqueIdentifier>{61efa950-0dd2-44f7-9e7f-ce3b4cec2010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\登录">
+      <UniqueIdentifier>{0a8617fa-8286-4967-a621-a8e2998f0d6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tool">
+      <UniqueIdentifier>{6a515034-133b-4e38-b242-9317d7827e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\主界面">
+      <UniqueIdentifier>{c0760e86-0656-4fc1-8838-9e7bf4082c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\主界面\历史">
+      <UniqueIdentifier>{88a010c7-1b93-4a82-819f-7c5460e029db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\主界面\存取款">
+      <UniqueIdentifier>{450723ee-bf4e-4c31-b87e-6e4ffa46fae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\主界面\转账汇款">
+      <UniqueIdentifier>{fc01287c-0ba5-42eb-819b-68826e365193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\主界面\设置">
+      <UniqueIdentifier>{e03cdaf5-ee18-43ba-9a2c-73e2099022a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\主界面\用户报表">
+      <UniqueIdentifier>{2441d205-11e3-4f6a-a2c5-2fa152625599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\主界面\银行报表">
+      <UniqueIdentifier>{4a56f21b-3be4-4279-95c9-0a78e540949b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BankDepositCardManagementSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Bank.h">
+      <Filter>Bank</Filter>
+    </ClInclude>
+    <ClInclude Include="MySQLConnector.h">
+      <Filter>Bank</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankRegisterDlg.h">
+      <Filter>GUI\注册</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankLoginDlg.h">
+      <Filter>GUI\登录</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolFunction.h">
+      <Filter>Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankDepositCardManagementSystemDlg.h">
+      <Filter>GUI\主界面</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankHistory.h">
+      <Filter>GUI\主界面\历史</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankDepositWithDraw.h">
+      <Filter>GUI\主界面\存取款</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankTransfer.h">
+      <Filter>GUI\主界面\转账汇款</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankCardConfig.h">
+      <Filter>GUI\主界面\设置</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankUserReport.h">
+      <Filter>GUI\主界面\用户报表</Filter>
+    </ClInclude>
+    <ClInclude Include="CBankBankReport.h">
+      <Filter>GUI\主界面\银行报表</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5.h">
+      <Filter>Tool</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BankDepositCardManagementSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Bank.cpp">
+      <Filter>Bank</Filter>
+    </ClCompile>
+    <ClCompile Include="MySQLConnector.cpp">
+      <Filter>Bank</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankRegisterDlg.cpp">
+      <Filter>GUI\注册</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankLoginDlg.cpp">
+      <Filter>GUI\登录</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankDepositCardManagementSystemDlg.cpp">
+      <Filter>GUI\主界面</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankHistory.cpp">
+      <Filter>GUI\主界面\历史</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolFunction.cpp">
+      <Filter>Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankDepositWithDraw.cpp">
+      <Filter>GUI\主界面\存取款</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankTransfer.cpp">
+      <Filter>GUI\主界面\转账汇款</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankCardConfig.cpp">
+      <Filter>GUI\主界面\设置</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankUserReport.cpp">
+      <Filter>GUI\主界面\用户报表</Filter>
+    </ClCompile>
+    <ClCompile Include="CBankBankReport.cpp">
+      <Filter>GUI\主界面\银行报表</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5.cpp">
+      <Filter>Tool</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BankDepositCardManagementSystem.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BankDepositCardManagementSystem.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\BankDepositCardManagementSystem.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
