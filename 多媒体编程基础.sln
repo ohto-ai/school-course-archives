@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HellowQT", "HellowQT\HellowQT.vcxproj", "{7AA481D2-C9EB-4082-88B6-03A6EDC416AE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HellowQTDialog", "HellowQTDialog\HellowQTDialog.vcxproj", "{E45CDE83-B79F-4E04-BBCF-75F98B402092}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HellowQTUI", "HellowQTUI\HellowQTUI.vcxproj", "{F3BA5ACD-D3CC-4391-A910-9EBDF98BE85C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CH101", "CH101\CH101.vcxproj", "{115C137E-102F-4FAB-8B3F-F18C85517FE2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudentInfoManagement", "StudentInfoManagement\StudentInfoManagement.vcxproj", "{734C4166-1E04-40D9-85F7-D28A386FF416}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DialogExample", "DialogExample\DialogExample.vcxproj", "{996FA5B3-9215-4D25-9003-B9DF5F12299E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NotepadX", "NotepadX\NotepadX.vcxproj", "{FE579C3E-DDD6-467A-836B-B76A11C462AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AA481D2-C9EB-4082-88B6-03A6EDC416AE}.Debug|x64.ActiveCfg = Debug|x64
+		{7AA481D2-C9EB-4082-88B6-03A6EDC416AE}.Debug|x64.Build.0 = Debug|x64
+		{7AA481D2-C9EB-4082-88B6-03A6EDC416AE}.Release|x64.ActiveCfg = Release|x64
+		{7AA481D2-C9EB-4082-88B6-03A6EDC416AE}.Release|x64.Build.0 = Release|x64
+		{E45CDE83-B79F-4E04-BBCF-75F98B402092}.Debug|x64.ActiveCfg = Debug|x64
+		{E45CDE83-B79F-4E04-BBCF-75F98B402092}.Debug|x64.Build.0 = Debug|x64
+		{E45CDE83-B79F-4E04-BBCF-75F98B402092}.Release|x64.ActiveCfg = Release|x64
+		{E45CDE83-B79F-4E04-BBCF-75F98B402092}.Release|x64.Build.0 = Release|x64
+		{F3BA5ACD-D3CC-4391-A910-9EBDF98BE85C}.Debug|x64.ActiveCfg = Debug|x64
+		{F3BA5ACD-D3CC-4391-A910-9EBDF98BE85C}.Debug|x64.Build.0 = Debug|x64
+		{F3BA5ACD-D3CC-4391-A910-9EBDF98BE85C}.Release|x64.ActiveCfg = Release|x64
+		{F3BA5ACD-D3CC-4391-A910-9EBDF98BE85C}.Release|x64.Build.0 = Release|x64
+		{115C137E-102F-4FAB-8B3F-F18C85517FE2}.Debug|x64.ActiveCfg = Debug|x64
+		{115C137E-102F-4FAB-8B3F-F18C85517FE2}.Debug|x64.Build.0 = Debug|x64
+		{115C137E-102F-4FAB-8B3F-F18C85517FE2}.Release|x64.ActiveCfg = Release|x64
+		{115C137E-102F-4FAB-8B3F-F18C85517FE2}.Release|x64.Build.0 = Release|x64
+		{734C4166-1E04-40D9-85F7-D28A386FF416}.Debug|x64.ActiveCfg = Debug|x64
+		{734C4166-1E04-40D9-85F7-D28A386FF416}.Debug|x64.Build.0 = Debug|x64
+		{734C4166-1E04-40D9-85F7-D28A386FF416}.Release|x64.ActiveCfg = Release|x64
+		{734C4166-1E04-40D9-85F7-D28A386FF416}.Release|x64.Build.0 = Release|x64
+		{996FA5B3-9215-4D25-9003-B9DF5F12299E}.Debug|x64.ActiveCfg = Debug|x64
+		{996FA5B3-9215-4D25-9003-B9DF5F12299E}.Debug|x64.Build.0 = Debug|x64
+		{996FA5B3-9215-4D25-9003-B9DF5F12299E}.Release|x64.ActiveCfg = Release|x64
+		{996FA5B3-9215-4D25-9003-B9DF5F12299E}.Release|x64.Build.0 = Release|x64
+		{FE579C3E-DDD6-467A-836B-B76A11C462AF}.Debug|x64.ActiveCfg = Debug|x64
+		{FE579C3E-DDD6-467A-836B-B76A11C462AF}.Debug|x64.Build.0 = Debug|x64
+		{FE579C3E-DDD6-467A-836B-B76A11C462AF}.Release|x64.ActiveCfg = Release|x64
+		{FE579C3E-DDD6-467A-836B-B76A11C462AF}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8854F45-F1A4-412C-802E-0ACB32E6344D}
+	EndGlobalSection
+EndGlobal
