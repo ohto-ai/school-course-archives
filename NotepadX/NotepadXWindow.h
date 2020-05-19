@@ -7,6 +7,7 @@
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QPageSetupDialog>
+#include <QColorDialog>
 #include <QPrinter>
 #include "ui_NotepadXWindow.h"
 #include "About.h"

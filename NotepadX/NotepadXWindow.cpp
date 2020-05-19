@@ -46,6 +46,23 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 			}
 		});
 
+	// 颜色
+	connect(ui.actionColor, &QAction::triggered, [this]
+		{
+			if (ui.markdownEdit->textCursor().hasSelection())
+			{
+				auto selectedText = ui.markdownEdit->textCursor().selectedText();
+
+				auto color = QColorDialog::getColor(Qt::black, this);
+				if (color.isValid())
+				{
+					;
+					selectedText = "<font color=" + color.name() + ">" + selectedText + "</font>";
+					ui.markdownEdit->textCursor().insertText(selectedText);
+				}
+			}
+		});
+
 	// 字体
 	connect(ui.actionFont, &QAction::triggered, [this]
 		{
@@ -106,7 +123,7 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 	// 关于
 	connect(ui.actionAbout, &QAction::triggered, &about, &About::exec);
 
-	// 打印
+	// 打印 TODO: 未完成
 	connect(ui.actionPrint, &QAction::triggered, [this]
 		{
 			QPrinter printer;
@@ -118,7 +135,9 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 				return;
 		});
 
-	
+	// TODO: 左右滚动条同步
+
+	// 填充初始内容
 	ui.markdownEdit->setPlainText(R"MARKDOWN(# 标题1
 ## 标题2
 ### 标题3

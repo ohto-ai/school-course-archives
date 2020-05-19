@@ -52,7 +52,7 @@
      <x>0</x>
      <y>0</y>
      <width>961</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -95,6 +95,7 @@
     <addaction name="actionItalic"/>
     <addaction name="actionUnderline"/>
     <addaction name="actionStrikeout"/>
+    <addaction name="actionColor"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -129,8 +130,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>16</width>
-     <height>16</height>
+     <width>20</width>
+     <height>20</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -161,6 +162,7 @@
    <addaction name="actionItalic"/>
    <addaction name="actionUnderline"/>
    <addaction name="actionStrikeout"/>
+   <addaction name="actionColor"/>
    <addaction name="actionFont"/>
    <addaction name="separator"/>
    <addaction name="actionEnlarge"/>
@@ -220,7 +222,7 @@
     <string>保存为...</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Shift+S</string>
+    <string>F12</string>
    </property>
   </action>
   <action name="actionPrint">
@@ -318,9 +320,6 @@
   <action name="actionFindNext">
    <property name="text">
     <string>查找下一个(&amp;N)</string>
-   </property>
-   <property name="shortcut">
-    <string>F3</string>
    </property>
   </action>
   <action name="actionReplace">
@@ -484,7 +483,10 @@
     <string>字体(&amp;F)</string>
    </property>
    <property name="toolTip">
-    <string>字体(Ctrl+F)</string>
+    <string>字体(Ctrl+Shift+F)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
    </property>
   </action>
   <action name="actionStrikeout">
@@ -496,10 +498,25 @@
     <string>删除线</string>
    </property>
    <property name="toolTip">
-    <string>删除线(Alt+Shift+5)</string>
+    <string>删除线(Ctrl+Shift+D)</string>
    </property>
    <property name="shortcut">
-    <string>Alt+Shift+5</string>
+    <string>Ctrl+Shift+D</string>
+   </property>
+  </action>
+  <action name="actionColor">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/ui/Resources/color.png</normaloff>:/ui/Resources/color.png</iconset>
+   </property>
+   <property name="text">
+    <string>颜色</string>
+   </property>
+   <property name="toolTip">
+    <string>颜色(Ctrl+Shift+C)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
    </property>
   </action>
  </widget>
