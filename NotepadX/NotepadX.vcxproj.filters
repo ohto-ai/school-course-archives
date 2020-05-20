@@ -56,4 +56,15 @@
       <Filter>Form Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NotepadX.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\markdown.ico" />
+  </ItemGroup>
 </Project>

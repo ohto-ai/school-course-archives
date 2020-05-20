@@ -28,6 +28,15 @@
   <ItemGroup>
     <QtMoc Include="About.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NotepadX.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\markdown.ico" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE579C3E-DDD6-467A-836B-B76A11C462AF}</ProjectGuid>
     <Keyword>QtVS_v302</Keyword>
