@@ -6,15 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>961</width>
-    <height>706</height>
+    <width>1128</width>
+    <height>838</height>
    </rect>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1200</width>
-    <height>1000</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>NotepadX</string>
@@ -51,7 +45,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>961</width>
+     <width>1128</width>
      <height>26</height>
     </rect>
    </property>
@@ -82,7 +76,6 @@
     <addaction name="separator"/>
     <addaction name="actionAll"/>
     <addaction name="actionFind"/>
-    <addaction name="actionFindNext"/>
     <addaction name="actionReplace"/>
     <addaction name="actionGoto"/>
    </widget>
@@ -315,11 +308,6 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+A</string>
-   </property>
-  </action>
-  <action name="actionFindNext">
-   <property name="text">
-    <string>查找下一个(&amp;N)</string>
    </property>
   </action>
   <action name="actionReplace">

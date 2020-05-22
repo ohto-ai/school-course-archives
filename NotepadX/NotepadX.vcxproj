@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="About.cpp" />
+    <ClCompile Include="FindDialog.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NotepadXWindow.cpp" />
   </ItemGroup>
@@ -20,6 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="About.ui" />
+    <QtUic Include="FindDialog.ui" />
     <QtUic Include="NotepadXWindow.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +31,7 @@
     <QtMoc Include="About.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FindDialog.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
