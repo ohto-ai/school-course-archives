@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="ui">
+    <file>Resources/index.html</file>
+    <file>Resources/color.png</file>
     <file>Resources/boy-border.png</file>
     <file>Resources/strikeout.png</file>
     <file>Resources/underline.png</file>

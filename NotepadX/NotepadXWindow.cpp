@@ -4,7 +4,34 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+
+	// 内容同步
     connect(ui.markdownEdit, &QPlainTextEdit::textChanged, [this] { ui.markdownPreview->setMarkdown(ui.markdownEdit->toPlainText()); });
+
+	// 查找
+	connect(ui.actionFind, &QAction::triggered, [this] {
+		if (ui.markdownEdit->textCursor().hasSelection())
+		{
+			findDialog.ui.lineEdit->setText(ui.markdownEdit->textCursor().selectedText());
+		}
+		findDialog.show();
+		});
+
+	// 查找下一个
+	connect(findDialog.ui.pushButton, &QPushButton::clicked, [this] {
+		QString findText = findDialog.ui.lineEdit->text();
+		if (ui.markdownEdit->find(findText))
+		{
+			QPalette palette = ui.markdownEdit->palette();
+			palette.setColor(QPalette::Highlight, palette.color(QPalette::Active, QPalette::Highlight));
+			ui.markdownEdit->setPalette(palette);
+		}
+		else
+		{
+			QMessageBox::information(this, "NotepadX", "没有查找到内容", QMessageBox::Ok);
+		}
+		;
+		});
 
 	// 加粗
 	connect(ui.actionBold, &QAction::triggered, [this]
@@ -16,6 +43,7 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 			}
 			
 		});
+
 	// 斜体
 	connect(ui.actionItalic, &QAction::triggered, [this]
 		{
@@ -43,6 +71,23 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 			{
 				auto selectedText = ui.markdownEdit->textCursor().selectedText();
 				ui.markdownEdit->textCursor().insertText("~~" + selectedText + "~~");
+			}
+		});
+
+	// 颜色
+	connect(ui.actionColor, &QAction::triggered, [this]
+		{
+			if (ui.markdownEdit->textCursor().hasSelection())
+			{
+				auto selectedText = ui.markdownEdit->textCursor().selectedText();
+
+				auto color = QColorDialog::getColor(Qt::black, this);
+				if (color.isValid())
+				{
+					;
+					selectedText = "<font color=" + color.name() + ">" + selectedText + "</font>";
+					ui.markdownEdit->textCursor().insertText(selectedText);
+				}
 			}
 		});
 
@@ -106,7 +151,7 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 	// 关于
 	connect(ui.actionAbout, &QAction::triggered, &about, &About::exec);
 
-	// 打印
+	// 打印 TODO: 未完成
 	connect(ui.actionPrint, &QAction::triggered, [this]
 		{
 			QPrinter printer;
@@ -118,7 +163,10 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 				return;
 		});
 
-	
+	// TODO: 左右滚动条同步
+
+
+	// 填充初始内容
 	ui.markdownEdit->setPlainText(R"MARKDOWN(# 标题1
 ## 标题2
 ### 标题3

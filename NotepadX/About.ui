@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>362</width>
-    <height>151</height>
+    <width>464</width>
+    <height>159</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,13 +36,13 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>30</y>
-     <width>101</width>
+     <y>40</y>
+     <width>241</width>
      <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 30pt &quot;Blackadder ITC&quot;;</string>
+    <string notr="true">font: 20pt &quot;bitween 10&quot;;</string>
    </property>
    <property name="text">
     <string>&lt;a href=&quot;https://thatboy.info&quot;&gt;thatboy&lt;/a&gt;</string>

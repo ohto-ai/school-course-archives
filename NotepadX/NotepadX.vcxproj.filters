@@ -34,12 +34,18 @@
     <ClCompile Include="About.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FindDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="NotepadXWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="About.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FindDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -50,10 +56,24 @@
     <QtUic Include="About.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="FindDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="res.qrc">
       <Filter>Form Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NotepadX.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\markdown.ico" />
   </ItemGroup>
 </Project>
