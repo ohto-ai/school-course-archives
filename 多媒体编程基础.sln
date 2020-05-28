@@ -17,6 +17,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DialogExample", "DialogExam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NotepadX", "NotepadX\NotepadX.vcxproj", "{FE579C3E-DDD6-467A-836B-B76A11C462AF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImageViewerX", "ImageViewerX\ImageViewerX.vcxproj", "{12A61BAF-7ADD-41FE-AD51-28CD277737FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PaintX", "PaintX\PaintX.vcxproj", "{663817A7-E997-479D-9F15-631796F0B73C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +55,14 @@ Global
 		{FE579C3E-DDD6-467A-836B-B76A11C462AF}.Debug|x64.Build.0 = Debug|x64
 		{FE579C3E-DDD6-467A-836B-B76A11C462AF}.Release|x64.ActiveCfg = Release|x64
 		{FE579C3E-DDD6-467A-836B-B76A11C462AF}.Release|x64.Build.0 = Release|x64
+		{12A61BAF-7ADD-41FE-AD51-28CD277737FA}.Debug|x64.ActiveCfg = Debug|x64
+		{12A61BAF-7ADD-41FE-AD51-28CD277737FA}.Debug|x64.Build.0 = Debug|x64
+		{12A61BAF-7ADD-41FE-AD51-28CD277737FA}.Release|x64.ActiveCfg = Release|x64
+		{12A61BAF-7ADD-41FE-AD51-28CD277737FA}.Release|x64.Build.0 = Release|x64
+		{663817A7-E997-479D-9F15-631796F0B73C}.Debug|x64.ActiveCfg = Debug|x64
+		{663817A7-E997-479D-9F15-631796F0B73C}.Debug|x64.Build.0 = Debug|x64
+		{663817A7-E997-479D-9F15-631796F0B73C}.Release|x64.ActiveCfg = Release|x64
+		{663817A7-E997-479D-9F15-631796F0B73C}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
