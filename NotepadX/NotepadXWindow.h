@@ -9,6 +9,7 @@
 #include <QPageSetupDialog>
 #include <QColorDialog>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QPrinter>
 #include "ui_NotepadXWindow.h"
 #include "About.h"

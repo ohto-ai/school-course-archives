@@ -24,6 +24,7 @@ void PaintWidget::mousePressEvent(QMouseEvent* event)
 
 void PaintWidget::mouseReleaseEvent(QMouseEvent* event)
 {
+
 }
 
 void PaintWidget::mouseMoveEvent(QMouseEvent* event)

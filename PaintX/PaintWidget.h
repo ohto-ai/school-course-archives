@@ -18,6 +18,22 @@ public:
 	virtual void mouseMoveEvent(QMouseEvent* event);
 	virtual void paintEvent(QPaintEvent* event);
 private:
+
+	enum : int
+	{
+		PAINT_PENCIL				// 铅笔
+		, PAINT_LINE				// 直线
+		, PAINT_CIRCLE				// 圆形
+		, PAINT_RECTANGLE			// 矩形
+		, PAINT_ROUNDEDRECTANGLE	// 圆角矩形
+		, PAINT_POLYGON				// 多边形
+		, PAINT_FILL				// 油漆桶
+		, PAINT_ERASER				// 橡皮擦
+		, PAINT_PICKER				// 取色器
+	};
+	QColor foreColor = Qt::black;
+	QColor backColor = Qt::white;
+
 	Ui::PaintWidget ui;
 	QPoint mousePressCoord;
 	QPoint mouseReleaseCoord;
