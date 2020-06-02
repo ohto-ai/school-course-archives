@@ -14,8 +14,8 @@ static GLubyte flyImage[flyImageHeight][flyImageWidth][4];
 
 static GLuint texName[4];
 
-#define USE_FLY_TEXTURE true
-#define USE_PIC_TEXTURE false
+#define USE_FLY_TEXTURE false
+#define USE_PIC_TEXTURE true
 
 /// <summary>
 /// 32X32 bits
@@ -122,7 +122,7 @@ void init(void)
         flyImageHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE,
         flyImage);
 
-    auto texture = auxDIBImageLoad(TEXT("meme.bmp"));
+    auto texture = auxDIBImageLoad(TEXT("meme2.bmp"));
     glBindTexture(GL_TEXTURE_2D, texName[3]);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
