@@ -10,6 +10,9 @@
     <height>800</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>CrossCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>PaintWidget</string>
   </property>
