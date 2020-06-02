@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="thatboy::PaintObject">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::PaintShapeObject">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::LineObject">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::RectangleObject">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::CircleObject">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAIAEAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::EllipseObject">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::RoundedRectangleObject">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAIAEAAAAAAAAAMAAAAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

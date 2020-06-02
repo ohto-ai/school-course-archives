@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>733</width>
-    <height>729</height>
+    <width>883</width>
+    <height>896</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,13 +19,52 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>600</width>
-      <height>600</height>
+      <width>800</width>
+      <height>800</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">border: 1px solid #000;</string>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>827</x>
+      <y>10</y>
+      <width>41</width>
+      <height>801</height>
+     </rect>
     </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="foreColorBtn">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="backColorBtn">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="penWidthSlider">
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksAbove</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="penWidthSpinBox"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -33,7 +72,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>733</width>
+     <width>883</width>
      <height>23</height>
     </rect>
    </property>
@@ -45,8 +84,122 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionArrow"/>
+   <addaction name="actionPenceil"/>
+   <addaction name="actionLine"/>
+   <addaction name="actionRectangle"/>
+   <addaction name="actionRoundRectangle"/>
+   <addaction name="actionCircle"/>
+   <addaction name="actionEllipse"/>
+   <addaction name="actionPolgon"/>
+   <addaction name="actionClear"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionArrow">
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/arrow.png</normaloff>:/PaintX/res/arrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>箭头</string>
+   </property>
+   <property name="toolTip">
+    <string>箭头</string>
+   </property>
+  </action>
+  <action name="actionPenceil">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/penceil.png</normaloff>:/PaintX/res/penceil.png</iconset>
+   </property>
+   <property name="text">
+    <string>Penceil</string>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/line.png</normaloff>:/PaintX/res/line.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/rectangle.png</normaloff>:/PaintX/res/rectangle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+  </action>
+  <action name="actionRoundRectangle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/roundrectangle.png</normaloff>:/PaintX/res/roundrectangle.png</iconset>
+   </property>
+   <property name="text">
+    <string>RoundRectangle</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/circle.png</normaloff>:/PaintX/res/circle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionEllipse">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/ellipse.png</normaloff>:/PaintX/res/ellipse.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ellipse</string>
+   </property>
+  </action>
+  <action name="actionPolgon">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/多边形.png</normaloff>:/PaintX/res/多边形.png</iconset>
+   </property>
+   <property name="text">
+    <string>Polgon</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="PaintX.qrc">
+     <normaloff>:/PaintX/res/clear.png</normaloff>:/PaintX/res/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
