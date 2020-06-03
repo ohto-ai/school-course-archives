@@ -2,6 +2,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include <QColorDialog>
+#include <QFileDialog>
 #include "PaintWidget.h"
 #include "ui_PaintX.h"
 

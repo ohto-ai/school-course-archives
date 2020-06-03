@@ -5,9 +5,9 @@ namespace thatboy
 {
 	namespace  qt
 	{
-
+		// 保留类的默认构造与赋值函数
 #define DEFAULT_CONSTRUCT(_class) \
-	_class() = default; \
+		_class() = default; \
 		_class(const _class&) = default; \
 		_class(_class&&) = default; \
 		_class& operator=(const _class&) = default;
@@ -19,6 +19,7 @@ namespace thatboy
 		struct PaintObject
 		{
 			virtual void draw(QPainter&) = 0;
+			virtual QString exportSvgObject() = 0;
 		};
 
 		/// <summary>
@@ -47,6 +48,12 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawLine(*this);
 			}
+
+			virtual QString exportSvgObject()
+			{
+				return QString().sprintf(R"(<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, p1().x(), p1().y(), p2().x(), p2().y(), QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+			}
 		};
 
 		/// <summary>
@@ -64,6 +71,12 @@ namespace thatboy
 			{
 				painter.setPen(*this);
 				painter.drawRect(*this);
+			}
+
+			virtual QString exportSvgObject()
+			{
+				return QString().sprintf(R"(<rect x="%d" y="%d" width="%d" height="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, normalized().x(), normalized().y(), normalized().width(), normalized().height(), QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
 			}
 		};
 
@@ -86,6 +99,12 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawEllipse(*this, r, r);
 			}
+
+			virtual QString exportSvgObject()
+			{
+				return QString().sprintf(R"(<circle cx="%d" cy="%d" r="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, x(), y(), r, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+			}
 		};
 
 		/// <summary>
@@ -103,6 +122,12 @@ namespace thatboy
 			{
 				painter.setPen(*this);
 				painter.drawEllipse(*this);
+			}
+
+			virtual QString exportSvgObject()
+			{
+				return QString().sprintf(R"(<ellipse cx="%d" cy="%d" rx="%d" ry="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, normalized().center().x(), normalized().center().y(), normalized().width() / 2, normalized().height() / 2, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
 			}
 		};
 
@@ -126,6 +151,12 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawRoundRect(*this, xR, yR);
 			}
+
+			virtual QString exportSvgObject()
+			{
+				return QString().sprintf(R"(<rect x="%d" y="%d" width="%d" height="%d" rx="%d" ry="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, normalized().x(), normalized().y(), normalized().width(), normalized().height(), xR, yR, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+			}
 		};
 
 		/// <summary>
@@ -144,6 +175,17 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawPolygon(*this);
 			}
+
+			virtual QString exportSvgObject()
+			{
+				QString svg;
+				svg += R"(<polygon points=")";
+				for (auto& pt : *this)
+					svg += QString().sprintf("%d,%d ", pt.x(), pt.y());
+				svg += QString().sprintf(R"(" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+				return svg;
+			}
 		};
 
 		/// <summary>
@@ -161,6 +203,17 @@ namespace thatboy
 			{
 				painter.setPen(*this);
 				painter.drawPolyline(*this);
+			}
+
+			virtual QString exportSvgObject()
+			{
+				QString svg;
+				svg += R"(<polyline points=")";
+				for (auto& pt : *this)
+					svg += QString().sprintf("%d,%d ", pt.x(), pt.y());
+				svg += QString().sprintf(R"(" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+				return svg;
 			}
 		};
 

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="PaintX">
+    <file>res/export.png</file>
     <file>res/clear.png</file>
     <file>PaintX.qrc</file>
     <file>res/roundrectangle.png</file>
