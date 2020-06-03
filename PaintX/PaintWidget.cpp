@@ -22,59 +22,38 @@ void PaintWidget::mousePressEvent(QMouseEvent* event)
 		case PaintWidget::PAINT_NULL:
 			break;
 		case PaintWidget::PAINT_PENCIL:
-			paintObjList.push_back(new thatboy::qt::PolylineObject());
-			if (onPaintObjectCreate)
-				onPaintObjectCreate(PAINT_PENCIL, paintObjList.back());
-			dynamic_cast<thatboy::qt::PolylineObject*>(paintObjList.back())->append(event->pos());
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
+			currentObject = new thatboy::qt::PolylineObject();
+			dynamic_cast<thatboy::qt::PolylineObject*>(currentObject)->append(event->pos());
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
 			break;
 		case PaintWidget::PAINT_LINE:
-			paintObjList.push_back(new thatboy::qt::LineObject(QLine(event->pos(), event->pos())));
-			if (onPaintObjectCreate)
-				onPaintObjectCreate(PAINT_LINE, paintObjList.back());
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
+			currentObject = new thatboy::qt::LineObject(QLine(event->pos(), event->pos()));
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
 			break;
 		case PaintWidget::PAINT_CIRCLE:
-			paintObjList.push_back(new thatboy::qt::CircleObject(QPoint(event->pos())));
-			if (onPaintObjectCreate)
-				onPaintObjectCreate(PAINT_CIRCLE, paintObjList.back());
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
+			currentObject = new thatboy::qt::CircleObject(QPoint(event->pos()));
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
 			break;
 		case PaintWidget::PAINT_ELLIPSE:
-			paintObjList.push_back(new thatboy::qt::EllipseObject(QRect(event->pos(), event->pos())));
-			if (onPaintObjectCreate)
-				onPaintObjectCreate(PAINT_ELLIPSE, paintObjList.back());
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
+			currentObject = new thatboy::qt::EllipseObject(QRect(event->pos(), event->pos()));
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
 			break;
 		case PaintWidget::PAINT_RECTANGLE:
-			paintObjList.push_back(new thatboy::qt::RectangleObject(QRect(event->pos(), event->pos())));
-			if (onPaintObjectCreate)
-				onPaintObjectCreate(PAINT_RECTANGLE, paintObjList.back());
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
+			currentObject = new thatboy::qt::RectangleObject(QRect(event->pos(), event->pos()));
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
 			break;
 		case PaintWidget::PAINT_ROUNDEDRECTANGLE:
-			paintObjList.push_back(new thatboy::qt::RoundedRectangleObject(QRect(event->pos(), event->pos())));
-			if (onPaintObjectCreate)
-				onPaintObjectCreate(PAINT_ROUNDEDRECTANGLE, paintObjList.back());
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
+			currentObject = new thatboy::qt::RoundedRectangleObject(QRect(event->pos(), event->pos()));
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
 			break;
 		case PaintWidget::PAINT_POLYGON:
-
-			if (continusStatus)
+			if (currentObject == nullptr)
 			{
-				dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
-				dynamic_cast<thatboy::qt::PolygonObject*>(paintObjList.back())->append(event->pos());
+				currentObject = new thatboy::qt::PolygonObject();
+				dynamic_cast<thatboy::qt::PolygonObject*>(currentObject)->append(event->pos());
 			}
-			else
-			{
-				continusStatus = true;
-				paintObjList.push_back(new thatboy::qt::PolygonObject());
-				if (onPaintObjectCreate)
-					onPaintObjectCreate(PAINT_POLYGON, paintObjList.back());
-				dynamic_cast<thatboy::qt::PaintShapeObject*>(paintObjList.back())->QPen::operator=(thisPen);
-				dynamic_cast<thatboy::qt::PolygonObject*>(paintObjList.back())->append(event->pos());
-				dynamic_cast<thatboy::qt::PolygonObject*>(paintObjList.back())->append(event->pos());
-			}
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
+			dynamic_cast<thatboy::qt::PolygonObject*>(currentObject)->append(event->pos());
 			break;
 		default:
 			break;
@@ -82,7 +61,40 @@ void PaintWidget::mousePressEvent(QMouseEvent* event)
 		break;
 
 	case Qt::RightButton:
-		continusStatus = false;
+		pushPaintObject();
+		break;
+	default:
+		break;
+	}
+}
+
+void PaintWidget::mouseReleaseEvent(QMouseEvent* event)
+{
+	switch (event->button())
+	{
+	case Qt::LeftButton:
+		switch (paintMode)
+		{
+		case PaintWidget::PAINT_NULL:
+			break;
+		case PaintWidget::PAINT_ROUNDEDRECTANGLE:
+		case PaintWidget::PAINT_RECTANGLE:
+		case PaintWidget::PAINT_ELLIPSE:
+			dynamic_cast<QRect*>(currentObject)->operator=(dynamic_cast<QRect*>(currentObject)->normalized());
+		case PaintWidget::PAINT_PENCIL:
+		case PaintWidget::PAINT_LINE:
+		case PaintWidget::PAINT_CIRCLE:
+			pushPaintObject();
+			break;
+		case PaintWidget::PAINT_POLYGON:
+			break;
+		default:
+			break;
+		}
+		break;
+
+	case Qt::RightButton:
+		pushPaintObject();
 		break;
 	default:
 		break;
@@ -98,29 +110,29 @@ void PaintWidget::mouseMoveEvent(QMouseEvent* event)
 		case PaintWidget::PAINT_NULL:
 			break;
 		case PaintWidget::PAINT_PENCIL:
-			dynamic_cast<thatboy::qt::PolylineObject*>(paintObjList.back())->append(event->pos());
+			dynamic_cast<thatboy::qt::PolylineObject*>(currentObject)->append(event->pos());
 			break;
 		case PaintWidget::PAINT_LINE:
-			dynamic_cast<thatboy::qt::LineObject*>(paintObjList.back())->setP2(event->pos());
+			dynamic_cast<thatboy::qt::LineObject*>(currentObject)->setP2(event->pos());
 			break;
 		case PaintWidget::PAINT_CIRCLE:
 		{
-			auto& circle = *dynamic_cast<thatboy::qt::CircleObject*>(paintObjList.back());
+			auto& circle = *dynamic_cast<thatboy::qt::CircleObject*>(currentObject);
 			circle.setR(sqrt((event->pos().x() - circle.x()) * (event->pos().x() - circle.x())
 				+ (event->pos().y() - circle.y()) * (event->pos().y() - circle.y())));
 		}
 		break;
 		case PaintWidget::PAINT_ELLIPSE:
-			dynamic_cast<thatboy::qt::EllipseObject*>(paintObjList.back())->setBottomRight(event->pos());
+			dynamic_cast<thatboy::qt::EllipseObject*>(currentObject)->setBottomRight(event->pos());
 			break;
 		case PaintWidget::PAINT_RECTANGLE:
-			dynamic_cast<thatboy::qt::RectangleObject*>(paintObjList.back())->setBottomRight(event->pos());
+			dynamic_cast<thatboy::qt::RectangleObject*>(currentObject)->setBottomRight(event->pos());
 			break;
 		case PaintWidget::PAINT_ROUNDEDRECTANGLE:
-			dynamic_cast<thatboy::qt::RoundedRectangleObject*>(paintObjList.back())->setBottomRight(event->pos());
+			dynamic_cast<thatboy::qt::RoundedRectangleObject*>(currentObject)->setBottomRight(event->pos());
 			break;
 		case PaintWidget::PAINT_POLYGON:
-			dynamic_cast<thatboy::qt::PolygonObject*>(paintObjList.back())->back() = event->pos();
+			dynamic_cast<thatboy::qt::PolygonObject*>(currentObject)->back() = event->pos();
 			break;
 		default:
 			break;
@@ -131,11 +143,15 @@ void PaintWidget::mouseMoveEvent(QMouseEvent* event)
 
 void PaintWidget::paintEvent(QPaintEvent* event)
 {
-	QPainter painter(this);
+	QPainter painter;// (this);
 	painter.setRenderHint(QPainter::Antialiasing);
+	painter.begin(this);
 	painter.fillRect(rect(), backColor);
 	for (auto& obj : paintObjList)
 		obj->draw(painter);
+	if (currentObject)
+		currentObject->drawHalf(painter);
+	painter.end();
 }
 
 void PaintWidget::setForeColor(QColor c)
@@ -166,12 +182,14 @@ QColor PaintWidget::getBackColor()const
 void PaintWidget::switchPaintMode(PaintMode mode)
 {
 	continusStatus = false;
+	pushPaintObject();
 	paintMode = mode;
 }
 
 void PaintWidget::clearPaint()
 {
 	continusStatus = false;
+	currentObject = nullptr;
 	paintObjList.clear();
 	update();
 }
@@ -198,4 +216,16 @@ QString PaintWidget::exportSvg() const
 void PaintWidget::setPaintObjectCreateCallBack(std::function<void(PaintMode, const thatboy::qt::PaintObject*)> func)
 {
 	onPaintObjectCreate = func;
+}
+
+void PaintWidget::pushPaintObject()
+{
+	if (currentObject)
+	{
+		paintObjList.push_back(currentObject);
+		if (onPaintObjectCreate)
+			onPaintObjectCreate(paintMode, currentObject);
+		currentObject = nullptr;
+		update();
+	}
 }

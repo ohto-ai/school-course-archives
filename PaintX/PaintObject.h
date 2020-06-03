@@ -18,6 +18,7 @@ namespace thatboy
 		struct PaintObject
 		{
 			virtual void draw(QPainter&) = 0;
+			virtual void drawHalf(QPainter&) = 0;
 			virtual QString exportSvgObject() = 0;
 		};
 
@@ -48,6 +49,12 @@ namespace thatboy
 				painter.drawLine(*this);
 			}
 
+			virtual void drawHalf(QPainter& painter)
+			{
+				painter.setPen(*this);
+				painter.drawLine(*this);
+			}
+
 			virtual QString exportSvgObject()
 			{
 				return QString().sprintf(R"(<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
@@ -72,10 +79,16 @@ namespace thatboy
 				painter.drawRect(*this);
 			}
 
+			virtual void drawHalf(QPainter& painter)
+			{
+				painter.setPen(*this);
+				painter.drawRect(*this);
+			}
+
 			virtual QString exportSvgObject()
 			{
 				return QString().sprintf(R"(<rect x="%d" y="%d" width="%d" height="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
-					, normalized().x(), normalized().y(), normalized().width(), normalized().height(), QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+					, x(), y(), QRect::width(), height(), QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
 			}
 		};
 
@@ -94,6 +107,12 @@ namespace thatboy
 			CircleObject(const QPoint& p) :QPoint(p) {}
 
 			virtual void draw(QPainter& painter)
+			{
+				painter.setPen(*this);
+				painter.drawEllipse(*this, r, r);
+			}
+
+			virtual void drawHalf(QPainter& painter)
 			{
 				painter.setPen(*this);
 				painter.drawEllipse(*this, r, r);
@@ -123,10 +142,16 @@ namespace thatboy
 				painter.drawEllipse(*this);
 			}
 
+			virtual void drawHalf(QPainter& painter)
+			{
+				painter.setPen(*this);
+				painter.drawEllipse(*this);
+			}
+
 			virtual QString exportSvgObject()
 			{
 				return QString().sprintf(R"(<ellipse cx="%d" cy="%d" rx="%d" ry="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
-					, normalized().center().x(), normalized().center().y(), normalized().width() / 2, normalized().height() / 2, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+					, center().x(), center().y(), QRect::width() / 2, height() / 2, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
 			}
 		};
 
@@ -151,10 +176,16 @@ namespace thatboy
 				painter.drawRoundRect(*this, xR, yR);
 			}
 
+			virtual void drawHalf(QPainter& painter)
+			{
+				painter.setPen(*this);
+				painter.drawRoundRect(this->normalized(), xR, yR);
+			}
+
 			virtual QString exportSvgObject()
 			{
 				return QString().sprintf(R"(<rect x="%d" y="%d" width="%d" height="%d" rx="%d" ry="%d" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
-					, normalized().x(), normalized().y(), normalized().width(), normalized().height(), xR, yR, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
+					, x(), y(), QRect::width(), height(), xR, yR, QPen::color().red(), QPen::color().green(), QPen::color().blue(), QPen::width());
 			}
 		};
 
@@ -173,6 +204,12 @@ namespace thatboy
 			{
 				painter.setPen(*this);
 				painter.drawPolygon(*this);
+			}
+
+			virtual void drawHalf(QPainter& painter)
+			{
+				painter.setPen(*this);
+				painter.drawPolyline(*this);
 			}
 
 			virtual QString exportSvgObject()
@@ -199,6 +236,12 @@ namespace thatboy
 			PolylineObject(const QPolygon& p) :QPolygon(p) {}
 
 			virtual void draw(QPainter& painter)
+			{
+				painter.setPen(*this);
+				painter.drawPolyline(*this);
+			}
+
+			virtual void drawHalf(QPainter& painter)
 			{
 				painter.setPen(*this);
 				painter.drawPolyline(*this);
