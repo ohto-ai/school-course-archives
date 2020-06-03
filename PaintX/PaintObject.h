@@ -12,7 +12,6 @@ namespace thatboy
 		_class(_class&&) = default; \
 		_class& operator=(const _class&) = default;
 
-
 		/// <summary>
 		/// 绘制对象类
 		/// </summary>
@@ -216,11 +215,6 @@ namespace thatboy
 				return svg;
 			}
 		};
-
 #undef DEFAULT_CONSTRUCT
-
 	}
 }
-
-
-

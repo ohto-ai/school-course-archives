@@ -8,11 +8,10 @@
 
 class PaintX : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    PaintX(QWidget *parent = Q_NULLPTR);
+	PaintX(QWidget* parent = Q_NULLPTR);
 
 private:
-    Ui::PaintXClass ui;
-    QPoint mouseCoord;
+	Ui::PaintXClass ui;
 };

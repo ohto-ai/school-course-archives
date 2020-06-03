@@ -171,6 +171,7 @@ void PaintWidget::switchPaintMode(PaintMode mode)
 
 void PaintWidget::clearPaint()
 {
+	continusStatus = false;
 	paintObjList.clear();
 	update();
 }
@@ -186,8 +187,8 @@ QString PaintWidget::exportSvg() const
 	for (auto obj : paintObjList)
 		svg += obj->exportSvgObject() + "\n";
 	svg += R"(
-</svg> 
- 
+</svg>
+
 </body>
 </html>)";
 

@@ -13,8 +13,10 @@ PaintX::PaintX(QWidget *parent)
             QFile file(QFileDialog::getSaveFileName(sketchpadWidget, "Export", "/", "SVG Files(*.svg);;"), sketchpadWidget);
             file.open(QIODevice::WriteOnly| QIODevice::Text);
             if (file.isOpen())
+            {
                 file.write(sketchpadWidget->exportSvg().toStdString().c_str());
-            file.close();
+                file.close();
+            }
         });
 
     // ÑÕÉ«°´Å¥

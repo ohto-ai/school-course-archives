@@ -25,8 +25,7 @@ public:
 		, PAINT_POLYGON				// 多边形
 	};
 
-
-	PaintWidget(QWidget *parent = Q_NULLPTR);
+	PaintWidget(QWidget* parent = Q_NULLPTR);
 	~PaintWidget();
 
 	virtual void mousePressEvent(QMouseEvent* event);
@@ -35,29 +34,21 @@ public:
 
 	void setForeColor(QColor);
 	QColor getForeColor()const;
-
 	void setPenWidth(int);
-
 	void setBackColor(QColor);
 	QColor getBackColor()const;
-
 	void switchPaintMode(PaintMode);
-
 	void clearPaint();
-
 	QString exportSvg()const;
-
 	void setPaintObjectCreateCallBack(std::function<void(PaintMode, const thatboy::qt::PaintObject*)>);
 private:
+	Ui::PaintWidget ui;
 	QPen thisPen{ Qt::black,1,Qt::SolidLine,Qt::SquareCap,Qt::MiterJoin };
 	QColor backColor = Qt::white;
 
-
-	Ui::PaintWidget ui;
 	PaintMode paintMode{ PAINT_NULL };
+	bool continusStatus = false;	// 在连续画线（多边形）
 
 	std::function<void(PaintMode, const thatboy::qt::PaintObject*)> onPaintObjectCreate;
-	bool continusStatus = false;	// 在连续画线
-
 	std::vector<thatboy::qt::PaintObject*> paintObjList;	// 绘制对象列表
 };

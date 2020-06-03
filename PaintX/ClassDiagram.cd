@@ -1,51 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Struct Name="thatboy::PaintObject">
-    <Position X="3.75" Y="0.5" Width="1.5" />
+  <Struct Name="thatboy::qt::PaintObject">
+    <Position X="5" Y="5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>PaintObject.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="thatboy::PaintShapeObject">
-    <Position X="3.75" Y="1.75" Width="1.5" />
+  <Struct Name="thatboy::qt::PaintShapeObject" Collapsed="true">
+    <Position X="5" Y="6.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PaintObject.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="thatboy::LineObject">
-    <Position X="5" Y="3.25" Width="1.5" />
+  <Struct Name="thatboy::qt::LineObject">
+    <Position X="7.25" Y="8" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIBAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>PaintObject.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="thatboy::RectangleObject">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+  <Struct Name="thatboy::qt::RectangleObject">
+    <Position X="7.25" Y="1.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAQAA=</HashCode>
       <FileName>PaintObject.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="thatboy::CircleObject">
-    <Position X="2.75" Y="3.25" Width="1.5" />
+  <Struct Name="thatboy::qt::CircleObject">
+    <Position X="7.25" Y="4.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAAAAAAAIAEAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAIAEAAAAAAAAAAAAEABAAAAAAA=</HashCode>
       <FileName>PaintObject.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="thatboy::EllipseObject">
-    <Position X="7.25" Y="3.25" Width="1.5" />
+  <Struct Name="thatboy::qt::EllipseObject">
+    <Position X="7.25" Y="9.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>PaintObject.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="thatboy::RoundedRectangleObject">
-    <Position X="0.5" Y="5.5" Width="1.5" />
+  <Struct Name="thatboy::qt::RoundedRectangleObject">
+    <Position X="7.25" Y="3" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAIAEAAAAAAAAAMAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAAAAAAAIAEAAAAAAAAAMAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::PolygonObject">
+    <Position X="7.25" Y="6.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::PolylineObject">
+    <Position X="7.25" Y="11" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>PaintObject.h</FileName>
     </TypeIdentifier>
   </Struct>
