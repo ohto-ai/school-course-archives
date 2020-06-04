@@ -24,23 +24,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="ImageViewerX.ui">
-      <Filter>Resource Files</Filter>
-    </QtUic>
     <QtMoc Include="ImageViewerX.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <ClCompile Include="ImageViewerX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ResourceCompile Include="$pro_name$.rc">
-    </ResourceCompile>
-    <None Include="$pro_name$.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="$pro_name$.def">
-      <Filter>Resource Files</Filter>
-    </None>
-
+    <QtMoc Include="ImageWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="ImageViewerX.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="ImageViewerX.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

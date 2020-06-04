@@ -1,6 +1,8 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <QFileDialog>
+#include "ImageWidget.h"
 #include "ui_ImageViewerX.h"
 
 class ImageViewerX : public QMainWindow
@@ -12,4 +14,5 @@ public:
 
 private:
     Ui::ImageViewerXClass ui;
+    ImageWidget imageWidget;
 };
