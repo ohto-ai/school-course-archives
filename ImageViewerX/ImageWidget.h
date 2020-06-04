@@ -24,6 +24,6 @@ public:
 private:
 	QImage image;
 	qreal scale = 1.0;
-	QPoint drawCoord;
+	QPointF drawCoord;
 	QPoint mouseCoord;
 };
