@@ -10,7 +10,7 @@ PaintX::PaintX(QWidget *parent)
     // µ¼³ö
     connect(ui.actionExport, &QAction::triggered, [sketchpadWidget] 
         { 
-            QFile file(QFileDialog::getSaveFileName(sketchpadWidget, "Export", "/", "SVG Files(*.svg);;"), sketchpadWidget);
+            QFile file(QFileDialog::getSaveFileName(sketchpadWidget, "Export", "/", "SVG Files(*.svg);"), sketchpadWidget);        
             file.open(QIODevice::WriteOnly| QIODevice::Text);
             if (file.isOpen())
             {

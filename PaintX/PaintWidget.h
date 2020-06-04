@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 #include <QPainter>
+#include <QPicture>
 #include "ui_PaintWidget.h"
 #include "PaintObject.h"
 #include <list>
@@ -41,6 +42,7 @@ public:
 	void switchPaintMode(PaintMode);
 	void clearPaint();
 	QString exportSvg()const;
+	void exportQPicture(QString)const;
 	void setPaintObjectCreateCallBack(std::function<void(PaintMode, const thatboy::qt::PaintObject*)>);
 private:
 	void pushPaintObject();

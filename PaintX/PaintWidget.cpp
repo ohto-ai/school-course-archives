@@ -144,13 +144,14 @@ void PaintWidget::mouseMoveEvent(QMouseEvent* event)
 void PaintWidget::paintEvent(QPaintEvent* event)
 {
 	QPainter painter;// (this);
-	painter.setRenderHint(QPainter::Antialiasing);
 	painter.begin(this);
+	painter.setRenderHint(QPainter::Antialiasing);
 	painter.fillRect(rect(), backColor);
 	for (auto& obj : paintObjList)
 		obj->draw(painter);
 	if (currentObject)
 		currentObject->drawHalf(painter);
+
 	painter.end();
 }
 
@@ -213,6 +214,17 @@ QString PaintWidget::exportSvg() const
 	return svg;
 }
 
+void PaintWidget::exportQPicture(QString file) const
+{
+	QPicture picture;
+	QPainter painter;
+	painter.begin(&picture);
+	for (auto& obj : paintObjList)
+		obj->draw(painter);
+	painter.end();
+	picture.save(file);
+}
+
 void PaintWidget::setPaintObjectCreateCallBack(std::function<void(PaintMode, const thatboy::qt::PaintObject*)> func)
 {
 	onPaintObjectCreate = func;
@@ -220,7 +232,7 @@ void PaintWidget::setPaintObjectCreateCallBack(std::function<void(PaintMode, con
 
 void PaintWidget::pushPaintObject()
 {
-	if (currentObject)
+	if (currentObject != nullptr)
 	{
 		paintObjList.push_back(currentObject);
 		if (onPaintObjectCreate)
