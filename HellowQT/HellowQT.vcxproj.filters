@@ -37,7 +37,4 @@
   <ItemGroup>
     <ResourceCompile Include="HellowQT.rc" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="Resources\hi.ico" />
-  </ItemGroup>
 </Project>

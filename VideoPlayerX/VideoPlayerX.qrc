@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="VideoPlayerX">
+    <file>VideoPlayerX.qrc</file>
+    <file>res/保存.png</file>
+    <file>res/播放.png</file>
+    <file>res/菜单.png</file>
+    <file>res/弹出.png</file>
+    <file>res/静音.png</file>
+    <file>res/快进.png</file>
+    <file>res/快退.png</file>
+    <file>res/喇叭.png</file>
+    <file>res/喇叭广播.png</file>
+    <file>res/全屏.png</file>
+    <file>res/停止.png</file>
+    <file>res/暂停.png</file>
+  </qresource>
+</RCC>
