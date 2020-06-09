@@ -121,28 +121,80 @@
        <item>
         <widget class="QPushButton" name="brightnessDefaultBtn">
          <property name="text">
-          <string>默认</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="VideoPlayerX.qrc">
+           <normaloff>:/VideoPlayerX/res/复原.png</normaloff>:/VideoPlayerX/res/复原.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="contrastDefaultBtn">
          <property name="text">
-          <string>默认</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="VideoPlayerX.qrc">
+           <normaloff>:/VideoPlayerX/res/复原.png</normaloff>:/VideoPlayerX/res/复原.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="hueDefaultBtn">
          <property name="text">
-          <string>默认</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="VideoPlayerX.qrc">
+           <normaloff>:/VideoPlayerX/res/复原.png</normaloff>:/VideoPlayerX/res/复原.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="saturationDefaultBtn">
          <property name="text">
-          <string>默认</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="VideoPlayerX.qrc">
+           <normaloff>:/VideoPlayerX/res/复原.png</normaloff>:/VideoPlayerX/res/复原.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -153,6 +205,8 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="VideoPlayerX.qrc"/>
+ </resources>
  <connections/>
 </ui>

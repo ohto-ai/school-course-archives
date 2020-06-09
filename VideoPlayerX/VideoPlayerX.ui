@@ -117,7 +117,16 @@
          </property>
          <property name="icon">
           <iconset resource="VideoPlayerX.qrc">
-           <normaloff>:/VideoPlayerX/res/喇叭.png</normaloff>:/VideoPlayerX/res/喇叭.png</iconset>
+           <normaloff>:/VideoPlayerX/res/player_voice_16.png</normaloff>:/VideoPlayerX/res/player_voice_16.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -207,8 +216,17 @@
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/播放.png</normaloff>:/VideoPlayerX/res/播放.png</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
          <property name="checked">
           <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -233,6 +251,15 @@
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/暂停.png</normaloff>:/VideoPlayerX/res/暂停.png</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -255,6 +282,15 @@
          <property name="icon">
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/停止.png</normaloff>:/VideoPlayerX/res/停止.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -279,6 +315,15 @@
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/快退.png</normaloff>:/VideoPlayerX/res/快退.png</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -302,6 +347,15 @@
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/快进.png</normaloff>:/VideoPlayerX/res/快进.png</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -324,6 +378,15 @@
          <property name="icon">
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/弹出.png</normaloff>:/VideoPlayerX/res/弹出.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -368,6 +431,15 @@
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/菜单.png</normaloff>:/VideoPlayerX/res/菜单.png</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -390,6 +462,15 @@
          <property name="icon">
           <iconset resource="VideoPlayerX.qrc">
            <normaloff>:/VideoPlayerX/res/全屏.png</normaloff>:/VideoPlayerX/res/全屏.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>

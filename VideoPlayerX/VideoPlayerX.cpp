@@ -11,6 +11,8 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
     ui.videoWidget->setMediaPlayer(player);
     ui.pauseBtn->hide();
     optionDialog.setWindowTitle(" ”∆µ…Ë÷√");
+    optionDialog.setWindowIcon(QIcon(":/VideoPlayerX/res/player.ico"));
+    setWindowIcon(QIcon(":/VideoPlayerX/res/player.ico"));
 
     connect(player, &QMediaPlayer::stateChanged, [&](QMediaPlayer::State state)
         {
@@ -54,13 +56,12 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
                 lastVolume = value;
             player->setVolume(value);
             player->setMuted(value <= 0);
-            ui.volumeBtn->setIcon(QIcon(player->isMuted() ? ":/VideoPlayerX/res/æ≤“Ù.png" : ":/VideoPlayerX/res/¿Æ∞».png"));
+            ui.volumeBtn->setIcon(QIcon(QString::asprintf(":/VideoPlayerX/res/player_voice_%d.png", value * 16 / 100)));
         });
     connect(ui.volumeBtn, &QPushButton::clicked, [&]
         {
             player->setMuted(!player->isMuted());
             ui.volumeSlider->setValue(player->isMuted() ? 0 : lastVolume);
-            ui.volumeBtn->setIcon(QIcon(player->isMuted() ? ":/VideoPlayerX/res/æ≤“Ù.png" : ":/VideoPlayerX/res/¿Æ∞».png"));
         });
 
     connect(ui.openBtn, &QPushButton::clicked, [&]
