@@ -14,7 +14,7 @@ VideoControlWidget::~VideoControlWidget()
 
 void VideoControlWidget::setMediaPlayer(QMediaPlayer* player)
 {
-    mediaPlayer = player;
+   mediaPlayer = player;
 }
 
 void VideoControlWidget::keyPressEvent(QKeyEvent* event)

@@ -20,31 +20,56 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
         });
     connect(player, &QMediaPlayer::durationChanged, [&](qint64 duration)
         {
-            ui.progessSlider->setMaximum(duration);
+            ui.positionSlider->setMaximum(duration);
             int   secs = duration / 1000;
             int hour = secs / 3600;
             int mins = (secs / 60) % 60;
             secs %= 60;
             durationTime = QString::asprintf("%02d:%02d:%02d", hour, mins, secs);
-            ui.progessLab->setText(positionTime + "/" + durationTime);
+            ui.positionLab->setText(positionTime + "/" + durationTime);
         });
     connect(player, &QMediaPlayer::positionChanged, [&](qint64 position)
         {
-            if (ui.progessSlider->isSliderDown())
+            if (ui.positionSlider->isSliderDown())
                 return;
-            ui.progessSlider->setSliderPosition(position);
+            ui.positionSlider->setSliderPosition(position);
 
             int   secs = position / 1000;
             int hour = secs / 3600;
             int mins = (secs / 60) % 60;
             secs %= 60;
             positionTime = QString::asprintf("%02d:%02d:%02d", hour, mins, secs);
-            ui.progessLab->setText(positionTime + "/" + durationTime);
+            ui.positionLab->setText(positionTime + "/" + durationTime);
+        });
+    connect(ui.positionSlider, &QSlider::valueChanged, [&](int value)
+        {
+            if (ui.positionSlider->isSliderDown())
+                player->setPosition(value);
+        });
+
+
+    connect(ui.volumeSlider, &QSlider::valueChanged, [&](int value)
+        {
+            if (value > 0)
+                lastVolume = value;
+            player->setVolume(value);
+            player->setMuted(value <= 0);
+            ui.volumeBtn->setIcon(QIcon(player->isMuted() ? ":/VideoPlayerX/res/静音.png" : ":/VideoPlayerX/res/喇叭.png"));
+        });
+    connect(ui.volumeBtn, &QPushButton::clicked, [&]
+        {
+            player->setMuted(!player->isMuted());
+            ui.volumeSlider->setValue(player->isMuted() ? 0 : lastVolume);
+            ui.volumeBtn->setIcon(QIcon(player->isMuted() ? ":/VideoPlayerX/res/静音.png" : ":/VideoPlayerX/res/喇叭.png"));
         });
 
     connect(ui.openBtn, &QPushButton::clicked, [&]
         {
-            QString aFile = QFileDialog::getOpenFileName(this, "打开视频", "", "视频文件(*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv);;所有文件(*.*)");
+            QString aFile = QFileDialog::getOpenFileName(this, "打开", ""
+                , "支持的全部文件(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac;*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv);;\
+视频文件(*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv);;\
+音频文件(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac;*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv);;\
+所有文件(*.*)");
 
             if (aFile.isEmpty())
                 return;
@@ -57,27 +82,6 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
     connect(ui.playBtn, &QPushButton::clicked, player, &QMediaPlayer::play);
     connect(ui.pauseBtn, &QPushButton::clicked, player, &QMediaPlayer::pause);
     connect(ui.stopBtn, &QPushButton::clicked, player, &QMediaPlayer::stop);
-    connect(ui.soundSlider, &QSlider::valueChanged, [&](int value)
-        {
-            if (!ui.soundSlider->isSliderDown())
-                return;
-            lastVolume = value;
-            player->setVolume(lastVolume);
-            player->setMuted(lastVolume <= 0);
-            ui.soundBtn->setIcon(QIcon(player->isMuted() ? ":/VideoPlayerX/res/静音.png" : ":/VideoPlayerX/res/喇叭.png"));
-        });
-    connect(ui.soundBtn, &QPushButton::clicked, [&]
-        {
-            player->setMuted(!player->isMuted());
-            ui.soundSlider->setValue(player->isMuted() ? 0 : lastVolume);
-            ui.soundBtn->setIcon(QIcon(player->isMuted() ? ":/VideoPlayerX/res/静音.png" : ":/VideoPlayerX/res/喇叭.png"));
-        });
-    connect(ui.progessSlider, &QSlider::valueChanged, [&](int value)
-        {
-            if (ui.progessSlider->isSliderDown())
-                player->setPosition(value);
-        });
-    connect(ui.fullscreenBtn, &QPushButton::clicked, [&] {ui.videoWidget->setFullScreen(true); });
     connect(ui.leftBtn, &QPushButton::clicked, [&]
         {
             auto new_postion = player->position() - 2000;
@@ -92,6 +96,7 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
                 new_postion = player->duration();
             player->setPosition(new_postion);
         });
+    connect(ui.fullscreenBtn, &QPushButton::clicked, [&] {ui.videoWidget->setFullScreen(true); });
 
     connect(ui.optionButton, &QPushButton::clicked, &optionDialog, &OptionDialog::show);
     connect(optionDialog.ui.brightnessSlider, &QSlider::valueChanged, ui.videoWidget, &QVideoWidget::setBrightness);

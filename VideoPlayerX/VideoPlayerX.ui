@@ -89,7 +89,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QSlider" name="progessSlider">
+        <widget class="QSlider" name="positionSlider">
          <property name="maximum">
           <number>0</number>
          </property>
@@ -99,7 +99,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="soundBtn">
+        <widget class="QPushButton" name="volumeBtn">
          <property name="minimumSize">
           <size>
            <width>28</width>
@@ -122,7 +122,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSlider" name="soundSlider">
+        <widget class="QSlider" name="volumeSlider">
          <property name="minimumSize">
           <size>
            <width>50</width>
@@ -136,6 +136,9 @@
           </size>
          </property>
          <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
           <number>100</number>
          </property>
          <property name="orientation">
@@ -325,7 +328,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="progessLab">
+        <widget class="QLabel" name="positionLab">
          <property name="text">
           <string>00:00:00/00:00:00</string>
          </property>
