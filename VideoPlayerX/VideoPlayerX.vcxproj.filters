@@ -30,9 +30,6 @@
     <ClCompile Include="VideoPlayerX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <QtMoc Include="OptionWidget.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="OptionDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -42,9 +39,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VideoControlWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OptionWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OptionDialog.cpp">
@@ -61,9 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="VideoPlayerX.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="OptionWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="OptionDialog.ui">

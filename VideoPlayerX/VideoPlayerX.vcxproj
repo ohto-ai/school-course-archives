@@ -94,20 +94,15 @@
   <ItemGroup>
     <QtRcc Include="VideoPlayerX.qrc" />
     <QtUic Include="OptionDialog.ui" />
-    <QtUic Include="OptionWidget.ui" />
     <QtUic Include="VideoPlayerX.ui" />
     <QtMoc Include="VideoPlayerX.h" />
     <ClCompile Include="OptionDialog.cpp" />
-    <ClCompile Include="OptionWidget.cpp" />
     <ClCompile Include="VideoControlWidget.cpp" />
     <ClCompile Include="VideoPlayerX.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="VideoControlWidget.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="OptionWidget.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="OptionDialog.h" />
