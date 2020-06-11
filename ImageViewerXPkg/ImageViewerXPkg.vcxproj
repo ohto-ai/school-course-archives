@@ -11,19 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{12A61BAF-7ADD-41FE-AD51-28CD277737FA}</ProjectGuid>
+    <ProjectGuid>{2D886EAE-8284-4608-96D0-4288F486F90D}</ProjectGuid>
     <Keyword>QtVS_v302</Keyword>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -44,12 +44,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;printsupport;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;printsupport;widgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -62,6 +62,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>IMAGEVIEWERXPKG_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -75,6 +76,7 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MaxSpeed</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>IMAGEVIEWERXPKG_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -82,17 +84,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="ImageViewerX.qrc" />
-    <QtUic Include="ImageViewerX.ui" />
-    <ClCompile Include="ImageViewerX.cpp" />
-    <ClCompile Include="ImageWidget.cpp" />
-    <ClCompile Include="main.cpp" />
+    <QtMoc Include="..\ImageViewerX\ImageViewerX.h" />
+    <QtMoc Include="..\ImageViewerX\ImageWidget.h" />
+    <QtMoc Include="..\NotepadX\About.h" />
+    <QtMoc Include="..\NotepadX\FindDialog.h" />
+    <QtMoc Include="..\NotepadX\NotepadXWindow.h" />
+    <ClInclude Include="..\NotepadX\resource.h" />
+    <ClInclude Include="imageviewerxpkg_global.h" />
+    <ClInclude Include="ImageViewerXPkg.h" />
+    <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp" />
+    <ClCompile Include="..\ImageViewerX\ImageWidget.cpp" />
+    <ClCompile Include="..\NotepadX\About.cpp" />
+    <ClCompile Include="..\NotepadX\FindDialog.cpp" />
+    <ClCompile Include="..\NotepadX\NotepadXWindow.cpp" />
+    <ClCompile Include="ImageViewerXPkg.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="ImageWidget.h" />
+    <QtUic Include="..\ImageViewerX\ImageViewerX.ui" />
+    <QtUic Include="..\NotepadX\About.ui" />
+    <QtUic Include="..\NotepadX\FindDialog.ui" />
+    <QtUic Include="..\NotepadX\NotepadXWindow.ui" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="ImageViewerX.h" />
+    <QtRcc Include="..\NotepadX\res.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\NotepadX\Resources\markdown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\NotepadX\NotepadX.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

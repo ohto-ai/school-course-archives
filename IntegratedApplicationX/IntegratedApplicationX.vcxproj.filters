@@ -24,32 +24,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ImageViewerX.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ImageWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="ImageViewerX.qrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="ImageViewerX.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="ImageWidget.h">
+    <None Include="..\x64\Release\ImageViewerXPkg.dll">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="ImageViewerX.h">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\x64\Release\ImageViewerXPkg.lib">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </Library>
   </ItemGroup>
 </Project>
