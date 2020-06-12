@@ -139,6 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CameraX\CameraX.vcxproj">
+      <Project>{b0411cde-7cc3-402a-a285-cfd627f1a89d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalClockX\DigitalClockX.vcxproj">
+      <Project>{3d0e3b03-07bb-4da5-ad86-593573639910}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\ImageViewerX\ImageViewerX.vcxproj">
       <Project>{12a61baf-7add-41fe-ad51-28cd277737fa}</Project>
     </ProjectReference>
@@ -147,6 +153,9 @@
     </ProjectReference>
     <ProjectReference Include="..\PaintX\PaintX.vcxproj">
       <Project>{663817a7-e997-479d-9f15-631796f0b73c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoPlayerX\VideoPlayerX.vcxproj">
+      <Project>{66cf7282-df95-4590-80fd-bd144b7de40a}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

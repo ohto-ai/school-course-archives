@@ -56,7 +56,7 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
                 lastVolume = value;
             player->setVolume(value);
             player->setMuted(value <= 0);
-            ui.volumeBtn->setIcon(QIcon(QString::asprintf(":/VideoPlayerX/res/player_voice_%d.png", value * 16 / 100)));
+            ui.volumeBtn->setIcon(QIcon(QString::asprintf(":/VideoPlayerX/res/player_voice_%d.png", (value * 16 + 99) / 100)));
         });
     connect(ui.volumeBtn, &QPushButton::clicked, [&]
         {

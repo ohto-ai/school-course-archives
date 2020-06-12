@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImageViewerXPkg", "ImageVie
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntegratedApplicationX", "IntegratedApplicationX\IntegratedApplicationX.vcxproj", "{BF863DA9-22BA-409B-9035-7C91E3583538}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CameraX", "CameraX\CameraX.vcxproj", "{B0411CDE-7CC3-402A-A285-CFD627F1A89D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -129,6 +131,12 @@ Global
 		{BF863DA9-22BA-409B-9035-7C91E3583538}.Release|x64.ActiveCfg = Release|x64
 		{BF863DA9-22BA-409B-9035-7C91E3583538}.Release|x64.Build.0 = Release|x64
 		{BF863DA9-22BA-409B-9035-7C91E3583538}.Release|x86.ActiveCfg = Release|x64
+		{B0411CDE-7CC3-402A-A285-CFD627F1A89D}.Debug|x64.ActiveCfg = Debug|x64
+		{B0411CDE-7CC3-402A-A285-CFD627F1A89D}.Debug|x64.Build.0 = Debug|x64
+		{B0411CDE-7CC3-402A-A285-CFD627F1A89D}.Debug|x86.ActiveCfg = Debug|x64
+		{B0411CDE-7CC3-402A-A285-CFD627F1A89D}.Release|x64.ActiveCfg = Release|x64
+		{B0411CDE-7CC3-402A-A285-CFD627F1A89D}.Release|x64.Build.0 = Release|x64
+		{B0411CDE-7CC3-402A-A285-CFD627F1A89D}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +151,7 @@ Global
 		{66CF7282-DF95-4590-80FD-BD144B7DE40A} = {C16FFAF4-71B0-415D-9E11-97948FB3FD71}
 		{2D886EAE-8284-4608-96D0-4288F486F90D} = {AD305859-ED50-47A8-A9CC-8EA66AAE226D}
 		{BF863DA9-22BA-409B-9035-7C91E3583538} = {AD305859-ED50-47A8-A9CC-8EA66AAE226D}
+		{B0411CDE-7CC3-402A-A285-CFD627F1A89D} = {C16FFAF4-71B0-415D-9E11-97948FB3FD71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8854F45-F1A4-412C-802E-0ACB32E6344D}
