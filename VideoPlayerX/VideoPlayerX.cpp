@@ -23,7 +23,7 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
     connect(player, &QMediaPlayer::durationChanged, [&](qint64 duration)
         {
             ui.positionSlider->setMaximum(duration);
-            int   secs = duration / 1000;
+            int secs = duration / 1000;
             int hour = secs / 3600;
             int mins = (secs / 60) % 60;
             secs %= 60;
@@ -32,11 +32,10 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
         });
     connect(player, &QMediaPlayer::positionChanged, [&](qint64 position)
         {
-            if (ui.positionSlider->isSliderDown())
-                return;
-            ui.positionSlider->setSliderPosition(position);
+            if (!ui.positionSlider->isSliderDown())
+                ui.positionSlider->setSliderPosition(position);
 
-            int   secs = position / 1000;
+            int secs = position / 1000;
             int hour = secs / 3600;
             int mins = (secs / 60) % 60;
             secs %= 60;
