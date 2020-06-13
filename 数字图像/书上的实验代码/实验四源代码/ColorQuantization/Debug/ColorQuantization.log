@@ -1,0 +1,11 @@
+﻿Build started 2014-5-13 15:55:46.
+     1>Project "H:\My Document\My teaching\实验代码\DIP_VS2010\ColorQuantization\ColorQuantization.vcxproj" on node 2 (ClCompile target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\OpenCV2.4.3\opencv\build\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ColorQuantization.cpp
+         ColorQuantization.cpp
+     1>h:\my document\my teaching\实验代码\dip_vs2010\colorquantization\colorquantization.cpp(46): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Done Building Project "H:\My Document\My teaching\实验代码\DIP_VS2010\ColorQuantization\ColorQuantization.vcxproj" (ClCompile target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.23
