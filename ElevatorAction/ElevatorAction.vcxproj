@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{9C9B8FD8-5399-4E0F-BFD7-66786BD7BC46}</ProjectGuid>
+    <RootNamespace>ElevatorAction</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy /y /d  "$(ProjectDir)glut\*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy glut dll files to output directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d  "$(ProjectDir)glut\*.dll" "$(OutDir)"</Command>
+      <Message>Copy glut dll files to output directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletHitbox.cpp" />
+    <ClCompile Include="CollisionHelper.cpp" />
+    <ClCompile Include="DocumentDoor.cpp" />
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="Elevator.cpp" />
+    <ClCompile Include="AbstractHitbox.cpp" />
+    <ClCompile Include="ElevatorDeathbox.cpp" />
+    <ClCompile Include="ElevatorHitbox.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyBullet.cpp" />
+    <ClCompile Include="EnemyDoor.cpp" />
+    <ClCompile Include="ElevatorExit.cpp" />
+    <ClCompile Include="EnemyHitbox.cpp" />
+    <ClCompile Include="ExtraLife.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateExit.cpp" />
+    <ClCompile Include="GameStateGameOver.cpp" />
+    <ClCompile Include="GameStateInGame.cpp" />
+    <ClCompile Include="GameStateMainMenu.cpp" />
+    <ClCompile Include="GameStates.cpp" />
+    <ClCompile Include="GameStateScoreboard.cpp" />
+    <ClCompile Include="Hitbox.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
+    <ClCompile Include="Levels.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="LevelObject.cpp" />
+    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerBullet.cpp" />
+    <ClCompile Include="PlayerHitbox.cpp" />
+    <ClCompile Include="PlayerSpawnPoint.cpp" />
+    <ClCompile Include="SingleFloorLevelObject.cpp" />
+    <ClCompile Include="Usable.cpp" />
+    <ClCompile Include="UserInput.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="Wall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bullet.hpp" />
+    <ClInclude Include="BulletHitbox.hpp" />
+    <ClInclude Include="CollisionHelper.hpp" />
+    <ClInclude Include="DocumentDoor.hpp" />
+    <ClInclude Include="Door.hpp" />
+    <ClInclude Include="Elevator.hpp" />
+    <ClInclude Include="ElevatorDeathbox.hpp" />
+    <ClInclude Include="ElevatorHitbox.hpp" />
+    <ClInclude Include="Enemy.hpp" />
+    <ClInclude Include="EnemyBullet.hpp" />
+    <ClInclude Include="EnemyDoor.hpp" />
+    <ClInclude Include="ElevatorExit.hpp" />
+    <ClInclude Include="EnemyHitbox.hpp" />
+    <ClInclude Include="ExtraLife.hpp" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="GameState.hpp" />
+    <ClInclude Include="GameStateExit.hpp" />
+    <ClInclude Include="GameStateGameOver.hpp" />
+    <ClInclude Include="GameStateInGame.hpp" />
+    <ClInclude Include="GameStateMainMenu.hpp" />
+    <ClInclude Include="GameStates.hpp" />
+    <ClInclude Include="GameStateScoreboard.hpp" />
+    <ClInclude Include="glut\glut.h" />
+    <ClInclude Include="AbstractHitbox.hpp" />
+    <ClInclude Include="Hitbox.hpp" />
+    <ClInclude Include="Level.hpp" />
+    <ClInclude Include="LevelManager.hpp" />
+    <ClInclude Include="LevelObject.hpp" />
+    <ClInclude Include="Levels.hpp" />
+    <ClInclude Include="Platform.hpp" />
+    <ClInclude Include="Player.hpp" />
+    <ClInclude Include="PlayerBullet.hpp" />
+    <ClInclude Include="PlayerHitbox.hpp" />
+    <ClInclude Include="PlayerSpawnPoint.hpp" />
+    <ClInclude Include="SingleFloorLevelObject.hpp" />
+    <ClInclude Include="Usable.hpp" />
+    <ClInclude Include="UserInput.hpp" />
+    <ClInclude Include="util.hpp" />
+    <ClInclude Include="main.hpp" />
+    <ClInclude Include="Wall.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="glut\glut32.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="glut\glut32.dll" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
