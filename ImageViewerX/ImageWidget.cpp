@@ -51,8 +51,8 @@ void ImageWidget::mouseDoubleClickEvent(QMouseEvent* event)
 	switch (event->button())
 	{
 	case Qt::LeftButton:
-		if(image.isNull())
-			load(QFileDialog::getOpenFileName(this, "Open", "/", "Image file(*.bmp;*.png;*.jpg;*.jpeg;)"));
+		if (image.isNull())
+			loadDialog();
 		autoScale();
 		break;
 	case Qt::RightButton:
@@ -67,8 +67,13 @@ void ImageWidget::load(QString file)
 {
 	if (file.isEmpty())
 		return;
-	image.load(file); 
+	image.load(file);
 	autoScale();
+}
+
+void ImageWidget::loadDialog()
+{
+	return load(QFileDialog::getOpenFileName(this, "Open", "", "Image file(*.bmp;*.png;*.jpg;*.jpeg;)"));
 }
 
 void ImageWidget::autoScale()

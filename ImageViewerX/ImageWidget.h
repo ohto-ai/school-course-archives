@@ -20,6 +20,7 @@ public:
 	virtual void mouseDoubleClickEvent(QMouseEvent*);
 
 	void load(QString);
+	void loadDialog();
 	void autoScale();
 private:
 	QImage image;
