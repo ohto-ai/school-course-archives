@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B0411CDE-7CC3-402A-A285-CFD627F1A89D}</ProjectGuid>
+    <ProjectGuid>{28933507-8184-4227-B63C-1BCCF1C6C775}</ProjectGuid>
     <Keyword>QtVS_v302</Keyword>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -44,12 +44,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core;gui;multimedia;multimediawidgets;widgets</QtModules>
+    <QtModules>core;gui;multimedia;multimediawidgets;printsupport;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core;gui;multimedia;multimediawidgets;widgets</QtModules>
+    <QtModules>core;gui;multimedia;multimediawidgets;printsupport;widgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -82,13 +82,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtUic Include="CameraX.ui" />
-    <QtMoc Include="CameraX.h" />
-    <ClCompile Include="CameraX.cpp" />
+    <ClCompile Include="PaintX\PaintWidget.cpp" />
+    <ClCompile Include="PaintX\PaintX.cpp" />
+    <ClCompile Include="VideoPlayerX\OptionDialog.cpp" />
+    <ClCompile Include="VideoPlayerX\VideoControlWidget.cpp" />
+    <ClCompile Include="VideoPlayerX\VideoPlayerX.cpp" />
+    <QtRcc Include="CameraX\CameraX.qrc" />
+    <QtRcc Include="ImageViewerX\ImageViewerX.qrc" />
+    <QtRcc Include="NotepadX\res.qrc" />
+    <QtRcc Include="PageTest.qrc" />
+    <QtRcc Include="PaintX\PaintX.qrc" />
+    <QtRcc Include="VideoPlayerX\VideoPlayerX.qrc" />
+    <QtUic Include="CameraX\CameraX.ui" />
+    <QtUic Include="ImageViewerX\ImageViewerX.ui" />
+    <QtUic Include="NotepadX\About.ui" />
+    <QtUic Include="NotepadX\FindDialog.ui" />
+    <QtUic Include="NotepadX\NotepadXWindow.ui" />
+    <QtUic Include="PageTest.ui" />
+    <QtMoc Include="PageTest.h" />
+    <ClCompile Include="CameraX\CameraX.cpp" />
+    <ClCompile Include="ImageViewerX\ImageViewerX.cpp" />
+    <ClCompile Include="ImageViewerX\ImageWidget.cpp" />
+    <ClCompile Include="NotepadX\About.cpp" />
+    <ClCompile Include="NotepadX\FindDialog.cpp" />
+    <ClCompile Include="NotepadX\NotepadXWindow.cpp" />
+    <ClCompile Include="PageTest.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="PaintX\PaintWidget.ui" />
+    <QtUic Include="PaintX\PaintX.ui" />
+    <QtUic Include="VideoPlayerX\OptionDialog.ui" />
+    <QtUic Include="VideoPlayerX\VideoPlayerX.ui" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="CameraX.qrc" />
+    <QtMoc Include="CameraX\CameraX.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ImageViewerX\ImageViewerX.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ImageViewerX\ImageWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="NotepadX\About.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="NotepadX\FindDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="NotepadX\NotepadXWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NotepadX\resource.h" />
+    <ClInclude Include="PaintX\PaintObject.h" />
+    <ClInclude Include="VideoPlayerX\resource.h" />
+    <QtMoc Include="VideoPlayerX\VideoPlayerX.h" />
+    <QtMoc Include="VideoPlayerX\VideoControlWidget.h" />
+    <QtMoc Include="VideoPlayerX\OptionDialog.h" />
+    <QtMoc Include="PaintX\PaintX.h" />
+    <QtMoc Include="PaintX\PaintWidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

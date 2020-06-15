@@ -82,11 +82,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="DigitalClockX.qrc" />
     <QtUic Include="DigitalClockX.ui" />
     <QtMoc Include="DigitalClockX.h" />
     <ClCompile Include="DigitalClockX.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="DigitalClockX.qrc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

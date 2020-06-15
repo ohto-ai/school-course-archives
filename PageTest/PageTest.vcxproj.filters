@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{489e5e5d-4ee4-4884-9b73-b3f6c35db906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\CameraX">
+      <UniqueIdentifier>{15ece39b-109a-4723-895c-f8437bab4e1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\ImageViewerX">
+      <UniqueIdentifier>{56df79ef-c383-4823-b5ba-d43d764ee4bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\NotepadX">
+      <UniqueIdentifier>{294f39af-1ca4-4072-8bba-c01eff8554c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\PaintX">
+      <UniqueIdentifier>{924fc20a-d2fe-4801-b661-0f51a39b231d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\VideoPlayerX">
+      <UniqueIdentifier>{37b6cece-2fcc-49b8-8f1d-401a4c794520}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PageTest.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="CameraX\CameraX.h">
+      <Filter>Application\CameraX</Filter>
+    </QtMoc>
+    <QtMoc Include="ImageViewerX\ImageViewerX.h">
+      <Filter>Application\ImageViewerX</Filter>
+    </QtMoc>
+    <QtMoc Include="ImageViewerX\ImageWidget.h">
+      <Filter>Application\ImageViewerX</Filter>
+    </QtMoc>
+    <QtMoc Include="NotepadX\About.h">
+      <Filter>Application\NotepadX</Filter>
+    </QtMoc>
+    <QtMoc Include="NotepadX\FindDialog.h">
+      <Filter>Application\NotepadX</Filter>
+    </QtMoc>
+    <QtMoc Include="NotepadX\NotepadXWindow.h">
+      <Filter>Application\NotepadX</Filter>
+    </QtMoc>
+    <QtMoc Include="PaintX\PaintWidget.h">
+      <Filter>Application\PaintX</Filter>
+    </QtMoc>
+    <QtMoc Include="PaintX\PaintX.h">
+      <Filter>Application\PaintX</Filter>
+    </QtMoc>
+    <QtMoc Include="VideoPlayerX\OptionDialog.h">
+      <Filter>Application\VideoPlayerX</Filter>
+    </QtMoc>
+    <QtMoc Include="VideoPlayerX\VideoControlWidget.h">
+      <Filter>Application\VideoPlayerX</Filter>
+    </QtMoc>
+    <QtMoc Include="VideoPlayerX\VideoPlayerX.h">
+      <Filter>Application\VideoPlayerX</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PageTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraX\CameraX.cpp">
+      <Filter>Application\CameraX</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageViewerX\ImageViewerX.cpp">
+      <Filter>Application\ImageViewerX</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageViewerX\ImageWidget.cpp">
+      <Filter>Application\ImageViewerX</Filter>
+    </ClCompile>
+    <ClCompile Include="NotepadX\About.cpp">
+      <Filter>Application\NotepadX</Filter>
+    </ClCompile>
+    <ClCompile Include="NotepadX\FindDialog.cpp">
+      <Filter>Application\NotepadX</Filter>
+    </ClCompile>
+    <ClCompile Include="NotepadX\NotepadXWindow.cpp">
+      <Filter>Application\NotepadX</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintX\PaintWidget.cpp">
+      <Filter>Application\PaintX</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintX\PaintX.cpp">
+      <Filter>Application\PaintX</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayerX\OptionDialog.cpp">
+      <Filter>Application\VideoPlayerX</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayerX\VideoControlWidget.cpp">
+      <Filter>Application\VideoPlayerX</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayerX\VideoPlayerX.cpp">
+      <Filter>Application\VideoPlayerX</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="PageTest.qrc" />
+    <QtRcc Include="CameraX\CameraX.qrc">
+      <Filter>Application\CameraX</Filter>
+    </QtRcc>
+    <QtRcc Include="ImageViewerX\ImageViewerX.qrc">
+      <Filter>Application\ImageViewerX</Filter>
+    </QtRcc>
+    <QtRcc Include="NotepadX\res.qrc">
+      <Filter>Application\NotepadX</Filter>
+    </QtRcc>
+    <QtRcc Include="PaintX\PaintX.qrc">
+      <Filter>Application\PaintX</Filter>
+    </QtRcc>
+    <QtRcc Include="VideoPlayerX\VideoPlayerX.qrc">
+      <Filter>Application\VideoPlayerX</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="PageTest.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="CameraX\CameraX.ui">
+      <Filter>Application\CameraX</Filter>
+    </QtUic>
+    <QtUic Include="ImageViewerX\ImageViewerX.ui">
+      <Filter>Application\ImageViewerX</Filter>
+    </QtUic>
+    <QtUic Include="NotepadX\About.ui">
+      <Filter>Application\NotepadX</Filter>
+    </QtUic>
+    <QtUic Include="NotepadX\FindDialog.ui">
+      <Filter>Application\NotepadX</Filter>
+    </QtUic>
+    <QtUic Include="NotepadX\NotepadXWindow.ui">
+      <Filter>Application\NotepadX</Filter>
+    </QtUic>
+    <QtUic Include="PaintX\PaintWidget.ui">
+      <Filter>Application\PaintX</Filter>
+    </QtUic>
+    <QtUic Include="PaintX\PaintX.ui">
+      <Filter>Application\PaintX</Filter>
+    </QtUic>
+    <QtUic Include="VideoPlayerX\OptionDialog.ui">
+      <Filter>Application\VideoPlayerX</Filter>
+    </QtUic>
+    <QtUic Include="VideoPlayerX\VideoPlayerX.ui">
+      <Filter>Application\VideoPlayerX</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NotepadX\resource.h">
+      <Filter>Application\NotepadX</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintX\PaintObject.h">
+      <Filter>Application\PaintX</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayerX\resource.h">
+      <Filter>Application\VideoPlayerX</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

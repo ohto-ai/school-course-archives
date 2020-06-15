@@ -37,11 +37,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="DigitalClockX.qrc" />
-  </ItemGroup>
-  <ItemGroup>
     <QtUic Include="DigitalClockX.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="DigitalClockX.qrc" />
   </ItemGroup>
 </Project>
