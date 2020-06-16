@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtWidgets/QDialog>
+#include <QtWidgets/QMainWindow>
 #include <QCameraInfo>
 #include <QCameraViewfinder>
 #include <QCameraImageCapture>
@@ -8,7 +8,7 @@
 #include <QMediaRecorder>
 #include "ui_CameraX.h"
 
-class CameraX : public QDialog
+class CameraX : public QMainWindow
 {
     Q_OBJECT
 

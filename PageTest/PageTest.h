@@ -1,12 +1,12 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_PageTest.h"
 #include "ImageViewerX/ImageViewerX.h"
-#include "VideoPlayerX/VideoPlayerX.h"
+#include "VideoPlayerX.h"
 #include "PaintX/PaintX.h"
 #include "NotepadX/NotepadXWindow.h"
 #include "CameraX/CameraX.h"
+#include "ui_PageTest.h"
 
 class PageTest : public QMainWindow
 {
@@ -17,6 +17,4 @@ public:
 
 private:
     Ui::PageTestClass ui;
-    Ui::ImageViewerXClass uiImage;
-    ImageWidget imageWidget;
 };

@@ -82,23 +82,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="OptionDialog.cpp" />
     <ClCompile Include="PaintX\PaintWidget.cpp" />
     <ClCompile Include="PaintX\PaintX.cpp" />
-    <ClCompile Include="VideoPlayerX\OptionDialog.cpp" />
-    <ClCompile Include="VideoPlayerX\VideoControlWidget.cpp" />
-    <ClCompile Include="VideoPlayerX\VideoPlayerX.cpp" />
+    <ClCompile Include="VideoControlWidget.cpp" />
+    <ClCompile Include="VideoPlayerX.cpp" />
     <QtRcc Include="CameraX\CameraX.qrc" />
     <QtRcc Include="ImageViewerX\ImageViewerX.qrc" />
     <QtRcc Include="NotepadX\res.qrc" />
     <QtRcc Include="PageTest.qrc" />
     <QtRcc Include="PaintX\PaintX.qrc" />
-    <QtRcc Include="VideoPlayerX\VideoPlayerX.qrc" />
     <QtUic Include="CameraX\CameraX.ui" />
     <QtUic Include="ImageViewerX\ImageViewerX.ui" />
     <QtUic Include="NotepadX\About.ui" />
     <QtUic Include="NotepadX\FindDialog.ui" />
     <QtUic Include="NotepadX\NotepadXWindow.ui" />
-    <QtUic Include="PageTest.ui" />
     <QtMoc Include="PageTest.h" />
     <ClCompile Include="CameraX\CameraX.cpp" />
     <ClCompile Include="ImageViewerX\ImageViewerX.cpp" />
@@ -108,10 +106,11 @@
     <ClCompile Include="NotepadX\NotepadXWindow.cpp" />
     <ClCompile Include="PageTest.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="OptionDialog.ui" />
+    <QtUic Include="PageTest.ui" />
     <QtUic Include="PaintX\PaintWidget.ui" />
     <QtUic Include="PaintX\PaintX.ui" />
-    <QtUic Include="VideoPlayerX\OptionDialog.ui" />
-    <QtUic Include="VideoPlayerX\VideoPlayerX.ui" />
+    <QtUic Include="VideoPlayerX.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CameraX\CameraX.h" />
@@ -133,11 +132,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NotepadX\resource.h" />
+    <QtMoc Include="VideoPlayerX.h" />
+    <QtMoc Include="OptionDialog.h" />
     <ClInclude Include="PaintX\PaintObject.h" />
-    <ClInclude Include="VideoPlayerX\resource.h" />
-    <QtMoc Include="VideoPlayerX\VideoPlayerX.h" />
-    <QtMoc Include="VideoPlayerX\VideoControlWidget.h" />
-    <QtMoc Include="VideoPlayerX\OptionDialog.h" />
+    <QtMoc Include="VideoControlWidget.h" />
     <QtMoc Include="PaintX\PaintX.h" />
     <QtMoc Include="PaintX\PaintWidget.h" />
   </ItemGroup>

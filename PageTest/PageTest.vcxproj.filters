@@ -13,10 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Form Files">
-      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
       <Extensions>qrc;*</Extensions>
@@ -69,13 +65,13 @@
     <QtMoc Include="PaintX\PaintX.h">
       <Filter>Application\PaintX</Filter>
     </QtMoc>
-    <QtMoc Include="VideoPlayerX\OptionDialog.h">
+    <QtMoc Include="VideoControlWidget.h">
       <Filter>Application\VideoPlayerX</Filter>
     </QtMoc>
-    <QtMoc Include="VideoPlayerX\VideoControlWidget.h">
+    <QtMoc Include="OptionDialog.h">
       <Filter>Application\VideoPlayerX</Filter>
     </QtMoc>
-    <QtMoc Include="VideoPlayerX\VideoPlayerX.h">
+    <QtMoc Include="VideoPlayerX.h">
       <Filter>Application\VideoPlayerX</Filter>
     </QtMoc>
   </ItemGroup>
@@ -110,13 +106,13 @@
     <ClCompile Include="PaintX\PaintX.cpp">
       <Filter>Application\PaintX</Filter>
     </ClCompile>
-    <ClCompile Include="VideoPlayerX\OptionDialog.cpp">
+    <ClCompile Include="VideoControlWidget.cpp">
       <Filter>Application\VideoPlayerX</Filter>
     </ClCompile>
-    <ClCompile Include="VideoPlayerX\VideoControlWidget.cpp">
+    <ClCompile Include="OptionDialog.cpp">
       <Filter>Application\VideoPlayerX</Filter>
     </ClCompile>
-    <ClCompile Include="VideoPlayerX\VideoPlayerX.cpp">
+    <ClCompile Include="VideoPlayerX.cpp">
       <Filter>Application\VideoPlayerX</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,14 +130,8 @@
     <QtRcc Include="PaintX\PaintX.qrc">
       <Filter>Application\PaintX</Filter>
     </QtRcc>
-    <QtRcc Include="VideoPlayerX\VideoPlayerX.qrc">
-      <Filter>Application\VideoPlayerX</Filter>
-    </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="PageTest.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtUic Include="CameraX\CameraX.ui">
       <Filter>Application\CameraX</Filter>
     </QtUic>
@@ -163,11 +153,14 @@
     <QtUic Include="PaintX\PaintX.ui">
       <Filter>Application\PaintX</Filter>
     </QtUic>
-    <QtUic Include="VideoPlayerX\OptionDialog.ui">
+    <QtUic Include="OptionDialog.ui">
       <Filter>Application\VideoPlayerX</Filter>
     </QtUic>
-    <QtUic Include="VideoPlayerX\VideoPlayerX.ui">
+    <QtUic Include="VideoPlayerX.ui">
       <Filter>Application\VideoPlayerX</Filter>
+    </QtUic>
+    <QtUic Include="PageTest.ui">
+      <Filter>Source Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -176,9 +169,6 @@
     </ClInclude>
     <ClInclude Include="PaintX\PaintObject.h">
       <Filter>Application\PaintX</Filter>
-    </ClInclude>
-    <ClInclude Include="VideoPlayerX\resource.h">
-      <Filter>Application\VideoPlayerX</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

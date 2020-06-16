@@ -2,7 +2,7 @@
 
 Q_DECLARE_METATYPE(QCameraInfo)
 CameraX::CameraX(QWidget *parent)
-    : QDialog(parent)
+    : QMainWindow(parent)
 {
     ui.setupUi(this);
 
