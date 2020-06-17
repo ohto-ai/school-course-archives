@@ -7,6 +7,12 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 
 	// 内容同步
     connect(ui.markdownEdit, &QPlainTextEdit::textChanged, [this] { ui.markdownPreview->setMarkdown(ui.markdownEdit->toPlainText()); });
+	connect(ui.markdownEdit->verticalScrollBar(), &QScrollBar::valueChanged, 
+		[this](int value) {
+			if (ui.actionSynchronize->isChecked())
+				ui.markdownPreview->verticalScrollBar()->setValue(
+					ui.markdownPreview->verticalScrollBar()->maximum() * value / ui.markdownEdit->verticalScrollBar()->maximum());
+		});
 
 	// 查找
 	connect(ui.actionFind, &QAction::triggered, [this] {

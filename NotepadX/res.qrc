@@ -19,6 +19,8 @@
     <file>Resources/open.png</file>
     <file>Resources/paste.png</file>
     <file>Resources/print.png</file>
+    <file>Resources/nosynchronize.png</file>
+    <file>Resources/synchronize.png</file>
     <file>Resources/save.png</file>
   </qresource>
 </RCC>

@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QPrinter>
+#include <QScrollBar>
 #include "ui_NotepadXWindow.h"
 #include "About.h"
 #include "FindDialog.h"

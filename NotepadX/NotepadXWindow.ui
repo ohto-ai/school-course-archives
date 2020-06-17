@@ -46,7 +46,7 @@
      <x>0</x>
      <y>0</y>
      <width>1128</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -160,6 +160,8 @@
    <addaction name="separator"/>
    <addaction name="actionEnlarge"/>
    <addaction name="actionLessen"/>
+   <addaction name="separator"/>
+   <addaction name="actionSynchronize"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
@@ -505,6 +507,25 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="actionSynchronize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/ui/Resources/nosynchronize.png</normaloff>
+     <normalon>:/ui/Resources/synchronize.png</normalon>:/ui/Resources/nosynchronize.png</iconset>
+   </property>
+   <property name="text">
+    <string>滚动同步</string>
+   </property>
+   <property name="toolTip">
+    <string>滚动同步</string>
    </property>
   </action>
  </widget>
