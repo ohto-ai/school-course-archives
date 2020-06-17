@@ -50,6 +50,7 @@ PictureProcessX::PictureProcessX(QWidget *parent)
     connect(ui.checkGray, &QCheckBox::clicked, [this](bool) {updateImageView(); });
     connect(ui.checkBinarize, &QCheckBox::clicked, [this](bool) {updateImageView(); });
     connect(ui.checkLight, &QCheckBox::clicked, [this](bool) {updateImageView(); });
+    connect(ui.checkHist, &QCheckBox::clicked, [this](bool) {updateImageView(); });
 
 
     connect(ui.checkBinarize, &QCheckBox::clicked, ui.sliderBinarize, &QWidget::setEnabled);
@@ -161,6 +162,11 @@ void PictureProcessX::updateImageView()
         // 
         int maxHist = *std::max_element(hist, hist + 256);
         QImage histImage(256, maxHist, QImage::Format::Format_ARGB32);
+        QPainter painter(&histImage);
+        for (size_t i = 0; i < 255; i++)
+            painter.drawLine(i, 0, i, hist[i]);
+        
+        img = histImage.scaled(img.size());
 
     }
 
