@@ -11,5 +11,8 @@ public:
     PictureProcessX(QWidget *parent = Q_NULLPTR);
 
 private:
+    void updateImageView();
+
     Ui::PictureProcessXClass ui;
+    QImage oriImage;
 };

@@ -51,8 +51,8 @@ void ImageView::mouseDoubleClickEvent(QMouseEvent* event)
 	switch (event->button())
 	{
 	case Qt::LeftButton:
-		if (_image.isNull())
-			loadDialog();
+		//if (_image.isNull())
+		//	loadDialog();
 		autoScale();
 		break;
 	case Qt::RightButton:
