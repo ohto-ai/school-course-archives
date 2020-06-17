@@ -198,11 +198,11 @@ void PaintWidget::clearPaint()
 QString PaintWidget::exportSvg() const
 {
 	QString svg;
-	svg += R"(<!DOCTYPE html>
+	svg += QString::asprintf(R"(<!DOCTYPE html>
 <html>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="800">
-)";
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="%d" height="%d">
+)", width(), height());
 	for (auto obj : paintObjList)
 		svg += obj->exportSvgObject() + "\n";
 	svg += R"(
@@ -228,6 +228,15 @@ void PaintWidget::exportQPicture(QString file) const
 void PaintWidget::setPaintObjectCreateCallBack(std::function<void(PaintMode, const thatboy::qt::PaintObject*)> func)
 {
 	onPaintObjectCreate = func;
+}
+
+bool PaintWidget::removePaintObject(int ptr)
+{
+	if (ptr >= 0 && ptr < paintObjList.size())
+		paintObjList.erase(paintObjList.begin() + ptr);
+	else
+		return false;
+	return true;
 }
 
 void PaintWidget::pushPaintObject()

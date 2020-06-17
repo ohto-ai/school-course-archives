@@ -5,16 +5,22 @@ PaintX::PaintX(QWidget *parent)
 {
     ui.setupUi(this);
 
-    auto sketchpadWidget = new PaintWidget(ui.sketchpad);
+    connect(ui.paintObjectList, &QListWidget::itemDoubleClicked, [this](QListWidgetItem* item)
+        {
+            ui.sketchpad->removePaintObject(ui.paintObjectList->currentRow());
+            ui.paintObjectList->removeItemWidget(item);
+            delete item;
+            update();
+        });
 
     // 导出
-    connect(ui.actionExport, &QAction::triggered, [sketchpadWidget] 
+    connect(ui.actionExport, &QAction::triggered, [this] 
         { 
-            QFile file(QFileDialog::getSaveFileName(sketchpadWidget, "Export", "/", "SVG Files(*.svg);"), sketchpadWidget);        
+            QFile file(QFileDialog::getSaveFileName(ui.sketchpad, "Export", "/", "SVG Files(*.svg);"), ui.sketchpad);        
             file.open(QIODevice::WriteOnly| QIODevice::Text);
             if (file.isOpen())
             {
-                file.write(sketchpadWidget->exportSvg().toStdString().c_str());
+                file.write(ui.sketchpad->exportSvg().toStdString().c_str());
                 file.close();
             }
         });
@@ -24,8 +30,8 @@ PaintX::PaintX(QWidget *parent)
     ui.backColorBtn->setAutoFillBackground(true);
     ui.foreColorBtn->setFlat(true);
     ui.backColorBtn->setFlat(true);
-    ui.foreColorBtn->setPalette(sketchpadWidget->getForeColor());
-    ui.backColorBtn->setPalette(sketchpadWidget->getBackColor());
+    ui.foreColorBtn->setPalette(ui.sketchpad->getForeColor());
+    ui.backColorBtn->setPalette(ui.sketchpad->getBackColor());
 
     // 颜色选择
     connect(ui.foreColorBtn, &QPushButton::clicked, [=]
@@ -34,7 +40,7 @@ PaintX::PaintX(QWidget *parent)
             if (c.isValid())
             {
                 ui.foreColorBtn->setPalette(c);
-                sketchpadWidget->setForeColor(c);
+                ui.sketchpad->setForeColor(c);
             }
         });
     connect(ui.backColorBtn, &QPushButton::clicked, [=]
@@ -43,12 +49,12 @@ PaintX::PaintX(QWidget *parent)
             if (c.isValid())
             {
                 ui.backColorBtn->setPalette(c);
-                sketchpadWidget->setBackColor(c);
+                ui.sketchpad->setBackColor(c);
             }
         });
 
     // 图层创建回调
-    sketchpadWidget->setPaintObjectCreateCallBack([=](PaintWidget::PaintMode mode, const thatboy::qt::PaintObject*)
+    ui.sketchpad->setPaintObjectCreateCallBack([=](PaintWidget::PaintMode mode, const thatboy::qt::PaintObject*)
         {
             switch (mode)
             {
@@ -90,7 +96,7 @@ PaintX::PaintX(QWidget *parent)
     // 同步SpinBox和Slider
     connect(ui.penWidthSpinBox, static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), ui.penWidthSlider, &QSlider::setValue);
     connect(ui.penWidthSlider, &QSlider::valueChanged, ui.penWidthSpinBox, &QSpinBox::setValue);
-    connect(ui.penWidthSlider, &QSlider::valueChanged, sketchpadWidget, &PaintWidget::setPenWidth);
+    connect(ui.penWidthSlider, &QSlider::valueChanged, ui.sketchpad, &PaintWidget::setPenWidth);
 
     // 取消其他按钮选中
     auto unCheckOtherActions = [=](QAction* showAction) {
@@ -106,47 +112,47 @@ PaintX::PaintX(QWidget *parent)
     };
 
     // 按钮
-    connect(ui.actionClear, &QAction::triggered, sketchpadWidget, &PaintWidget::clearPaint);
+    connect(ui.actionClear, &QAction::triggered, ui.sketchpad, &PaintWidget::clearPaint);
     connect(ui.actionClear, &QAction::triggered, ui.paintObjectList, &QListWidget::clear);
     connect(ui.actionArrow, &QAction::triggered, [=]
         {
             unCheckOtherActions(nullptr);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_NULL);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_NULL);
         });
     connect(ui.actionPenceil, &QAction::triggered, [=]
         {
             unCheckOtherActions(ui.actionPenceil);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_PENCIL);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_PENCIL);
         });
     connect(ui.actionLine, &QAction::triggered, [=]
         {
             unCheckOtherActions(ui.actionLine);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_LINE);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_LINE);
         });
     connect(ui.actionRectangle, &QAction::triggered, [=]
         {
             unCheckOtherActions(ui.actionRectangle);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_RECTANGLE);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_RECTANGLE);
         });
     connect(ui.actionRoundRectangle, &QAction::triggered, [=]
         {
             unCheckOtherActions(ui.actionRoundRectangle);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_ROUNDEDRECTANGLE);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_ROUNDEDRECTANGLE);
         });
     connect(ui.actionCircle, &QAction::triggered, [=]
         {
             unCheckOtherActions(ui.actionCircle);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_CIRCLE);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_CIRCLE);
         });
     connect(ui.actionEllipse, &QAction::triggered, [=]
         {
             unCheckOtherActions(ui.actionEllipse);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_ELLIPSE);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_ELLIPSE);
         });
     connect(ui.actionPolgon, &QAction::triggered, [=]
         {
             unCheckOtherActions(ui.actionPolgon);
-            sketchpadWidget->switchPaintMode(PaintWidget::PAINT_POLYGON);
+            ui.sketchpad->switchPaintMode(PaintWidget::PAINT_POLYGON);
         });
  
 }

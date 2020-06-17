@@ -16,9 +16,6 @@
   <property name="windowTitle">
    <string>PaintWidget</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
-  </property>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

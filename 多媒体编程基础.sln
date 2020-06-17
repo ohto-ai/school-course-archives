@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CameraX", "CameraX\CameraX.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PageTest", "PageTest\PageTest.vcxproj", "{28933507-8184-4227-B63C-1BCCF1C6C775}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PictureProcessX", "PictureProcessX\PictureProcessX.vcxproj", "{88C4F225-1338-43D4-8938-04AA515E9179}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -145,6 +147,12 @@ Global
 		{28933507-8184-4227-B63C-1BCCF1C6C775}.Release|x64.ActiveCfg = Release|x64
 		{28933507-8184-4227-B63C-1BCCF1C6C775}.Release|x64.Build.0 = Release|x64
 		{28933507-8184-4227-B63C-1BCCF1C6C775}.Release|x86.ActiveCfg = Release|x64
+		{88C4F225-1338-43D4-8938-04AA515E9179}.Debug|x64.ActiveCfg = Debug|x64
+		{88C4F225-1338-43D4-8938-04AA515E9179}.Debug|x64.Build.0 = Debug|x64
+		{88C4F225-1338-43D4-8938-04AA515E9179}.Debug|x86.ActiveCfg = Debug|x64
+		{88C4F225-1338-43D4-8938-04AA515E9179}.Release|x64.ActiveCfg = Release|x64
+		{88C4F225-1338-43D4-8938-04AA515E9179}.Release|x64.Build.0 = Release|x64
+		{88C4F225-1338-43D4-8938-04AA515E9179}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -161,6 +169,7 @@ Global
 		{BF863DA9-22BA-409B-9035-7C91E3583538} = {AD305859-ED50-47A8-A9CC-8EA66AAE226D}
 		{B0411CDE-7CC3-402A-A285-CFD627F1A89D} = {C16FFAF4-71B0-415D-9E11-97948FB3FD71}
 		{28933507-8184-4227-B63C-1BCCF1C6C775} = {AD305859-ED50-47A8-A9CC-8EA66AAE226D}
+		{88C4F225-1338-43D4-8938-04AA515E9179} = {C16FFAF4-71B0-415D-9E11-97948FB3FD71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8854F45-F1A4-412C-802E-0ACB32E6344D}

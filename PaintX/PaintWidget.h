@@ -44,6 +44,7 @@ public:
 	QString exportSvg()const;
 	void exportQPicture(QString)const;
 	void setPaintObjectCreateCallBack(std::function<void(PaintMode, const thatboy::qt::PaintObject*)>);
+	bool removePaintObject(int);
 private:
 	void pushPaintObject();
 
