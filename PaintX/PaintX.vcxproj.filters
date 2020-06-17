@@ -43,9 +43,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="PaintX.qrc" />
-  </ItemGroup>
-  <ItemGroup>
     <QtUic Include="PaintX.ui">
       <Filter>Form Files</Filter>
     </QtUic>
@@ -60,5 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="PaintX.qrc" />
   </ItemGroup>
 </Project>

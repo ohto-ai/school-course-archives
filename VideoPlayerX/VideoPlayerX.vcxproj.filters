@@ -46,9 +46,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="VideoPlayerX.qrc" />
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="VideoControlWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>

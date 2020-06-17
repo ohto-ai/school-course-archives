@@ -92,7 +92,6 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="VideoPlayerX.qrc" />
     <QtUic Include="OptionDialog.ui" />
     <QtUic Include="VideoPlayerX.ui" />
     <QtMoc Include="VideoPlayerX.h" />

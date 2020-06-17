@@ -37,9 +37,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="ImageViewerX.qrc" />
-  </ItemGroup>
-  <ItemGroup>
     <QtUic Include="ImageViewerX.ui">
       <Filter>Form Files</Filter>
     </QtUic>

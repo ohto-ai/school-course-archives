@@ -1,11 +1,11 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ImageViewerX/ImageViewerX.h"
-#include "VideoPlayerX.h"
-#include "PaintX/PaintX.h"
-#include "NotepadX/NotepadXWindow.h"
-#include "CameraX/CameraX.h"
+#include "../ImageViewerX/ImageViewerX.h"
+#include "../VideoPlayerX/VideoPlayerX.h"
+#include "../PaintX/PaintX.h"
+#include "../NotepadX/NotepadXWindow.h"
+#include "../CameraX/CameraX.h"
 #include "ui_PageTest.h"
 
 class PageTest : public QMainWindow

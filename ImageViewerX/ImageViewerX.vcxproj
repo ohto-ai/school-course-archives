@@ -82,7 +82,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="ImageViewerX.qrc" />
     <QtUic Include="ImageViewerX.ui" />
     <ClCompile Include="ImageViewerX.cpp" />
     <ClCompile Include="ImageWidget.cpp" />

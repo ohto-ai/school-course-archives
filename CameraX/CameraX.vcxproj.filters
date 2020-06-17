@@ -39,7 +39,4 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="CameraX.qrc" />
-  </ItemGroup>
 </Project>
