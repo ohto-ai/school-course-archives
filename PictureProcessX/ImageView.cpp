@@ -40,7 +40,7 @@ void ImageView::paintEvent(QPaintEvent* event)
 	painter.rotate(_rotate);
 	painter.translate(-_image.width() * scale / 2, -_image.height() * scale / 2);
 	painter.scale(scale, scale);
-	painter.drawImage(0, 0, _image);
+	painter.drawImage(0, 0, _image.mirrored(mirrorHorizontally, mirrorVertically));
 }
 
 void ImageView::wheelEvent(QWheelEvent* event)
@@ -105,4 +105,23 @@ void ImageView::autoScale()
 qreal& ImageView::rotate()
 {
 	return _rotate;
+}
+
+void ImageView::setMirror(bool hor, bool ver)
+{
+	mirrorHorizontally = hor;
+	mirrorVertically = ver;
+	update();
+}
+
+void ImageView::setMirrorHor(bool hor)
+{
+	mirrorHorizontally = hor;
+	update();
+}
+
+void ImageView::setMirrorVer(bool ver)
+{
+	mirrorVertically = ver;
+	update();
 }

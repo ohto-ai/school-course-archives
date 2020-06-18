@@ -172,6 +172,7 @@ PictureProcessX::PictureProcessX(QWidget* parent)
 	connect(ui.checkGauss, &QCheckBox::clicked, ui.sliderGauss, &QWidget::setEnabled);
 	connect(ui.checkGauss, &QCheckBox::clicked, ui.spinGauss, &QWidget::setEnabled);
 
+	// Ðý×ª
 	connect(ui.checkRotate, &QCheckBox::clicked, ui.dialRotate, &QWidget::setEnabled);
 	connect(ui.checkRotate, &QCheckBox::clicked, ui.spinRotate, &QWidget::setEnabled);
 	connect(ui.checkRotate, &QCheckBox::clicked, [this](bool b)
@@ -179,6 +180,9 @@ PictureProcessX::PictureProcessX(QWidget* parent)
 			ui.imageView->rotate() = b ? ui.dialRotate->value() : 0;
 			update();
 		});
+
+	connect(ui.checkMirrorHorizontally, &QCheckBox::clicked, ui.imageView, &ImageView::setMirrorHor);
+	connect(ui.checkMirrorVertically, &QCheckBox::clicked, ui.imageView, &ImageView::setMirrorVer);
 }
 
 void PictureProcessX::gauss()
@@ -189,12 +193,10 @@ void PictureProcessX::gauss()
 		--waiting_thread;
 		return;
 	}
-	std::lock_guard<std::mutex> lock(imageWriteLock);
-	--waiting_thread;
-
-	auto& dstImage = ui.imageView->image();
+	auto dstImage{ ui.imageView->image() };
+	auto srcImage{ ui.imageView->image() };
 	auto dstBits = dstImage.bits();
-	auto srcBits = oriImage.bits();
+	auto srcBits = srcImage.bits();
 	int bytePerLine = dstImage.bytesPerLine();
 	int pxByte = dstImage.depth() / 8;
 
@@ -239,6 +241,12 @@ void PictureProcessX::gauss()
 				thisPixel[0] = b;
 		}
 	}
+
+	imageWriteLock.lock();
+	memcpy(ui.imageView->image().bits(), dstImage.bits(), dstImage.byteCount());
+	imageWriteLock.unlock();
+
+	--waiting_thread;
 	update();
 }
 
@@ -344,13 +352,16 @@ void PictureProcessX::binarize()
 
 void PictureProcessX::updateImageView()
 {
-	// lock copy
-
 	auto& dstImage = ui.imageView->image();
 	if (dstImage.isNull())
 		return;
 	if (dstImage.depth() != 24 && dstImage.depth() != 32 && dstImage.depth() != 8)
 		return;
+
+	imageWriteLock.lock();
+	memcpy(dstImage.bits(), oriImage.bits(), oriImage.byteCount());
+	imageWriteLock.unlock();
+
 
 	// ÁÁ¶È
 	if (ui.checkLight->isChecked())

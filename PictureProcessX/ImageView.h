@@ -25,7 +25,12 @@ public:
 	void loadDialog();
 	void autoScale();
 	qreal& rotate();
+	void setMirror(bool, bool);
+	void setMirrorHor(bool);
+	void setMirrorVer(bool);
 private:
+	bool mirrorHorizontally{ false };
+	bool mirrorVertically{ false };
 	qreal _rotate{ 0 };
 	QImage _image;
 	qreal scale{ 1.0 };
