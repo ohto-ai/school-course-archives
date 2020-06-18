@@ -36,8 +36,11 @@ void ImageView::mouseMoveEvent(QMouseEvent* event)
 void ImageView::paintEvent(QPaintEvent* event)
 {
 	QPainter painter(this);
+	painter.translate(drawCoord.x() + _image.width() * scale / 2, drawCoord.y() + _image.height() * scale / 2);
+	painter.rotate(_rotate);
+	painter.translate(-_image.width() * scale / 2, -_image.height() * scale / 2);
 	painter.scale(scale, scale);
-	painter.drawImage(drawCoord / scale, _image);
+	painter.drawImage(0, 0, _image);
 }
 
 void ImageView::wheelEvent(QWheelEvent* event)
@@ -89,13 +92,17 @@ void ImageView::loadDialog()
 
 void ImageView::autoScale()
 {
-	if (_image.width() < rect().width() && _image.height() < rect().height())
+	if (_image.width() < width() && _image.height() < height())
 		scale = 1;
-	else if ((qreal)rect().width() / rect().height() < (qreal)_image.width() / _image.height())
-		scale = (qreal)rect().width() / _image.width();
+	else if ((qreal)width() / height() < (qreal)_image.width() / _image.height())
+		scale = (qreal)width() / _image.width();
 	else
-		scale = (qreal)rect().height() / _image.height();
-	drawCoord = QPoint(-(_image.width() * scale - rect().width()) / 2, -(_image.height() * scale - rect().height()) / 2);
+		scale = (qreal)height() / _image.height();
+	drawCoord = QPoint(-(_image.width() * scale - width()) / 2, -(_image.height() * scale - height()) / 2);
 	update();
 }
 
+qreal& ImageView::rotate()
+{
+	return _rotate;
+}

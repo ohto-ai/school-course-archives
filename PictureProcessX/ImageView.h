@@ -11,7 +11,7 @@ class ImageView : public QWidget
 	Q_OBJECT
 
 public:
-	ImageView(QWidget *parent = Q_NULLPTR);
+	ImageView(QWidget* parent = Q_NULLPTR);
 	~ImageView();
 	virtual void mousePressEvent(QMouseEvent* event);
 	virtual void mouseMoveEvent(QMouseEvent* event);
@@ -24,9 +24,11 @@ public:
 	void load(QString);
 	void loadDialog();
 	void autoScale();
+	qreal& rotate();
 private:
+	qreal _rotate{ 0 };
 	QImage _image;
-	qreal scale = 1.0;
+	qreal scale{ 1.0 };
 	QPointF drawCoord;
 	QPoint mouseCoord;
 };

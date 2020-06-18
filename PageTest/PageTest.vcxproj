@@ -83,6 +83,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="..\CameraX\CameraX.qrc" />
+    <QtRcc Include="..\DigitalClockX\DigitalClockX.qrc" />
     <QtRcc Include="..\ImageViewerX\ImageViewerX.qrc" />
     <QtRcc Include="..\NotepadX\res.qrc" />
     <QtRcc Include="..\PaintX\PaintX.qrc" />
@@ -90,6 +91,7 @@
     <QtRcc Include="PageTest.qrc" />
     <QtMoc Include="PageTest.h" />
     <ClCompile Include="..\CameraX\CameraX.cpp" />
+    <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp" />
     <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp" />
     <ClCompile Include="..\ImageViewerX\ImageWidget.cpp" />
     <ClCompile Include="..\NotepadX\About.cpp" />
@@ -103,6 +105,7 @@
     <ClCompile Include="PageTest.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="..\CameraX\CameraX.ui" />
+    <QtUic Include="..\DigitalClockX\DigitalClockX.ui" />
     <QtUic Include="..\ImageViewerX\ImageViewerX.ui" />
     <QtUic Include="..\NotepadX\About.ui" />
     <QtUic Include="..\NotepadX\FindDialog.ui" />
@@ -127,6 +130,7 @@
     <Image Include="..\VideoPlayerX\res\player.ico" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="..\DigitalClockX\DigitalClockX.h" />
     <ClInclude Include="..\PaintX\PaintObject.h" />
     <QtMoc Include="..\VideoPlayerX\OptionDialog.h" />
     <QtMoc Include="..\VideoPlayerX\VideoControlWidget.h" />

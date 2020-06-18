@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DigitalClockXClass</class>
- <widget class="QMainWindow" name="DigitalClockXClass">
+ <class>AnalogClockClass</class>
+ <widget class="QMainWindow" name="AnalogClockClass">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>452</height>
+    <width>600</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>DigitalClockX</string>
+   <string>AnalogClock</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="DigitalClockX.qrc"/>
+  <include location="AnalogClock.qrc"/>
  </resources>
  <connections/>
 </ui>

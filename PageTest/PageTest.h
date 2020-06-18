@@ -7,6 +7,7 @@
 #include "../PaintX/PaintX.h"
 #include "../NotepadX/NotepadXWindow.h"
 #include "../CameraX/CameraX.h"
+#include "../DigitalClockX/DigitalClockX.h"
 #include "ui_PageTest.h"
 
 class PageTest : public QMainWindow

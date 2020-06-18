@@ -194,7 +194,7 @@
          <widget class="QCheckBox" name="checkLivePreview">
           <property name="geometry">
            <rect>
-            <x>910</x>
+            <x>870</x>
             <y>20</y>
             <width>71</width>
             <height>16</height>
@@ -202,19 +202,6 @@
           </property>
           <property name="text">
            <string>实时预览</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkHist">
-          <property name="geometry">
-           <rect>
-            <x>470</x>
-            <y>80</y>
-            <width>71</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>直方图</string>
           </property>
          </widget>
          <widget class="QWidget" name="layoutWidget">
@@ -258,6 +245,54 @@
            </item>
           </layout>
          </widget>
+         <widget class="QDial" name="dialRotate">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>580</x>
+            <y>10</y>
+            <width>91</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>359</number>
+          </property>
+          <property name="wrapping">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinRotate">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>100</y>
+            <width>41</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>359</number>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="checkRotate">
+          <property name="geometry">
+           <rect>
+            <x>580</x>
+            <y>100</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>旋转</string>
+          </property>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -271,7 +306,7 @@
      <x>0</x>
      <y>0</y>
      <width>1011</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

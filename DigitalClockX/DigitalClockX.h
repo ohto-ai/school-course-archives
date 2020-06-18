@@ -21,7 +21,7 @@ private:
     /// <param name="h"> ±</param>
     /// <param name="m">∑÷</param>
     /// <param name="s">√Î</param>
-    void paintClock(QPainter& painter, int h, int m, int s);
+    void paintClock(QPainter& painter);
     
     Ui::DigitalClockXClass ui;
     QImage digitalImages[11];
