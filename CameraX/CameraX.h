@@ -23,6 +23,7 @@ private:
     QCameraImageCapture* imageCapture;
     /* 摄像头取景器部件 */
     QCameraViewfinder* viewfinder;
+    friend class MultiMidiaSystem;
 
 private slots:
 

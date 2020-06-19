@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Reference">
+      <UniqueIdentifier>{a90683e1-be5a-49aa-9804-c664be1fca53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\CameraX">
+      <UniqueIdentifier>{32e164bd-b689-4097-992c-71e851ffce0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PictureProcessX">
+      <UniqueIdentifier>{45e86861-34c6-4854-9ce9-070f11ec3957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\NotepadX">
+      <UniqueIdentifier>{34a9d673-d543-44c7-a52c-0bb245d53960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\VideoPlayerX">
+      <UniqueIdentifier>{18d3be2a-50c4-4dfe-a6f4-a2ae2322e524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\DigitalClockX">
+      <UniqueIdentifier>{14f7c5b1-bce6-4f30-9f93-87b087a0d3b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\CameraX\Form Files">
+      <UniqueIdentifier>{750deb25-074c-4874-8d2b-8d64f74b3276}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\CameraX\Header Files">
+      <UniqueIdentifier>{4305b4b6-9eaa-4140-9aec-91808eab5b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\CameraX\Resource Files">
+      <UniqueIdentifier>{a9c859d3-0a49-4801-9784-5a9d20bf0463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\CameraX\Source Files">
+      <UniqueIdentifier>{cb12138a-d422-444b-8c4e-ef81e339d719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\DigitalClockX\Form Files">
+      <UniqueIdentifier>{98807196-ce61-48f5-b3f6-09d97fae4250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\DigitalClockX\Header Files">
+      <UniqueIdentifier>{d825f0f4-7972-491c-bc35-aa04eea235b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\DigitalClockX\Source Files">
+      <UniqueIdentifier>{36dc6cda-6bc9-453a-9f98-1a45f74614f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\NotepadX\Form Files">
+      <UniqueIdentifier>{628e84d5-51a4-43c6-bf0e-ddeb9aa6bb2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\NotepadX\Header Files">
+      <UniqueIdentifier>{d049624c-e933-41e2-a0a6-07f01a2b35fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\NotepadX\Resource Files">
+      <UniqueIdentifier>{26118ba4-a34f-478d-99bd-7fb10b96a258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\NotepadX\Source Files">
+      <UniqueIdentifier>{43bd4763-e90f-4585-a7a8-7e6b4988d2b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\VideoPlayerX\Form Files">
+      <UniqueIdentifier>{3d5f7959-cbe2-49ca-a72c-90800d9f30de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\VideoPlayerX\Header Files">
+      <UniqueIdentifier>{da29a2db-6a84-4917-9c40-2c9ed1163c42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\VideoPlayerX\Resource Files">
+      <UniqueIdentifier>{8e5a58de-b221-4979-9b9b-9fdbee568823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\VideoPlayerX\Source Files">
+      <UniqueIdentifier>{3bc035a2-f516-4c15-9edd-6ed737f7fc5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PictureProcessX\Form Files">
+      <UniqueIdentifier>{c027fd90-cb18-4777-a6ab-60c134a4ad1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PictureProcessX\Header Files">
+      <UniqueIdentifier>{69900547-2a93-4b2e-9ef3-c64eecabda4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PictureProcessX\Resource Files">
+      <UniqueIdentifier>{e6c6b2e5-7efa-4f9f-8ca4-d63759563ead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PictureProcessX\Source Files">
+      <UniqueIdentifier>{4c3cd60f-fc2a-49cf-8a11-aeee8e9107cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\ImageViewerX">
+      <UniqueIdentifier>{5586d40e-52ea-4547-bc94-2050a78991be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\ImageViewerX\Form Files">
+      <UniqueIdentifier>{e729fa8d-5fa7-41da-ba69-209367544a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\ImageViewerX\Header Files">
+      <UniqueIdentifier>{4e183ba5-7429-4cd1-bc6a-9931232bf10d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\ImageViewerX\Resource Files">
+      <UniqueIdentifier>{8069ef35-db75-4335-849b-b072ad5975fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\ImageViewerX\Source Files">
+      <UniqueIdentifier>{ecfd0ba8-050c-4a45-a537-ce24d38a1e60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\AuthorInformation">
+      <UniqueIdentifier>{e44073e1-631b-439a-8ea5-9544daf1a327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\AuthorInformation\Form Files">
+      <UniqueIdentifier>{832e1cf5-ae94-4c97-8629-32779cfaea21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\AuthorInformation\Header Files">
+      <UniqueIdentifier>{5fca4605-7f13-4ca5-bef7-e32417ffc010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\AuthorInformation\Resource Files">
+      <UniqueIdentifier>{b0f8b18e-70f9-4c4d-8f1b-26b99f4f44c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\AuthorInformation\Source Files">
+      <UniqueIdentifier>{e0cc82b5-a891-4e4c-9927-4a8a7e7c83b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PaintX">
+      <UniqueIdentifier>{6a27efaf-27d6-4876-8963-963ae5e30f4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PaintX\Form Files">
+      <UniqueIdentifier>{4674fdd8-002e-430e-a7a7-03d817b51178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PaintX\Header Files">
+      <UniqueIdentifier>{a1017bd6-3748-479d-b736-ef246285b6fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PaintX\Resource Files">
+      <UniqueIdentifier>{ca02eaeb-9415-4c3e-a987-c7fd6dadcb92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reference\PaintX\Source Files">
+      <UniqueIdentifier>{c7a4469f-d802-4b65-b000-f9338a16b74d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MultiMidiaSystem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="MultiMidiaSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <QtUic Include="..\CameraX\CameraX.ui">
+      <Filter>Reference\CameraX\Resource Files</Filter>
+    </QtUic>
+    <QtUic Include="..\DigitalClockX\DigitalClockX.ui">
+      <Filter>Reference\DigitalClockX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\NotepadX\FindDialog.ui">
+      <Filter>Reference\NotepadX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\NotepadX\NotepadXWindow.ui">
+      <Filter>Reference\NotepadX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\PaintX\PaintWidget.ui">
+      <Filter>Reference\PaintX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\PaintX\PaintX.ui">
+      <Filter>Reference\PaintX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\VideoPlayerX\OptionDialog.ui">
+      <Filter>Reference\VideoPlayerX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\VideoPlayerX\VideoPlayerX.ui">
+      <Filter>Reference\VideoPlayerX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\PictureProcessX\PictureProcessX.ui">
+      <Filter>Reference\PictureProcessX\Form Files</Filter>
+    </QtUic>
+    <QtMoc Include="..\ImageViewerX\ImageWidget.h">
+      <Filter>Reference\ImageViewerX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\ImageViewerX\ImageViewerX.h">
+      <Filter>Reference\ImageViewerX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\AuthorInformation\AuthorInformation.h">
+      <Filter>Reference\AuthorInformation\Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CameraX\CameraX.cpp">
+      <Filter>Reference\CameraX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CameraX\main.cpp">
+      <Filter>Reference\CameraX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp">
+      <Filter>Reference\DigitalClockX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NotepadX\FindDialog.cpp">
+      <Filter>Reference\NotepadX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NotepadX\NotepadXWindow.cpp">
+      <Filter>Reference\NotepadX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PaintX\PaintWidget.cpp">
+      <Filter>Reference\PaintX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PaintX\PaintX.cpp">
+      <Filter>Reference\PaintX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VideoPlayerX\OptionDialog.cpp">
+      <Filter>Reference\VideoPlayerX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VideoPlayerX\VideoControlWidget.cpp">
+      <Filter>Reference\VideoPlayerX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VideoPlayerX\VideoPlayerX.cpp">
+      <Filter>Reference\VideoPlayerX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PictureProcessX\ImageView.cpp">
+      <Filter>Reference\PictureProcessX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PictureProcessX\PictureProcessX.cpp">
+      <Filter>Reference\PictureProcessX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PictureProcessX\main.cpp">
+      <Filter>Reference\PictureProcessX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp">
+      <Filter>Reference\ImageViewerX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ImageViewerX\ImageWidget.cpp">
+      <Filter>Reference\ImageViewerX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AuthorInformation\AuthorInformation.cpp">
+      <Filter>Reference\AuthorInformation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AuthorInformation\main.cpp">
+      <Filter>Reference\AuthorInformation\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="MultiMidiaSystem.qrc" />
+    <QtRcc Include="..\CameraX\CameraX.qrc">
+      <Filter>Reference\CameraX</Filter>
+    </QtRcc>
+    <QtRcc Include="..\DigitalClockX\DigitalClockX.qrc">
+      <Filter>Reference\DigitalClockX</Filter>
+    </QtRcc>
+    <QtRcc Include="..\NotepadX\res.qrc">
+      <Filter>Reference\NotepadX\Form Files</Filter>
+    </QtRcc>
+    <QtRcc Include="..\PaintX\PaintX.qrc">
+      <Filter>Reference\PaintX</Filter>
+    </QtRcc>
+    <QtRcc Include="..\VideoPlayerX\VideoPlayerX.qrc">
+      <Filter>Reference\VideoPlayerX</Filter>
+    </QtRcc>
+    <QtRcc Include="..\PictureProcessX\PictureProcessX.qrc">
+      <Filter>Reference\PictureProcessX</Filter>
+    </QtRcc>
+    <QtRcc Include="..\ImageViewerX\ImageViewerX.qrc">
+      <Filter>Reference\ImageViewerX</Filter>
+    </QtRcc>
+    <QtRcc Include="..\AuthorInformation\AuthorInformation.qrc">
+      <Filter>Reference\AuthorInformation</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\CameraX\CameraX.h">
+      <Filter>Reference\CameraX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\DigitalClockX\DigitalClockX.h">
+      <Filter>Reference\DigitalClockX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\NotepadX\FindDialog.h">
+      <Filter>Reference\NotepadX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\NotepadX\NotepadXWindow.h">
+      <Filter>Reference\NotepadX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\PaintX\PaintWidget.h">
+      <Filter>Reference\PaintX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\PaintX\PaintX.h">
+      <Filter>Reference\PaintX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\VideoPlayerX\OptionDialog.h">
+      <Filter>Reference\VideoPlayerX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\VideoPlayerX\VideoControlWidget.h">
+      <Filter>Reference\VideoPlayerX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\VideoPlayerX\VideoPlayerX.h">
+      <Filter>Reference\VideoPlayerX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\PictureProcessX\PictureProcessX.h">
+      <Filter>Reference\PictureProcessX\Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\PictureProcessX\ImageView.h">
+      <Filter>Reference\PictureProcessX\Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\PaintX\PaintObject.h">
+      <Filter>Reference\PaintX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\VideoPlayerX\res\player.ico">
+      <Filter>Reference\VideoPlayerX\Resource Files</Filter>
+    </Image>
+    <Image Include="res\MultiMidiaSystem.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MultiMidiaSystem.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\ImageViewerX\ImageViewerX.ui">
+      <Filter>Reference\ImageViewerX\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\AuthorInformation\AuthorInformation.ui">
+      <Filter>Reference\AuthorInformation\Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MultiMidiaSystem.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

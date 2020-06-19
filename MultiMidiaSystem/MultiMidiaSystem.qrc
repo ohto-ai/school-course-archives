@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="MultiMidiaSystem">
+    <file>MultiMidiaSystem.qrc</file>
+    <file>res/MultiMidiaSystem.ico</file>
+  </qresource>
+</RCC>

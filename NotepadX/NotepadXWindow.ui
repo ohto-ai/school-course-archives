@@ -105,17 +105,10 @@
     <addaction name="menu_Z"/>
     <addaction name="actionStatus"/>
    </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>帮助(&amp;H)</string>
-    </property>
-    <addaction name="actionAbout"/>
-   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuFormt"/>
    <addaction name="menuView"/>
-   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <property name="allowedAreas">
@@ -162,6 +155,8 @@
    <addaction name="actionLessen"/>
    <addaction name="separator"/>
    <addaction name="actionSynchronize"/>
+   <addaction name="separator"/>
+   <addaction name="actionAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
@@ -408,6 +403,10 @@
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/ui/Resources/about.png</normaloff>:/ui/Resources/about.png</iconset>
+   </property>
    <property name="text">
     <string>关于NotepadX</string>
    </property>

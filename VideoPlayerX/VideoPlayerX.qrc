@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="VideoPlayerX">
+    <file>res/关于.png</file>
     <file>res/复原.png</file>
     <file>res/player.png</file>
     <file>res/player.ico</file>

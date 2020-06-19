@@ -82,64 +82,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="..\CameraX\CameraX.qrc" />
-    <QtRcc Include="..\DigitalClockX\DigitalClockX.qrc" />
-    <QtRcc Include="..\ImageViewerX\ImageViewerX.qrc" />
-    <QtRcc Include="..\NotepadX\res.qrc" />
-    <QtRcc Include="..\PaintX\PaintX.qrc" />
-    <QtRcc Include="..\VideoPlayerX\VideoPlayerX.qrc" />
     <QtRcc Include="PageTest.qrc" />
     <QtMoc Include="PageTest.h" />
     <ClCompile Include="..\CameraX\CameraX.cpp" />
-    <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp" />
-    <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp" />
-    <ClCompile Include="..\ImageViewerX\ImageWidget.cpp" />
-    <ClCompile Include="..\NotepadX\About.cpp" />
-    <ClCompile Include="..\NotepadX\FindDialog.cpp" />
-    <ClCompile Include="..\NotepadX\NotepadXWindow.cpp" />
-    <ClCompile Include="..\PaintX\PaintWidget.cpp" />
-    <ClCompile Include="..\PaintX\PaintX.cpp" />
-    <ClCompile Include="..\VideoPlayerX\OptionDialog.cpp" />
-    <ClCompile Include="..\VideoPlayerX\VideoControlWidget.cpp" />
-    <ClCompile Include="..\VideoPlayerX\VideoPlayerX.cpp" />
     <ClCompile Include="PageTest.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="..\CameraX\CameraX.ui" />
-    <QtUic Include="..\DigitalClockX\DigitalClockX.ui" />
-    <QtUic Include="..\ImageViewerX\ImageViewerX.ui" />
-    <QtUic Include="..\NotepadX\About.ui" />
-    <QtUic Include="..\NotepadX\FindDialog.ui" />
-    <QtUic Include="..\NotepadX\NotepadXWindow.ui" />
-    <QtUic Include="..\PaintX\PaintWidget.ui" />
-    <QtUic Include="..\PaintX\PaintX.ui" />
-    <QtUic Include="..\VideoPlayerX\OptionDialog.ui" />
-    <QtUic Include="..\VideoPlayerX\VideoPlayerX.ui" />
     <QtUic Include="PageTest.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\CameraX\CameraX.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\ImageViewerX\ImageWidget.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="..\ImageViewerX\ImageViewerX.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="..\NotepadX\Resources\markdown.ico" />
-    <Image Include="..\VideoPlayerX\res\player.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="..\DigitalClockX\DigitalClockX.h" />
-    <ClInclude Include="..\PaintX\PaintObject.h" />
-    <QtMoc Include="..\VideoPlayerX\OptionDialog.h" />
-    <QtMoc Include="..\VideoPlayerX\VideoControlWidget.h" />
-    <QtMoc Include="..\VideoPlayerX\VideoPlayerX.h" />
-    <QtMoc Include="..\PaintX\PaintWidget.h" />
-    <QtMoc Include="..\PaintX\PaintX.h" />
-    <QtMoc Include="..\NotepadX\FindDialog.h" />
-    <QtMoc Include="..\NotepadX\About.h" />
-    <QtMoc Include="..\NotepadX\NotepadXWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

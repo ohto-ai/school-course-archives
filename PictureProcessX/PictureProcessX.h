@@ -14,12 +14,24 @@ public:
 	PictureProcessX(QWidget* parent = Q_NULLPTR);
 
 	std::mutex imageWriteLock;
-	void gauss();
+
 	void light();
+	void binarize();
+	void mosaic();
+	void emboss();
+
+	void neon();
+	void gauss();
+	void exposure();
+	void diffuse();
+
+	void nostalgic();
+	void blackWhiteComics();
+
 	void reverseColor();
 	void gray();
-	void binarize();
 private:
+	friend class MultiMidiaSystem;
 	void updateImageView();
 
 	Ui::PictureProcessXClass ui;

@@ -20,9 +20,10 @@ public:
 	virtual void mouseDoubleClickEvent(QMouseEvent*);
 
 	QImage& image();
-	void load(QImage);
-	void load(QString);
-	void loadDialog();
+	bool load(QImage);
+	bool load(QString);
+	bool loadDialog();
+	bool saveDialog();
 	void autoScale();
 	qreal& rotate();
 	void setMirror(bool, bool);

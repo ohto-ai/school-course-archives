@@ -10,6 +10,7 @@
     <file>res/line.png</file>
     <file>res/penceil.png</file>
     <file>res/rectangle.png</file>
-    <file>res/多边形.png</file>
+    <file>res/polygon.png</file>
+    <file>res/about.png</file>
   </qresource>
 </RCC>

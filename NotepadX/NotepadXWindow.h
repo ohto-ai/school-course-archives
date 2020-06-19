@@ -13,7 +13,6 @@
 #include <QPrinter>
 #include <QScrollBar>
 #include "ui_NotepadXWindow.h"
-#include "About.h"
 #include "FindDialog.h"
 
 #ifdef Q_OS_WIN
@@ -29,8 +28,8 @@ public:
 	~NotepadXWindow() = default;
 
 private:
+	friend class MultiMidiaSystem;
 	Ui::NotepadXWindow ui;
 	QString workingFileName;
-	About about{ this };
 	FindDialog findDialog{ this };
 };

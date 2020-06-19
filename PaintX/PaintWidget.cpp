@@ -152,6 +152,11 @@ void PaintWidget::paintEvent(QPaintEvent* event)
 	if (currentObject)
 		currentObject->drawHalf(painter);
 
+	if (selectedObject)
+	{
+		selectedObject->draw(painter);
+	}
+
 	painter.end();
 }
 
@@ -230,10 +235,21 @@ void PaintWidget::setPaintObjectCreateCallBack(std::function<void(PaintMode, con
 	onPaintObjectCreate = func;
 }
 
+
+
 bool PaintWidget::removePaintObject(int ptr)
 {
 	if (ptr >= 0 && ptr < paintObjList.size())
 		paintObjList.erase(paintObjList.begin() + ptr);
+	else
+		return false;
+	return true;
+}
+
+bool PaintWidget::selectPaintObject(int ptr)
+{
+	if (ptr >= 0 && ptr < paintObjList.size())
+		selectedObject = &paintObjList[ptr];
 	else
 		return false;
 	return true;

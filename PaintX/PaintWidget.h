@@ -45,6 +45,7 @@ public:
 	void exportQPicture(QString)const;
 	void setPaintObjectCreateCallBack(std::function<void(PaintMode, const thatboy::qt::PaintObject*)>);
 	bool removePaintObject(int);
+	bool selectPaintObject(int);
 private:
 	void pushPaintObject();
 
@@ -54,7 +55,8 @@ private:
 
 	PaintMode paintMode{ PAINT_NULL };
 	bool continusStatus = false;	// 在连续画线（多边形）
-
+	
+	thatboy::qt::PaintObject* selectedObject = nullptr;
 	thatboy::qt::PaintObject* currentObject = nullptr;
 	std::function<void(PaintMode, const thatboy::qt::PaintObject*)> onPaintObjectCreate;
 	std::vector<thatboy::qt::PaintObject*> paintObjList;	// 绘制对象列表

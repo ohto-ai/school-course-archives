@@ -71,23 +71,30 @@ QImage& ImageView::image()
 	return _image;
 }
 
-void ImageView::load(QImage img)
+bool ImageView::load(QImage img)
 {
 	_image = img;
 	autoScale();
+	return true;
 }
 
-void ImageView::load(QString file)
+bool ImageView::load(QString file)
 {
 	if (file.isEmpty())
-		return;
-	_image.load(file);
+		return false;
+	auto ret = _image.load(file);
 	autoScale();
+	return ret;
 }
 
-void ImageView::loadDialog()
+bool ImageView::loadDialog()
 {
 	return load(QFileDialog::getOpenFileName(this, "Open", "", "Image file(*.bmp;*.png;*.jpg;*.jpeg;)"));
+}
+
+bool ImageView::saveDialog()
+{
+	return _image.save(QFileDialog::getSaveFileName(this, "Open", "", "Image file(*.bmp;*.png;*.jpg;*.jpeg;)"));
 }
 
 void ImageView::autoScale()

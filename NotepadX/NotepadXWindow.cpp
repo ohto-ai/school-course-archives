@@ -154,9 +154,6 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 			file.close();
 		});
 
-	// 关于
-	connect(ui.actionAbout, &QAction::triggered, &about, &About::exec);
-
 	// 打印 TODO: 未完成
 	connect(ui.actionPrint, &QAction::triggered, [this]
 		{

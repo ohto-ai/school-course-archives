@@ -14,6 +14,8 @@ class VideoPlayerX : public QMainWindow
 public:
     VideoPlayerX(QWidget *parent = Q_NULLPTR);
 private:
+    friend class MultiMidiaSystem;
+
     Ui::VideoPlayerXClass ui;
     QMediaPlayer* player{ nullptr };
     QString durationTime{ "00:00:00" };

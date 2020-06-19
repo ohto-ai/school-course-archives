@@ -22,7 +22,9 @@ private:
     /// <param name="m">·Ö</param>
     /// <param name="s">Ãë</param>
     void paintClock(QPainter& painter);
-    
+
+    friend class MultiMidiaSystem;
+
     Ui::DigitalClockXClass ui;
     QImage digitalImages[11];
     QImage background;

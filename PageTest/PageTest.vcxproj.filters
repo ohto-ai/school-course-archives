@@ -36,77 +36,17 @@
     <Filter Include="App\CameraX\Source Files">
       <UniqueIdentifier>{d709b959-f505-44fd-bf32-7480feb54f46}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\ImageViewerX">
-      <UniqueIdentifier>{0a123b94-389f-44f8-bdf6-bd70b91076c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\ImageViewerX\Form Files">
-      <UniqueIdentifier>{f483edf7-7ccc-48fb-9f6a-08decea3daab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\ImageViewerX\Header Files">
-      <UniqueIdentifier>{290183d0-2652-4c6a-a942-ca3affb1dee0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\ImageViewerX\Resource Files">
-      <UniqueIdentifier>{195cf0f0-c000-4468-8df4-b69e4b6ec9b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\ImageViewerX\Source Files">
-      <UniqueIdentifier>{23d185ce-5777-4ce0-b03e-eadb0a0ac5cb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\NotepadX">
       <UniqueIdentifier>{815b09e2-e181-4fa8-84c1-9e9a9c8bf1de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\NotepadX\Source Files">
-      <UniqueIdentifier>{1b808914-5471-4f27-a707-4373ce077d44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\NotepadX\Resource Files">
-      <UniqueIdentifier>{74d0f01f-03b7-4337-94f8-37f87f5a49a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\NotepadX\Header Files">
-      <UniqueIdentifier>{b8d202b4-7905-4d4d-9751-bbbc8c397fea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\NotepadX\Form Files">
-      <UniqueIdentifier>{eeef0c3d-4d67-49d0-83ff-c537acfddcb2}</UniqueIdentifier>
     </Filter>
     <Filter Include="App\PaintX">
       <UniqueIdentifier>{0c01e717-6fce-4f8a-8c79-5f9178a8f163}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\PaintX\Form Files">
-      <UniqueIdentifier>{edf2a4a2-24d2-4407-bf95-450868223e05}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\PaintX\Header Files">
-      <UniqueIdentifier>{6c2c27c2-4796-4651-81a8-aa76d1ac5314}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\PaintX\Resource Files">
-      <UniqueIdentifier>{1dec9ca2-28b1-47ed-8f3d-e3ab5589d4b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\PaintX\Source Files">
-      <UniqueIdentifier>{1f98c73b-b25d-4754-a5d4-b809941589cd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\VideoPlayerX">
       <UniqueIdentifier>{811361e7-ea81-44a7-bbb6-197bc529707d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\VideoPlayerX\Source Files">
-      <UniqueIdentifier>{83e6910a-d6e6-425d-92dd-26321621178e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\VideoPlayerX\Resource Files">
-      <UniqueIdentifier>{57527204-3130-45be-92f1-53fca52ab9f6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\VideoPlayerX\Header Files">
-      <UniqueIdentifier>{4e7c2bd0-f023-4a75-9a9e-50e56f243262}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\VideoPlayerX\Form Files">
-      <UniqueIdentifier>{8f806f8f-0343-4087-a905-119517b560de}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\DigitalClockX">
       <UniqueIdentifier>{5bf8e840-5e23-432d-a27a-627c8076522b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\DigitalClockX\Form Files">
-      <UniqueIdentifier>{60df2cd1-acb3-4b18-8594-db313750cf8f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\DigitalClockX\Header Files">
-      <UniqueIdentifier>{7bc388a7-82c3-42bb-be87-320da6d0150a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\DigitalClockX\Source Files">
-      <UniqueIdentifier>{b321127c-049c-4ae4-9a40-5984a1cf9eef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -115,39 +55,6 @@
     </QtMoc>
     <QtMoc Include="..\CameraX\CameraX.h">
       <Filter>App\CameraX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\ImageViewerX\ImageWidget.h">
-      <Filter>App\ImageViewerX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\ImageViewerX\ImageViewerX.h">
-      <Filter>App\ImageViewerX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\NotepadX\NotepadXWindow.h">
-      <Filter>App\NotepadX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\NotepadX\About.h">
-      <Filter>App\NotepadX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\NotepadX\FindDialog.h">
-      <Filter>App\NotepadX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\PaintX\PaintX.h">
-      <Filter>App\PaintX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\PaintX\PaintWidget.h">
-      <Filter>App\PaintX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\VideoPlayerX\VideoPlayerX.h">
-      <Filter>App\VideoPlayerX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\VideoPlayerX\VideoControlWidget.h">
-      <Filter>App\VideoPlayerX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\VideoPlayerX\OptionDialog.h">
-      <Filter>App\VideoPlayerX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\DigitalClockX\DigitalClockX.h">
-      <Filter>App\DigitalClockX\Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -160,60 +67,9 @@
     <ClCompile Include="..\CameraX\CameraX.cpp">
       <Filter>App\CameraX\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp">
-      <Filter>App\ImageViewerX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ImageViewerX\ImageWidget.cpp">
-      <Filter>App\ImageViewerX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NotepadX\About.cpp">
-      <Filter>App\NotepadX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NotepadX\FindDialog.cpp">
-      <Filter>App\NotepadX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NotepadX\NotepadXWindow.cpp">
-      <Filter>App\NotepadX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PaintX\PaintWidget.cpp">
-      <Filter>App\PaintX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PaintX\PaintX.cpp">
-      <Filter>App\PaintX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\VideoPlayerX\OptionDialog.cpp">
-      <Filter>App\VideoPlayerX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\VideoPlayerX\VideoControlWidget.cpp">
-      <Filter>App\VideoPlayerX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\VideoPlayerX\VideoPlayerX.cpp">
-      <Filter>App\VideoPlayerX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp">
-      <Filter>App\DigitalClockX\Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="PageTest.qrc" />
-    <QtRcc Include="..\CameraX\CameraX.qrc">
-      <Filter>App\CameraX</Filter>
-    </QtRcc>
-    <QtRcc Include="..\ImageViewerX\ImageViewerX.qrc">
-      <Filter>App\ImageViewerX</Filter>
-    </QtRcc>
-    <QtRcc Include="..\NotepadX\res.qrc">
-      <Filter>App\NotepadX\Form Files</Filter>
-    </QtRcc>
-    <QtRcc Include="..\PaintX\PaintX.qrc">
-      <Filter>App\PaintX</Filter>
-    </QtRcc>
-    <QtRcc Include="..\VideoPlayerX\VideoPlayerX.qrc">
-      <Filter>App\VideoPlayerX</Filter>
-    </QtRcc>
-    <QtRcc Include="..\DigitalClockX\DigitalClockX.qrc">
-      <Filter>App\DigitalClockX</Filter>
-    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="PageTest.ui">
@@ -222,45 +78,10 @@
     <QtUic Include="..\CameraX\CameraX.ui">
       <Filter>App\CameraX\Resource Files</Filter>
     </QtUic>
-    <QtUic Include="..\ImageViewerX\ImageViewerX.ui">
-      <Filter>App\ImageViewerX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\NotepadX\About.ui">
-      <Filter>App\NotepadX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\NotepadX\FindDialog.ui">
-      <Filter>App\NotepadX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\NotepadX\NotepadXWindow.ui">
-      <Filter>App\NotepadX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\PaintX\PaintWidget.ui">
-      <Filter>App\PaintX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\PaintX\PaintX.ui">
-      <Filter>App\PaintX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\VideoPlayerX\OptionDialog.ui">
-      <Filter>App\VideoPlayerX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\VideoPlayerX\VideoPlayerX.ui">
-      <Filter>App\VideoPlayerX\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\DigitalClockX\DigitalClockX.ui">
-      <Filter>App\DigitalClockX\Form Files</Filter>
-    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\NotepadX\Resources\markdown.ico">
       <Filter>App\NotepadX</Filter>
     </Image>
-    <Image Include="..\VideoPlayerX\res\player.ico">
-      <Filter>App\VideoPlayerX\Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\PaintX\PaintObject.h">
-      <Filter>App\PaintX\Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -31,9 +31,6 @@
     <ClCompile Include="NotepadXWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="About.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FindDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -42,18 +39,12 @@
     <QtMoc Include="NotepadXWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="About.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="FindDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="NotepadXWindow.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="About.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="FindDialog.ui">

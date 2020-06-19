@@ -24,9 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="PictureProcessX.ui">
-      <Filter>Resource Files</Filter>
-    </QtUic>
     <QtMoc Include="PictureProcessX.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -43,11 +40,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="PictureProcessX.qrc" />
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="ImageView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="PictureProcessX.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

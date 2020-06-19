@@ -411,6 +411,26 @@
         </spacer>
        </item>
        <item>
+        <widget class="QPushButton" name="btnAbout">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="VideoPlayerX.qrc">
+           <normaloff>:/VideoPlayerX/res/关于.png</normaloff>:/VideoPlayerX/res/关于.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="optionButton">
          <property name="minimumSize">
           <size>
@@ -479,6 +499,18 @@
     </item>
    </layout>
   </widget>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="VideoPlayerX.qrc">
+     <normaloff>:/VideoPlayerX/res/关于.png</normaloff>:/VideoPlayerX/res/关于.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -492,5 +524,22 @@
  <resources>
   <include location="VideoPlayerX.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnAbout</sender>
+   <signal>clicked()</signal>
+   <receiver>actionAbout</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>727</x>
+     <y>584</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

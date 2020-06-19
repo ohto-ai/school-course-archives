@@ -18,7 +18,14 @@ namespace thatboy
 		struct PaintObject
 		{
 			virtual void draw(QPainter&) = 0;
-			virtual void drawHalf(QPainter&) = 0;
+			virtual void drawHalf(QPainter& p)
+			{
+				draw(p);
+			}
+			virtual void drawSelected(QPainter& p)
+			{
+				draw(p);
+			}
 			virtual QString exportSvgObject() = 0;
 		};
 
@@ -48,10 +55,9 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawLine(*this);
 			}
-
-			virtual void drawHalf(QPainter& painter)
+			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(*this);
+				painter.setPen(~(*this).color().rgba());
 				painter.drawLine(*this);
 			}
 
@@ -78,10 +84,9 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawRect(*this);
 			}
-
-			virtual void drawHalf(QPainter& painter)
+			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(*this);
+				painter.setPen(~(*this).color().rgba());
 				painter.drawRect(*this);
 			}
 
@@ -111,10 +116,9 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawEllipse(*this, r, r);
 			}
-
-			virtual void drawHalf(QPainter& painter)
+			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(*this);
+				painter.setPen(~(*this).color().rgba());
 				painter.drawEllipse(*this, r, r);
 			}
 
@@ -141,10 +145,9 @@ namespace thatboy
 				painter.setPen(*this);
 				painter.drawEllipse(*this);
 			}
-
-			virtual void drawHalf(QPainter& painter)
+			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(*this);
+				painter.setPen(~(*this).color().rgba());
 				painter.drawEllipse(*this);
 			}
 
@@ -176,10 +179,10 @@ namespace thatboy
 				painter.drawRoundRect(*this, xR, yR);
 			}
 
-			virtual void drawHalf(QPainter& painter)
+			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(*this);
-				painter.drawRoundRect(this->normalized(), xR, yR);
+				painter.setPen(~(*this).color().rgba());
+				painter.drawRoundRect(*this, xR, yR);
 			}
 
 			virtual QString exportSvgObject()
@@ -212,6 +215,13 @@ namespace thatboy
 				painter.drawPolyline(*this);
 			}
 
+			virtual void drawSelected(QPainter& painter)
+			{
+				painter.setPen(~(*this).color().rgba());
+				painter.drawPolygon(*this);
+			}
+
+
 			virtual QString exportSvgObject()
 			{
 				QString svg;
@@ -241,11 +251,12 @@ namespace thatboy
 				painter.drawPolyline(*this);
 			}
 
-			virtual void drawHalf(QPainter& painter)
+			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(*this);
+				painter.setPen(~(*this).color().rgba());
 				painter.drawPolyline(*this);
 			}
+
 
 			virtual QString exportSvgObject()
 			{

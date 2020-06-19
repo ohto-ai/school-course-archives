@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="About.cpp" />
     <ClCompile Include="FindDialog.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NotepadXWindow.cpp" />
@@ -20,15 +19,11 @@
     <QtMoc Include="NotepadXWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="About.ui" />
     <QtUic Include="FindDialog.ui" />
     <QtUic Include="NotepadXWindow.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="res.qrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="About.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FindDialog.h" />
