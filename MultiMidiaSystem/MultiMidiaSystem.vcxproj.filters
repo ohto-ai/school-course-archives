@@ -150,9 +150,6 @@
     <ClCompile Include="MultiMidiaSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <QtUic Include="..\CameraX\CameraX.ui">
-      <Filter>Reference\CameraX\Resource Files</Filter>
-    </QtUic>
     <QtUic Include="..\DigitalClockX\DigitalClockX.ui">
       <Filter>Reference\DigitalClockX\Form Files</Filter>
     </QtUic>
@@ -330,6 +327,9 @@
     </QtUic>
     <QtUic Include="..\AuthorInformation\AuthorInformation.ui">
       <Filter>Reference\AuthorInformation\Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\CameraX\CameraX.ui">
+      <Filter>Reference\CameraX\Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>

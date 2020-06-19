@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>390</width>
-    <height>320</height>
+    <width>431</width>
+    <height>330</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>390</width>
-    <height>320</height>
+    <width>431</width>
+    <height>330</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>390</width>
-    <height>320</height>
+    <width>431</width>
+    <height>330</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -57,8 +57,8 @@
      <rect>
       <x>10</x>
       <y>220</y>
-      <width>371</width>
-      <height>91</height>
+      <width>411</width>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -104,7 +104,7 @@
      <rect>
       <x>159</x>
       <y>80</y>
-      <width>220</width>
+      <width>261</width>
       <height>96</height>
      </rect>
     </property>
@@ -113,19 +113,19 @@
       <rect>
        <x>9</x>
        <y>48</y>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
@@ -148,19 +148,19 @@
       <rect>
        <x>9</x>
        <y>24</y>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
@@ -183,19 +183,19 @@
       <rect>
        <x>9</x>
        <y>72</y>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
@@ -224,19 +224,19 @@
       <rect>
        <x>9</x>
        <y>0</y>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>200</width>
+       <width>250</width>
        <height>24</height>
       </size>
      </property>
@@ -259,9 +259,9 @@
     <property name="geometry">
      <rect>
       <x>171</x>
-      <y>20</y>
-      <width>57</width>
-      <height>19</height>
+      <y>10</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -273,6 +273,14 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc, F1</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

@@ -57,7 +57,9 @@ namespace thatboy
 			}
 			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(~(*this).color().rgba());
+				QPen pen = *this;
+				pen.setColor((~(*this).color().rgba())&0XFFFFFF);
+				painter.setPen(pen);
 				painter.drawLine(*this);
 			}
 
@@ -86,7 +88,9 @@ namespace thatboy
 			}
 			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(~(*this).color().rgba());
+				QPen pen = *this;
+				pen.setColor((~(*this).color().rgba()) & 0XFFFFFF);
+				painter.setPen(pen);
 				painter.drawRect(*this);
 			}
 
@@ -118,7 +122,9 @@ namespace thatboy
 			}
 			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(~(*this).color().rgba());
+				QPen pen = *this;
+				pen.setColor((~(*this).color().rgba()) & 0XFFFFFF);
+				painter.setPen(pen);
 				painter.drawEllipse(*this, r, r);
 			}
 
@@ -147,7 +153,9 @@ namespace thatboy
 			}
 			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(~(*this).color().rgba());
+				QPen pen = *this;
+				pen.setColor((~(*this).color().rgba()) & 0XFFFFFF);
+				painter.setPen(pen);
 				painter.drawEllipse(*this);
 			}
 
@@ -181,7 +189,9 @@ namespace thatboy
 
 			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(~(*this).color().rgba());
+				QPen pen = *this;
+				pen.setColor((~(*this).color().rgba()) & 0XFFFFFF);
+				painter.setPen(pen);
 				painter.drawRoundRect(*this, xR, yR);
 			}
 
@@ -217,7 +227,9 @@ namespace thatboy
 
 			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(~(*this).color().rgba());
+				QPen pen = *this;
+				pen.setColor((~(*this).color().rgba()) & 0XFFFFFF);
+				painter.setPen(pen);
 				painter.drawPolygon(*this);
 			}
 
@@ -253,7 +265,9 @@ namespace thatboy
 
 			virtual void drawSelected(QPainter& painter)
 			{
-				painter.setPen(~(*this).color().rgba());
+				QPen pen = *this;
+				pen.setColor((~(*this).color().rgba()) & 0XFFFFFF);
+				painter.setPen(pen);
 				painter.drawPolyline(*this);
 			}
 

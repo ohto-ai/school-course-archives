@@ -14,9 +14,7 @@ PaintX::PaintX(QWidget *parent)
         });
     connect(ui.paintObjectList, &QListWidget::itemClicked, [this](QListWidgetItem* item)
         {
-            ui.sketchpad->removePaintObject(ui.paintObjectList->currentRow());
-            ui.paintObjectList->removeItemWidget(item);
-            delete item;
+            ui.sketchpad->selectPaintObject(ui.paintObjectList->currentRow());
             update();
         });
 
