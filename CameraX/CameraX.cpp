@@ -7,7 +7,6 @@ CameraX::CameraX(QWidget *parent)
     ui.setupUi(this);
 
     QActionGroup* videoDevicesGroup = new QActionGroup(this);
-    videoDevicesGroup->setExclusive(true);
     QList<QCameraInfo>cameras = QCameraInfo::availableCameras();
   
     for (const auto& cameraInfo : cameras)
