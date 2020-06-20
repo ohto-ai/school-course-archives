@@ -200,24 +200,9 @@ void PictureProcessX::gauss()
 				}
 			}
 			auto thisPixel = dstBits + y * bytePerLine + x * pxByte;
-			if (r > 255)
-				thisPixel[2] = 255;
-			else if (r < 0)
-				thisPixel[2] = 0;
-			else
-				thisPixel[2] = r;
-			if (g > 255)
-				thisPixel[1] = 255;
-			else if (g < 0)
-				thisPixel[1] = 0;
-			else
-				thisPixel[1] = g;
-			if (b > 255)
-				thisPixel[0] = 255;
-			else if (b < 0)
-				thisPixel[0] = 0;
-			else
-				thisPixel[0] = b;
+			thisPixel[2] = qBound<int>(0, r, 255);
+			thisPixel[1] = qBound<int>(0, g, 255);
+			thisPixel[0] = qBound<int>(0, b, 255);
 		}
 	}
 
