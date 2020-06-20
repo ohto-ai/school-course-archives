@@ -150,6 +150,9 @@
     <ClCompile Include="MultiMidiaSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <QtUic Include="..\CameraX\CameraX.ui">
+      <Filter>Reference\CameraX\Resource Files</Filter>
+    </QtUic>
     <QtUic Include="..\DigitalClockX\DigitalClockX.ui">
       <Filter>Reference\DigitalClockX\Form Files</Filter>
     </QtUic>
@@ -191,9 +194,6 @@
     <ClCompile Include="..\CameraX\CameraX.cpp">
       <Filter>Reference\CameraX\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\CameraX\main.cpp">
-      <Filter>Reference\CameraX\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp">
       <Filter>Reference\DigitalClockX\Source Files</Filter>
     </ClCompile>
@@ -224,9 +224,6 @@
     <ClCompile Include="..\PictureProcessX\PictureProcessX.cpp">
       <Filter>Reference\PictureProcessX\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\PictureProcessX\main.cpp">
-      <Filter>Reference\PictureProcessX\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp">
       <Filter>Reference\ImageViewerX\Source Files</Filter>
     </ClCompile>
@@ -234,9 +231,6 @@
       <Filter>Reference\ImageViewerX\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\AuthorInformation\AuthorInformation.cpp">
-      <Filter>Reference\AuthorInformation\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AuthorInformation\main.cpp">
       <Filter>Reference\AuthorInformation\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -327,9 +321,6 @@
     </QtUic>
     <QtUic Include="..\AuthorInformation\AuthorInformation.ui">
       <Filter>Reference\AuthorInformation\Form Files</Filter>
-    </QtUic>
-    <QtUic Include="..\CameraX\CameraX.ui">
-      <Filter>Reference\CameraX\Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>

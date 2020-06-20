@@ -105,9 +105,7 @@
     <QtUic Include="MultiMidiaSystem.ui" />
     <QtMoc Include="MultiMidiaSystem.h" />
     <ClCompile Include="..\AuthorInformation\AuthorInformation.cpp" />
-    <ClCompile Include="..\AuthorInformation\main.cpp" />
     <ClCompile Include="..\CameraX\CameraX.cpp" />
-    <ClCompile Include="..\CameraX\main.cpp" />
     <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp" />
     <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp" />
     <ClCompile Include="..\ImageViewerX\ImageWidget.cpp" />
@@ -116,7 +114,6 @@
     <ClCompile Include="..\PaintX\PaintWidget.cpp" />
     <ClCompile Include="..\PaintX\PaintX.cpp" />
     <ClCompile Include="..\PictureProcessX\ImageView.cpp" />
-    <ClCompile Include="..\PictureProcessX\main.cpp" />
     <ClCompile Include="..\PictureProcessX\PictureProcessX.cpp" />
     <ClCompile Include="..\VideoPlayerX\OptionDialog.cpp" />
     <ClCompile Include="..\VideoPlayerX\VideoControlWidget.cpp" />

@@ -9,37 +9,28 @@ CameraX::CameraX(QWidget *parent)
     QActionGroup* videoDevicesGroup = new QActionGroup(this);
     videoDevicesGroup->setExclusive(true);
     QList<QCameraInfo>cameras = QCameraInfo::availableCameras();
-    if (cameras.count() > 0)
+  
+    for (const auto& cameraInfo : cameras)
     {
-        foreach(const QCameraInfo & cameraInfo, cameras)
-        {
-            qDebug() << cameraInfo.description();
-            QAction* videoDeviceAction = new QAction(cameraInfo.description(), videoDevicesGroup);
-            videoDeviceAction->setCheckable(true);
-            videoDeviceAction->setData(QVariant::fromValue(cameraInfo));
-            if (cameraInfo == QCameraInfo::defaultCamera())
-                videoDeviceAction->setChecked(true);
-            /* 添加动作*/
-            ui.menuDevice->addAction(videoDeviceAction);
-        }
+        auto videoDeviceAction = new QAction(cameraInfo.description(), videoDevicesGroup);
+        videoDeviceAction->setCheckable(true);
+        videoDeviceAction->setData(QVariant::fromValue(cameraInfo));
+        if (cameraInfo == QCameraInfo::defaultCamera())
+            videoDeviceAction->setChecked(true);
+        ui.menuDevice->addAction(videoDeviceAction);
     }
-    /* 这三个声明必须有 */
-    camera = new QCamera(QCameraInfo::defaultCamera());
     viewfinder = new QCameraViewfinder(this);
-    imageCapture = new QCameraImageCapture(camera);
-    connect(videoDevicesGroup, SIGNAL(triggered(QAction*)), SLOT(changeCameraDevice(QAction * action)));
+    ui.layoutCamera->addWidget(viewfinder);
+    connect(videoDevicesGroup, &QActionGroup::triggered, this, &CameraX::changeCameraDevice);
     setCamera(QCameraInfo::defaultCamera());
 }
 
 void CameraX::setCamera(const QCameraInfo& cameraInfo)
 {
-    delete imageCapture;
-    delete viewfinder;
     delete camera;
+    delete imageCapture;
     camera = new QCamera(cameraInfo);
-    viewfinder = new QCameraViewfinder(this);
     imageCapture = new QCameraImageCapture(camera);
-    ui.horizontalLayout->addWidget(viewfinder);
     imageCapture->setCaptureDestination(QCameraImageCapture::CaptureToFile);
     camera->setCaptureMode(QCamera::CaptureStillImage);
     camera->setViewfinder(viewfinder);

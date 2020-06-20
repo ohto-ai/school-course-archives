@@ -17,6 +17,7 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(128, 128, 128);</string>
    </property>
+   <layout class="QGridLayout" name="gridLayout"/>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -67,6 +68,10 @@
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="ImageViewerX.qrc">
+     <normaloff>:/ImageViewerX/res/about.png</normaloff>:/ImageViewerX/res/about.png</iconset>
+   </property>
    <property name="text">
     <string>关于(F1)</string>
    </property>

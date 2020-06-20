@@ -18,11 +18,11 @@ public:
 private:
     Ui::CameraXClass ui;
     /* 摄像头设备 */
-    QCamera* camera;
+    QCamera* camera{ nullptr };
     /* 截图部件 */
-    QCameraImageCapture* imageCapture;
+    QCameraImageCapture* imageCapture{ nullptr };
     /* 摄像头取景器部件 */
-    QCameraViewfinder* viewfinder;
+    QCameraViewfinder* viewfinder{ nullptr };
     friend class MultiMidiaSystem;
 
 private slots:
