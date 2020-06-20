@@ -13,6 +13,6 @@ class PaintX : public QMainWindow
 public:
 	PaintX(QWidget* parent = Q_NULLPTR);
 private:
-	friend class MultiMidiaSystem;
+	friend class MultiMediaSystem;
 	Ui::PaintXClass ui;
 };

@@ -1,10 +1,10 @@
-#include "MultiMidiaSystem.h"
+#include "MultiMediaSystem.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MultiMidiaSystem w;
+    MultiMediaSystem w;
     w.show();
     return a.exec();
 }

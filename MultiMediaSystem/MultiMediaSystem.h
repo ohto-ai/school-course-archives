@@ -9,16 +9,26 @@
 #include "../DigitalClockX/DigitalClockX.h"
 #include "../PictureProcessX/PictureProcessX.h"
 #include "../AuthorInformation/AuthorInformation.h"
-#include "ui_MultiMidiaSystem.h"
+#include "ui_MultiMediaSystem.h"
 
-class MultiMidiaSystem : public QMainWindow
+class MultiMediaSystem : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MultiMidiaSystem(QWidget *parent = Q_NULLPTR);
+    MultiMediaSystem(QWidget *parent = Q_NULLPTR);
 
 private:
-    Ui::MultiMidiaSystemClass ui;
+    enum: int {
+        MEDIA_DIGITALCLOCK
+        , MEDIA_IMAGEVIEWER
+        , MEDIA_PICTUREPROCESS
+        , MEDIA_VIDEOPLAYER
+        , MEDIA_NOTEPAD
+        , MEDIA_PAINT
+        , Media_CAMERA
+    };
+
+    Ui::MultiMediaSystemClass ui;
     AuthorInformation about{ this };
 };

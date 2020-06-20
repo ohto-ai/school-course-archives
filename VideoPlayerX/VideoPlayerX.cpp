@@ -108,3 +108,22 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
     connect(optionDialog.ui.hueDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.hueSlider->setValue(0); });
     connect(optionDialog.ui.saturationDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.saturationSlider->setValue(0); });
 }
+
+void VideoPlayerX::turnBackground()
+{
+    if (isTurnBackground)
+        return;
+    isTurnBackground = true;
+    if (ui.btnPlayBack->isChecked())
+        return;
+    isPlayingBeforeTurnBackground = player->state() == QMediaPlayer::PlayingState;
+    if (isPlayingBeforeTurnBackground)
+        player->pause();
+}
+
+void VideoPlayerX::turnForeground()
+{
+    isTurnBackground = false;
+    if (isPlayingBeforeTurnBackground)
+        player->play();
+}

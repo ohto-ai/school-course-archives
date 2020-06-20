@@ -411,6 +411,36 @@
         </spacer>
        </item>
        <item>
+        <widget class="QPushButton" name="btnPlayBack">
+         <property name="toolTip">
+          <string>切换至后台时继续播放</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="VideoPlayerX.qrc">
+           <normaloff>:/VideoPlayerX/res/arrows_button_off.png</normaloff>
+           <normalon>:/VideoPlayerX/res/arrows_button_on.png</normalon>:/VideoPlayerX/res/arrows_button_off.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="btnAbout">
          <property name="text">
           <string/>

@@ -31,7 +31,7 @@ public:
 	void reverseColor();
 	void gray();
 private:
-	friend class MultiMidiaSystem;
+	friend class MultiMediaSystem;
 	void updateImageView();
 
 	Ui::PictureProcessXClass ui;

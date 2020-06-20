@@ -23,8 +23,11 @@ private:
     QCameraImageCapture* imageCapture{ nullptr };
     /* 摄像头取景器部件 */
     QCameraViewfinder* viewfinder{ nullptr };
-    friend class MultiMidiaSystem;
+    friend class MultiMediaSystem;
 
+public:
+    void start();
+    void stop();
 private slots:
 
     void setCamera(const QCameraInfo& cameraInfo);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MultiMidiaSystemClass</class>
- <widget class="QMainWindow" name="MultiMidiaSystemClass">
+ <class>MultiMediaSystemClass</class>
+ <widget class="QMainWindow" name="MultiMediaSystemClass">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MultiMidiaSystem</string>
+   <string>MultiMediaSystem</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -394,7 +394,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="MultiMidiaSystem.qrc"/>
+  <include location="MultiMediaSystem.qrc"/>
  </resources>
  <connections/>
 </ui>

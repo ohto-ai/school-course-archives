@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体，中国) resources
+// MultiMediaSystem resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -52,7 +52,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_MAINICO             ICON                    "res\\MultiMidiaSystem.ico"
+IDI_MAINICO             ICON                    "res\\MultiMediaSystem.ico"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -78,12 +78,12 @@ BEGIN
         BLOCK "080404b0"
         BEGIN
             VALUE "CompanyName", "THAT BOY"
-            VALUE "FileDescription", "多媒体大作业"
+            VALUE "FileDescription", "MultiMediaSystem"
             VALUE "FileVersion", "1.0.0.1"
-            VALUE "InternalName", "MultiMid.exe"
+            VALUE "InternalName", "MultiMediaSystem.exe"
             VALUE "LegalCopyright", "Copyright (C) 2020"
-            VALUE "OriginalFilename", "MultiMid.exe"
-            VALUE "ProductName", "MultiMidiaSystem"
+            VALUE "OriginalFilename", "MultiMediaSystem.exe"
+            VALUE "ProductName", "MultiMediaSystem"
             VALUE "ProductVersion", "1.0.0.1"
         END
     END
@@ -93,7 +93,7 @@ BEGIN
     END
 END
 
-#endif    // 中文(简体，中国) resources
+#endif    // MultiMediaSystem resources
 /////////////////////////////////////////////////////////////////////////////
 
 

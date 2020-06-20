@@ -1,11 +1,11 @@
-#include "MultiMidiaSystem.h"
+#include "MultiMediaSystem.h"
 
-MultiMidiaSystem::MultiMidiaSystem(QWidget *parent)
+MultiMediaSystem::MultiMediaSystem(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
 
-    setWindowIcon(QIcon(":/MultiMidiaSystem/res/MultiMidiaSystem.ico"));
+    setWindowIcon(QIcon(":/MultiMediaSystem/res/MultiMediaSystem.ico"));
 
     auto imageViewer = new ImageViewerX(ui.frameImageViewer);
     auto videoPlayer = new VideoPlayerX(ui.frameVideoPlayer);
@@ -14,7 +14,6 @@ MultiMidiaSystem::MultiMidiaSystem(QWidget *parent)
     auto camera = new CameraX(ui.frameCamera);
     auto digitalClock = new DigitalClockX(ui.frameDigitalClock);
     auto pictureProcess = new PictureProcessX(ui.framePictureProcess);
-    //auto authorInformation = new AuthorInformation(ui.frameAuthorInformation);
 
     connect(imageViewer->ui.actionAbout, &QAction::triggered, &about, &AuthorInformation::show);
     connect(videoPlayer->ui.actionAbout, &QAction::triggered, &about, &AuthorInformation::show);
@@ -31,7 +30,6 @@ MultiMidiaSystem::MultiMidiaSystem(QWidget *parent)
     ui.layoutCamera->addWidget(camera);
     ui.layoutDigitalClock->addWidget(digitalClock);
     ui.layoutPictureProcess->addWidget(pictureProcess);
-    //ui.layoutAuthorInformation->addWidget(authorInformation);
 
     imageViewer->setWindowFlags(Qt::FramelessWindowHint);
     videoPlayer->setWindowFlags(Qt::FramelessWindowHint);
@@ -40,5 +38,10 @@ MultiMidiaSystem::MultiMidiaSystem(QWidget *parent)
     camera->setWindowFlags(Qt::FramelessWindowHint);
     digitalClock->setWindowFlags(Qt::FramelessWindowHint);
     pictureProcess->setWindowFlags(Qt::FramelessWindowHint);
-   // authorInformation->setWindowFlags(Qt::FramelessWindowHint);
+
+    connect(ui.tabWidget, &QTabWidget::currentChanged, [=](int index)
+        {
+            ui.tabWidget->currentWidget() == ui.tabCamera ? camera->stop(): camera->start();
+            ui.tabWidget->currentWidget() == ui.tabVideoPlayer ? videoPlayer->turnForeground() : videoPlayer->turnBackground();
+        });
 }

@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="VideoPlayerX">
+    <file>res/arrows_button_off.png</file>
+    <file>res/arrows_button_on.png</file>
     <file>res/关于.png</file>
     <file>res/复原.png</file>
     <file>res/player.png</file>

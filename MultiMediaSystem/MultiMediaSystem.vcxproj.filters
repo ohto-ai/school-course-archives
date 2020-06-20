@@ -144,12 +144,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MultiMidiaSystem.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClCompile Include="MultiMidiaSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <QtUic Include="..\CameraX\CameraX.ui">
       <Filter>Reference\CameraX\Resource Files</Filter>
     </QtUic>
@@ -233,9 +227,11 @@
     <ClCompile Include="..\AuthorInformation\AuthorInformation.cpp">
       <Filter>Reference\AuthorInformation\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MultiMediaSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="MultiMidiaSystem.qrc" />
     <QtRcc Include="..\CameraX\CameraX.qrc">
       <Filter>Reference\CameraX</Filter>
     </QtRcc>
@@ -259,6 +255,9 @@
     </QtRcc>
     <QtRcc Include="..\AuthorInformation\AuthorInformation.qrc">
       <Filter>Reference\AuthorInformation</Filter>
+    </QtRcc>
+    <QtRcc Include="MultiMediaSystem.qrc">
+      <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +294,9 @@
     <QtMoc Include="..\PictureProcessX\ImageView.h">
       <Filter>Reference\PictureProcessX\Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="MultiMediaSystem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\PaintX\PaintObject.h">
@@ -308,23 +310,23 @@
     <Image Include="..\VideoPlayerX\res\player.ico">
       <Filter>Reference\VideoPlayerX\Resource Files</Filter>
     </Image>
-    <Image Include="res\MultiMidiaSystem.ico">
+    <Image Include="res\MultiMediaSystem.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="MultiMidiaSystem.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtUic Include="..\ImageViewerX\ImageViewerX.ui">
       <Filter>Reference\ImageViewerX\Form Files</Filter>
     </QtUic>
     <QtUic Include="..\AuthorInformation\AuthorInformation.ui">
       <Filter>Reference\AuthorInformation\Form Files</Filter>
     </QtUic>
+    <QtUic Include="MultiMediaSystem.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MultiMidiaSystem.rc">
+    <ResourceCompile Include="MultiMediaSystem.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

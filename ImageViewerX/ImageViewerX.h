@@ -13,7 +13,7 @@ public:
     ImageViewerX(QWidget *parent = Q_NULLPTR);
 
 private:
-    friend class MultiMidiaSystem;
+    friend class MultiMediaSystem;
     Ui::ImageViewerXClass ui;
     ImageWidget imageWidget;
 };

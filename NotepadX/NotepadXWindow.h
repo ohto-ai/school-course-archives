@@ -28,7 +28,7 @@ public:
 	~NotepadXWindow() = default;
 
 private:
-	friend class MultiMidiaSystem;
+	friend class MultiMediaSystem;
 	Ui::NotepadXWindow ui;
 	QString workingFileName;
 	FindDialog findDialog{ this };

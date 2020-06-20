@@ -90,7 +90,7 @@
     <QtRcc Include="..\PaintX\PaintX.qrc" />
     <QtRcc Include="..\PictureProcessX\PictureProcessX.qrc" />
     <QtRcc Include="..\VideoPlayerX\VideoPlayerX.qrc" />
-    <QtRcc Include="MultiMidiaSystem.qrc" />
+    <QtRcc Include="MultiMediaSystem.qrc" />
     <QtUic Include="..\AuthorInformation\AuthorInformation.ui" />
     <QtUic Include="..\CameraX\CameraX.ui" />
     <QtUic Include="..\DigitalClockX\DigitalClockX.ui" />
@@ -102,8 +102,8 @@
     <QtUic Include="..\PictureProcessX\PictureProcessX.ui" />
     <QtUic Include="..\VideoPlayerX\OptionDialog.ui" />
     <QtUic Include="..\VideoPlayerX\VideoPlayerX.ui" />
-    <QtUic Include="MultiMidiaSystem.ui" />
-    <QtMoc Include="MultiMidiaSystem.h" />
+    <QtUic Include="MultiMediaSystem.ui" />
+    <QtMoc Include="MultiMediaSystem.h" />
     <ClCompile Include="..\AuthorInformation\AuthorInformation.cpp" />
     <ClCompile Include="..\CameraX\CameraX.cpp" />
     <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp" />
@@ -118,7 +118,7 @@
     <ClCompile Include="..\VideoPlayerX\OptionDialog.cpp" />
     <ClCompile Include="..\VideoPlayerX\VideoControlWidget.cpp" />
     <ClCompile Include="..\VideoPlayerX\VideoPlayerX.cpp" />
-    <ClCompile Include="MultiMidiaSystem.cpp" />
+    <ClCompile Include="MultiMediaSystem.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,10 +149,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\VideoPlayerX\res\player.ico" />
-    <Image Include="res\MultiMidiaSystem.ico" />
+    <Image Include="res\MultiMediaSystem.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MultiMidiaSystem.rc" />
+    <ResourceCompile Include="MultiMediaSystem.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

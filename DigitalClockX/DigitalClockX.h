@@ -23,7 +23,7 @@ private:
     /// <param name="s">√Î</param>
     void paintClock(QPainter& painter);
 
-    friend class MultiMidiaSystem;
+    friend class MultiMediaSystem;
 
     Ui::DigitalClockXClass ui;
     QImage digitalImages[11];
