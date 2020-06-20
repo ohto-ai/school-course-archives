@@ -41,7 +41,7 @@ MultiMediaSystem::MultiMediaSystem(QWidget *parent)
 
     connect(ui.tabWidget, &QTabWidget::currentChanged, [=](int index)
         {
-            ui.tabWidget->currentWidget() == ui.tabCamera ? camera->stop(): camera->start();
+            ui.tabWidget->currentWidget() == ui.tabCamera ? camera->start(): camera->stop();
             ui.tabWidget->currentWidget() == ui.tabVideoPlayer ? videoPlayer->turnForeground() : videoPlayer->turnBackground();
         });
 }

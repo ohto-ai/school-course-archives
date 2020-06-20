@@ -1,6 +1,7 @@
 <RCC>
-  <qresource prefix="MultiMediaSystem">
-    <file>MultiMediaSystem.qrc</file>
-    <file>res/MultiMediaSystem.ico</file>
-  </qresource>
+    <qresource prefix="/MultiMediaSystem">
+        <file>MultiMediaSystem.qrc</file>
+        <file>res/MultiMediaSystem.ico</file>
+        <file>res/splash.png</file>
+    </qresource>
 </RCC>

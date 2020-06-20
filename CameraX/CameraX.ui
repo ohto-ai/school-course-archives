@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>947</width>
-    <height>697</height>
+    <width>910</width>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -71,16 +71,48 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btnCaputre">
+        <widget class="QWidget" name="widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>40</width>
+           <width>100</width>
            <height>16777215</height>
           </size>
          </property>
-         <property name="text">
-          <string>拍照</string>
-         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="btnCaputre">
+            <property name="icon">
+             <iconset resource="CameraX.qrc">
+              <normaloff>:/CameraX/res/shot.png</normaloff>:/CameraX/res/shot.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>保存到&lt;图片&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -93,7 +125,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>947</width>
+     <width>910</width>
      <height>23</height>
     </rect>
    </property>

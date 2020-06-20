@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="CameraX">
-    </qresource>
+  <qresource prefix="CameraX">
+    <file>res/shot.png</file>
+  </qresource>
 </RCC>
