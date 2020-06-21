@@ -1,12 +1,15 @@
 ﻿#include "NotepadXWindow.h"
+#include <thread>
 
 NotepadXWindow::NotepadXWindow(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-
 	// 内容同步
-    connect(ui.markdownEdit, &QPlainTextEdit::textChanged, [this] { ui.markdownPreview->setMarkdown(ui.markdownEdit->toPlainText()); });
+    connect(ui.markdownEdit, &QPlainTextEdit::textChanged, [this] 
+		{
+			ui.markdownPreview->setMarkdown(ui.markdownEdit->toPlainText()); 
+		});
 	connect(ui.markdownEdit->verticalScrollBar(), &QScrollBar::valueChanged, 
 		[this](int value) {
 			if (ui.actionSynchronize->isChecked())

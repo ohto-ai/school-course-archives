@@ -85,7 +85,6 @@
     <QtRcc Include="..\AuthorInformation\AuthorInformation.qrc" />
     <QtRcc Include="..\CameraX\CameraX.qrc" />
     <QtRcc Include="..\DigitalClockX\DigitalClockX.qrc" />
-    <QtRcc Include="..\ImageViewerX\ImageViewerX.qrc" />
     <QtRcc Include="..\NotepadX\res.qrc" />
     <QtRcc Include="..\PaintX\PaintX.qrc" />
     <QtRcc Include="..\PictureProcessX\PictureProcessX.qrc" />
@@ -94,7 +93,6 @@
     <QtUic Include="..\AuthorInformation\AuthorInformation.ui" />
     <QtUic Include="..\CameraX\CameraX.ui" />
     <QtUic Include="..\DigitalClockX\DigitalClockX.ui" />
-    <QtUic Include="..\ImageViewerX\ImageViewerX.ui" />
     <QtUic Include="..\NotepadX\FindDialog.ui" />
     <QtUic Include="..\NotepadX\NotepadXWindow.ui" />
     <QtUic Include="..\PaintX\PaintWidget.ui" />
@@ -107,8 +105,6 @@
     <ClCompile Include="..\AuthorInformation\AuthorInformation.cpp" />
     <ClCompile Include="..\CameraX\CameraX.cpp" />
     <ClCompile Include="..\DigitalClockX\DigitalClockX.cpp" />
-    <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp" />
-    <ClCompile Include="..\ImageViewerX\ImageWidget.cpp" />
     <ClCompile Include="..\NotepadX\FindDialog.cpp" />
     <ClCompile Include="..\NotepadX\NotepadXWindow.cpp" />
     <ClCompile Include="..\PaintX\PaintWidget.cpp" />
@@ -135,10 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\AuthorInformation\AuthorInformation.h" />
+    <ClInclude Include="..\PaintX\PaintObject.hpp" />
     <ClInclude Include="resource.h" />
-    <QtMoc Include="..\ImageViewerX\ImageViewerX.h" />
-    <QtMoc Include="..\ImageViewerX\ImageWidget.h" />
-    <ClInclude Include="..\PaintX\PaintObject.h" />
     <QtMoc Include="..\PictureProcessX\ImageView.h" />
     <QtMoc Include="..\PictureProcessX\PictureProcessX.h" />
     <QtMoc Include="..\VideoPlayerX\VideoPlayerX.h" />

@@ -348,12 +348,8 @@ namespace thatboy
 				svg += R"(<polyline points=")";
 				for (auto& pt : *this)
 					svg += QString::asprintf("%d,%d ", pt.x(), pt.y());
-				svg += QString::asprintf(R"(" stroke="#%02X%02X%02X" stroke-width="%d" fill="%s"/>)"
-					, pen.color().red(), pen.color().green(), pen.color().blue(), pen.width()
-					, brush.style() == Qt::BrushStyle::NoBrush ? "none"
-					: QString::asprintf("#%02X%02X%02X"
-						, brush.color().red(), brush.color().green(), brush.color().blue()).toStdString().c_str()
-				);
+				svg += QString::asprintf(R"(" stroke="#%02X%02X%02X" stroke-width="%d" fill="none"/>)"
+					, pen.color().red(), pen.color().green(), pen.color().blue(), pen.width());
 				return svg;
 			}
 		};

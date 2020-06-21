@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "../ImageViewerX/ImageViewerX.h"
 #include "../VideoPlayerX/VideoPlayerX.h"
 #include "../PaintX/PaintX.h"
 #include "../NotepadX/NotepadXWindow.h"

@@ -47,6 +47,10 @@ void VideoControlWidget::keyPressEvent(QKeyEvent* event)
             event->accept();
         }
         break;
+    case Qt::Key_Enter:
+        setFullScreen(!isFullScreen());
+        event->accept();
+        break;
     case Qt::Key_Left:
         backword();
         event->accept();

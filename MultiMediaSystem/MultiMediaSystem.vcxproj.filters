@@ -97,21 +97,6 @@
     <Filter Include="Reference\PictureProcessX\Source Files">
       <UniqueIdentifier>{4c3cd60f-fc2a-49cf-8a11-aeee8e9107cb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Reference\ImageViewerX">
-      <UniqueIdentifier>{5586d40e-52ea-4547-bc94-2050a78991be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Reference\ImageViewerX\Form Files">
-      <UniqueIdentifier>{e729fa8d-5fa7-41da-ba69-209367544a39}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Reference\ImageViewerX\Header Files">
-      <UniqueIdentifier>{4e183ba5-7429-4cd1-bc6a-9931232bf10d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Reference\ImageViewerX\Resource Files">
-      <UniqueIdentifier>{8069ef35-db75-4335-849b-b072ad5975fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Reference\ImageViewerX\Source Files">
-      <UniqueIdentifier>{ecfd0ba8-050c-4a45-a537-ce24d38a1e60}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Reference\AuthorInformation">
       <UniqueIdentifier>{e44073e1-631b-439a-8ea5-9544daf1a327}</UniqueIdentifier>
     </Filter>
@@ -171,12 +156,6 @@
     <QtUic Include="..\PictureProcessX\PictureProcessX.ui">
       <Filter>Reference\PictureProcessX\Form Files</Filter>
     </QtUic>
-    <QtMoc Include="..\ImageViewerX\ImageWidget.h">
-      <Filter>Reference\ImageViewerX\Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\ImageViewerX\ImageViewerX.h">
-      <Filter>Reference\ImageViewerX\Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="..\AuthorInformation\AuthorInformation.h">
       <Filter>Reference\AuthorInformation\Header Files</Filter>
     </QtMoc>
@@ -218,12 +197,6 @@
     <ClCompile Include="..\PictureProcessX\PictureProcessX.cpp">
       <Filter>Reference\PictureProcessX\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ImageViewerX\ImageViewerX.cpp">
-      <Filter>Reference\ImageViewerX\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ImageViewerX\ImageWidget.cpp">
-      <Filter>Reference\ImageViewerX\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\AuthorInformation\AuthorInformation.cpp">
       <Filter>Reference\AuthorInformation\Source Files</Filter>
     </ClCompile>
@@ -249,9 +222,6 @@
     </QtRcc>
     <QtRcc Include="..\PictureProcessX\PictureProcessX.qrc">
       <Filter>Reference\PictureProcessX</Filter>
-    </QtRcc>
-    <QtRcc Include="..\ImageViewerX\ImageViewerX.qrc">
-      <Filter>Reference\ImageViewerX</Filter>
     </QtRcc>
     <QtRcc Include="..\AuthorInformation\AuthorInformation.qrc">
       <Filter>Reference\AuthorInformation</Filter>
@@ -299,11 +269,11 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\PaintX\PaintObject.h">
-      <Filter>Reference\PaintX\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PaintX\PaintObject.hpp">
+      <Filter>Reference\PaintX\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -315,9 +285,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="..\ImageViewerX\ImageViewerX.ui">
-      <Filter>Reference\ImageViewerX\Form Files</Filter>
-    </QtUic>
     <QtUic Include="..\AuthorInformation\AuthorInformation.ui">
       <Filter>Reference\AuthorInformation\Form Files</Filter>
     </QtUic>

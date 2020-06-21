@@ -49,4 +49,7 @@
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="ImageViewerX.qrc" />
+  </ItemGroup>
 </Project>

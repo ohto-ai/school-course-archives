@@ -46,7 +46,7 @@
      <x>0</x>
      <y>0</y>
      <width>1128</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -76,8 +76,6 @@
     <addaction name="separator"/>
     <addaction name="actionAll"/>
     <addaction name="actionFind"/>
-    <addaction name="actionReplace"/>
-    <addaction name="actionGoto"/>
    </widget>
    <widget class="QMenu" name="menuFormt">
     <property name="title">
@@ -103,7 +101,6 @@
      <addaction name="actionDefault"/>
     </widget>
     <addaction name="menu_Z"/>
-    <addaction name="actionStatus"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -158,7 +155,6 @@
    <addaction name="separator"/>
    <addaction name="actionAbout"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
    <property name="icon">
     <iconset resource="res.qrc">

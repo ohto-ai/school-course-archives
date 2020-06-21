@@ -68,7 +68,7 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
             QString aFile = QFileDialog::getOpenFileName(this, "打开", ""
                 , "支持的全部文件(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac;*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv);;\
 视频文件(*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv);;\
-音频文件(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac;*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv);;\
+音频文件(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac);;\
 所有文件(*.*)");
 
             if (aFile.isEmpty())
