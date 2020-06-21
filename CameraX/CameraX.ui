@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>910</width>
-    <height>653</height>
+    <width>968</width>
+    <height>673</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -86,7 +86,36 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="0">
+           <widget class="QPushButton" name="btnAbout">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>49</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset resource="CameraX.qrc">
+              <normaloff>:/CameraX/res/about.png</normaloff>:/CameraX/res/about.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
            <widget class="QPushButton" name="btnCaputre">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>69</height>
+             </size>
+            </property>
             <property name="icon">
              <iconset resource="CameraX.qrc">
               <normaloff>:/CameraX/res/shot.png</normaloff>:/CameraX/res/shot.png</iconset>
@@ -99,16 +128,6 @@
             </property>
             <property name="flat">
              <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>保存到&lt;图片&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -125,8 +144,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>910</width>
-     <height>23</height>
+     <width>968</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDevice">
@@ -149,5 +168,22 @@
  <resources>
   <include location="CameraX.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnAbout</sender>
+   <signal>clicked()</signal>
+   <receiver>actionAbout</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>850</x>
+     <y>445</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

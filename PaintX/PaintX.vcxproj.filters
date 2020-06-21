@@ -51,14 +51,14 @@
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PaintObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="PaintX.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PaintObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

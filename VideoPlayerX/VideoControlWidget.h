@@ -14,10 +14,14 @@ public:
 	VideoControlWidget(QWidget *parent);
 	~VideoControlWidget();
 
+	void forword();
+	void backword();
 	void setMediaPlayer(QMediaPlayer*);
 
 protected:
+	friend class VideoPlayerX;
 	QMediaPlayer* mediaPlayer{ nullptr };
+	int fwbfStepLength{ 2000 }; // 快进快退步长
 
 	virtual void keyPressEvent(QKeyEvent* event);
 	virtual void mouseDoubleClickEvent(QMouseEvent* event);

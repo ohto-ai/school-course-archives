@@ -131,10 +131,10 @@ PictureProcessX::PictureProcessX(QWidget* parent)
 	SLIDER_RADIO_SPIN_SYNCHRO(Light, 0, 500);					// 亮度
 	SLIDER_RADIO_SPIN_SYNCHRO(Binarize, 0, 256);				// 二值化
 	SLIDER_RADIO_SPIN_SYNCHRO(Mosaic, 0, 80);					// 马赛克
-	SLIDER_RADIO_SPIN_SYNCHRO(Emboss, 1, 10);					// 浮雕
-	SLIDER_RADIO_SPIN_SYNCHRO(Neon, 1, 10);						// 霓虹
+	SLIDER_RADIO_SPIN_SYNCHRO(Emboss, 1, 40);					// 浮雕
+	SLIDER_RADIO_SPIN_SYNCHRO(Neon, 1, 40);						// 霓虹
 	SLIDER_RADIO_SPIN_SYNCHRO(Gauss, 1, MaxGaussKernelSize);	// 高斯模糊
-	SLIDER_RADIO_SPIN_SYNCHRO(Diffuse, 1, 10);					// 扩散
+	SLIDER_RADIO_SPIN_SYNCHRO(Diffuse, 1, 40);					// 扩散
 
 #undef SLIDER_RADIO_SPIN_SYNCHRO
 

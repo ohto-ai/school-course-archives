@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <QPicture>
 #include "ui_PaintWidget.h"
-#include "PaintObject.h"
+#include "PaintObject.hpp"
 #include <list>
 #include <functional>
 
@@ -34,6 +34,7 @@ public:
 	virtual void mouseMoveEvent(QMouseEvent* event);
 	virtual void paintEvent(QPaintEvent* event);
 
+	void setFill(bool);
 	void setForeColor(QColor);
 	QColor getForeColor()const;
 	void setPenWidth(int);
@@ -51,7 +52,7 @@ private:
 
 	Ui::PaintWidget ui;
 	QPen thisPen{ Qt::black,1,Qt::SolidLine,Qt::SquareCap,Qt::MiterJoin };
-	QColor backColor = Qt::white;
+	QBrush thisBrush{ Qt::white,Qt::BrushStyle::NoBrush };
 
 	PaintMode paintMode{ PAINT_NULL };
 	bool continusStatus = false;	// 在连续画线（多边形）

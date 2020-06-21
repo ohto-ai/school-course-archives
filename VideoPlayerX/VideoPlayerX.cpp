@@ -82,20 +82,8 @@ VideoPlayerX::VideoPlayerX(QWidget *parent)
     connect(ui.playBtn, &QPushButton::clicked, player, &QMediaPlayer::play);
     connect(ui.pauseBtn, &QPushButton::clicked, player, &QMediaPlayer::pause);
     connect(ui.stopBtn, &QPushButton::clicked, player, &QMediaPlayer::stop);
-    connect(ui.leftBtn, &QPushButton::clicked, [&]
-        {
-            auto new_postion = player->position() - 2000;
-            if (new_postion < 0)
-                new_postion = 0;
-            player->setPosition(new_postion);
-        });
-    connect(ui.rightBtn, &QPushButton::clicked, [&]
-        {
-            auto new_postion = player->position() + 2000;
-            if (new_postion > player->duration())
-                new_postion = player->duration();
-            player->setPosition(new_postion);
-        });
+    connect(ui.leftBtn, &QPushButton::clicked, ui.videoWidget, &VideoControlWidget::backword);
+    connect(ui.rightBtn, &QPushButton::clicked, ui.videoWidget, &VideoControlWidget::forword);
     connect(ui.fullscreenBtn, &QPushButton::clicked, [&] {ui.videoWidget->setFullScreen(true); });
 
     connect(ui.optionButton, &QPushButton::clicked, &optionDialog, &OptionDialog::show);
@@ -123,6 +111,7 @@ void VideoPlayerX::turnBackground()
 
 void VideoPlayerX::turnForeground()
 {
+    ui.videoWidget->setFocus();
     isTurnBackground = false;
     if (isPlayingBeforeTurnBackground)
         player->play();

@@ -50,6 +50,9 @@
        </property>
        <item>
         <widget class="VideoControlWidget" name="videoWidget" native="true">
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: #000;</string>
          </property>
@@ -90,6 +93,9 @@
        </property>
        <item>
         <widget class="QSlider" name="positionSlider">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="maximum">
           <number>0</number>
          </property>
@@ -111,6 +117,9 @@
            <width>28</width>
            <height>28</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string/>
@@ -143,6 +152,9 @@
            <width>100</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="maximum">
           <number>100</number>
@@ -209,6 +221,9 @@
            <height>28</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -244,6 +259,9 @@
            <height>28</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -275,6 +293,9 @@
            <width>28</width>
            <height>28</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string/>
@@ -308,6 +329,9 @@
            <height>28</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -340,6 +364,9 @@
            <height>28</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -371,6 +398,9 @@
            <width>28</width>
            <height>28</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string/>
@@ -412,6 +442,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnPlayBack">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>切换至后台时继续播放</string>
          </property>
@@ -442,6 +475,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnAbout">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -474,6 +510,9 @@
            <height>28</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -505,6 +544,9 @@
            <width>28</width>
            <height>28</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string/>
@@ -551,6 +593,22 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>videoWidget</tabstop>
+  <tabstop>playBtn</tabstop>
+  <tabstop>pauseBtn</tabstop>
+  <tabstop>stopBtn</tabstop>
+  <tabstop>leftBtn</tabstop>
+  <tabstop>rightBtn</tabstop>
+  <tabstop>openBtn</tabstop>
+  <tabstop>btnPlayBack</tabstop>
+  <tabstop>btnAbout</tabstop>
+  <tabstop>optionButton</tabstop>
+  <tabstop>fullscreenBtn</tabstop>
+  <tabstop>volumeBtn</tabstop>
+  <tabstop>positionSlider</tabstop>
+  <tabstop>volumeSlider</tabstop>
+ </tabstops>
  <resources>
   <include location="VideoPlayerX.qrc"/>
  </resources>

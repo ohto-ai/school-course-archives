@@ -23,7 +23,6 @@ CameraX::CameraX(QWidget *parent)
     ui.layoutCamera->addWidget(viewfinder);
     connect(videoDevicesGroup, &QActionGroup::triggered, this, &CameraX::changeCameraDevice);
     setCamera(QCameraInfo::defaultCamera());
-    stop();
     connect(ui.btnCaputre, &QPushButton::clicked, [this]
         {
             imageCapture->capture();
@@ -48,7 +47,6 @@ void CameraX::setCamera(const QCameraInfo& cameraInfo)
             ui.listImage->insertItem(ui.listImage->count(), pItem);
         });
 
-    camera->start();//Æô¶¯ÉãÏñÍ·
 }
 void CameraX::start()
 {
@@ -61,4 +59,5 @@ void CameraX::stop()
 void CameraX::changeCameraDevice(QAction* action)
 {
     setCamera(qvariant_cast<QCameraInfo>(action->data()));
+    camera->start();
 }

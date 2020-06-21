@@ -1,7 +1,7 @@
 <RCC>
   <qresource prefix="AuthorInformation">
     <file>AuthorInformation.qrc</file>
-    <file>res/photo.jpg</file>
+    <file>res/photo.png</file>
     <file>res/tel.png</file>
     <file>res/boy.png</file>
     <file>res/thatboy-text-vector.svg</file>

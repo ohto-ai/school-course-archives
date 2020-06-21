@@ -25,7 +25,7 @@
      <x>0</x>
      <y>0</y>
      <width>729</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -34,8 +34,6 @@
     </property>
     <addaction name="actionOpen"/>
     <addaction name="actionAbout"/>
-    <addaction name="separator"/>
-    <addaction name="actionExit"/>
    </widget>
    <addaction name="menu"/>
   </widget>
@@ -84,22 +82,5 @@
  <resources>
   <include location="ImageViewerX.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>actionExit</sender>
-   <signal>triggered()</signal>
-   <receiver>ImageViewerXClass</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>364</x>
-     <y>267</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

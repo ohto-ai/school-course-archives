@@ -136,6 +136,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="checkFill">
+         <property name="text">
+          <string>填充</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QSlider" name="penWidthSlider">
          <property name="minimumSize">
           <size>

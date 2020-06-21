@@ -24,27 +24,33 @@ void PaintWidget::mousePressEvent(QMouseEvent* event)
 		case PaintWidget::PAINT_PENCIL:
 			currentObject = new thatboy::qt::PolylineObject();
 			dynamic_cast<thatboy::qt::PolylineObject*>(currentObject)->append(event->pos());
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->pen = thisPen;
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->brush = thisBrush;
 			break;
 		case PaintWidget::PAINT_LINE:
 			currentObject = new thatboy::qt::LineObject(QLine(event->pos(), event->pos()));
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->pen = thisPen;
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->brush = thisBrush;
 			break;
 		case PaintWidget::PAINT_CIRCLE:
 			currentObject = new thatboy::qt::CircleObject(QPoint(event->pos()));
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->pen = thisPen;
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->brush = thisBrush;
 			break;
 		case PaintWidget::PAINT_ELLIPSE:
 			currentObject = new thatboy::qt::EllipseObject(QRect(event->pos(), event->pos()));
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->pen = thisPen;
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->brush = thisBrush;
 			break;
 		case PaintWidget::PAINT_RECTANGLE:
 			currentObject = new thatboy::qt::RectangleObject(QRect(event->pos(), event->pos()));
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->pen = thisPen;
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->brush = thisBrush;
 			break;
 		case PaintWidget::PAINT_ROUNDEDRECTANGLE:
 			currentObject = new thatboy::qt::RoundedRectangleObject(QRect(event->pos(), event->pos()));
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->pen = thisPen;
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->brush = thisBrush;
 			break;
 		case PaintWidget::PAINT_POLYGON:
 			if (currentObject == nullptr)
@@ -52,8 +58,9 @@ void PaintWidget::mousePressEvent(QMouseEvent* event)
 				currentObject = new thatboy::qt::PolygonObject();
 				dynamic_cast<thatboy::qt::PolygonObject*>(currentObject)->append(event->pos());
 			}
-			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->QPen::operator=(thisPen);
 			dynamic_cast<thatboy::qt::PolygonObject*>(currentObject)->append(event->pos());
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->pen = thisPen;
+			dynamic_cast<thatboy::qt::PaintShapeObject*>(currentObject)->brush = thisBrush;
 			break;
 		default:
 			break;
@@ -146,15 +153,18 @@ void PaintWidget::paintEvent(QPaintEvent* event)
 	QPainter painter;// (this);
 	painter.begin(this);
 	painter.setRenderHint(QPainter::Antialiasing);
-	painter.fillRect(rect(), backColor);
 	for (auto& obj : paintObjList)
 		obj->draw(painter);
+	if (selectedObject)
+		selectedObject->drawSelected(painter);
 	if (currentObject)
 		currentObject->drawHalf(painter);
-	else if (selectedObject)
-		selectedObject->drawSelected(painter);
-
 	painter.end();
+}
+
+void PaintWidget::setFill(bool f)
+{
+	thisBrush.setStyle(f ? Qt::BrushStyle::SolidPattern : Qt::BrushStyle::NoBrush);
 }
 
 void PaintWidget::setForeColor(QColor c)
@@ -174,12 +184,12 @@ void PaintWidget::setPenWidth(int w)
 
 void PaintWidget::setBackColor(QColor c)
 {
-	backColor = c;
+	thisBrush.setColor(c);
 }
 
 QColor PaintWidget::getBackColor()const
 {
-	return backColor;
+	return thisBrush.color();
 }
 
 void PaintWidget::switchPaintMode(PaintMode mode)
@@ -193,6 +203,7 @@ void PaintWidget::clearPaint()
 {
 	continusStatus = false;
 	currentObject = nullptr;
+	selectedObject = nullptr;
 	paintObjList.clear();
 	update();
 }

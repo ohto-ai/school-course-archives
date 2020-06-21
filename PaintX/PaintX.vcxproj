@@ -93,7 +93,7 @@
     <QtMoc Include="PaintWidget.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PaintObject.h" />
+    <ClInclude Include="PaintObject.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

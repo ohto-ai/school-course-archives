@@ -5,6 +5,8 @@ PaintX::PaintX(QWidget *parent)
 {
     ui.setupUi(this);
 
+   // connect(ui.checkFill, &QCheckBox::toggled, [this](bool f) {setFill(f); });
+    connect(ui.checkFill, &QCheckBox::toggled, ui.sketchpad, &PaintWidget::setFill);
     connect(ui.paintObjectList, &QListWidget::itemDoubleClicked, [this](QListWidgetItem* item)
         {
             ui.sketchpad->removePaintObject(ui.paintObjectList->currentRow());
