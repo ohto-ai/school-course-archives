@@ -289,22 +289,6 @@ void PictureProcessX::nostalgic()
 			, qBound<int>(0, r * 0.272 + g * 0.534 + g * 0.131, 255)
 		);
 	}
-	
-	for (int i = 0; i < dstImage.height(); i++)
-	{
-		for (int j = 0; j < dstImage.width(); j++)
-		{
-			QRgb& thisPix = *reinterpret_cast<QRgb*>(dstBits + i * bytePerLine + j * pxByte);
-			uchar r = qRed(thisPix);
-			uchar g = qGreen(thisPix);
-			uchar b = qBlue(thisPix);
-			thisPix = qRgb(
-				qBound<int>(0, r * 0.393 + g * 0.769 + g * 0.189, 255)
-				, qBound<int>(0, r * 0.349 + g * 0.686 + g * 0.168, 255)
-				, qBound<int>(0, r * 0.272 + g * 0.534 + g * 0.131, 255)
-			);
-		}
-	}
 	update();
 }
 

@@ -2,15 +2,10 @@
 
 PaintWidget::PaintWidget(QWidget* parent)
 	: QWidget(parent)
-{
-	ui.setupUi(this);
-}
+{}
 
 PaintWidget::~PaintWidget()
-{
-	//for (auto ptr : paintObjList)
-	//	delete ptr;
-}
+{}
 
 void PaintWidget::mousePressEvent(QMouseEvent* event)
 {

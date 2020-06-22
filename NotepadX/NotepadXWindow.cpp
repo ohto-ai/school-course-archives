@@ -39,7 +39,6 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 		{
 			QMessageBox::information(this, "NotepadX", "没有查找到内容", QMessageBox::Ok);
 		}
-		;
 		});
 
 	// 加粗
@@ -168,8 +167,6 @@ NotepadXWindow::NotepadXWindow(QWidget *parent)
 			if (dialog->exec() != QDialog::Accepted)
 				return;
 		});
-
-	// TODO: 左右滚动条同步
 
 
 	// 填充初始内容

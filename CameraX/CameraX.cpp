@@ -23,10 +23,7 @@ CameraX::CameraX(QWidget *parent)
     ui.layoutCamera->addWidget(viewfinder);
     connect(videoDevicesGroup, &QActionGroup::triggered, this, &CameraX::changeCameraDevice);
     setCamera(QCameraInfo::defaultCamera());
-    connect(ui.btnCaputre, &QPushButton::clicked, [this]
-        {
-            imageCapture->capture();
-        });
+    connect(ui.btnCaputre, &QPushButton::clicked, [this] {imageCapture->capture(); });
 }
 
 void CameraX::setCamera(const QCameraInfo& cameraInfo)

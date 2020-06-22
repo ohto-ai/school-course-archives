@@ -4,7 +4,6 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPicture>
-#include "ui_PaintWidget.h"
 #include "PaintObject.hpp"
 #include <list>
 #include <functional>
@@ -50,7 +49,6 @@ public:
 private:
 	void pushPaintObject();
 
-	Ui::PaintWidget ui;
 	QPen thisPen{ Qt::black,1,Qt::SolidLine,Qt::SquareCap,Qt::MiterJoin };
 	QBrush thisBrush{ Qt::white,Qt::BrushStyle::NoBrush };
 

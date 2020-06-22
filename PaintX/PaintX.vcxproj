@@ -82,7 +82,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtUic Include="PaintWidget.ui" />
     <QtUic Include="PaintX.ui" />
     <QtMoc Include="PaintX.h" />
     <ClCompile Include="PaintWidget.cpp" />

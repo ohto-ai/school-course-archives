@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="ImageViewerX">
-    <file>ImageViewerX.qrc</file>
-    <file>res/about.png</file>
-  </qresource>
-</RCC>

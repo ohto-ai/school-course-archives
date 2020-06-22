@@ -227,10 +227,6 @@ namespace thatboy
 
 			virtual void drawHalf(QPainter& painter)const
 			{
-				QPen pen{ this->pen };
-				QBrush brush{ this->brush };
-				pen.setColor((~this->pen.color().rgba()) & 0XFFFFFF);
-				brush.setColor((~this->brush.color().rgba()) & 0XFFFFFF);
 				painter.setPen(pen);
 				painter.setBrush(brush);
 				painter.drawRoundRect(this->normalized(), xR, yR);	// 圆角矩形特殊处理

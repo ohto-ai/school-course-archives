@@ -95,7 +95,6 @@
     <QtUic Include="..\DigitalClockX\DigitalClockX.ui" />
     <QtUic Include="..\NotepadX\FindDialog.ui" />
     <QtUic Include="..\NotepadX\NotepadXWindow.ui" />
-    <QtUic Include="..\PaintX\PaintWidget.ui" />
     <QtUic Include="..\PaintX\PaintX.ui" />
     <QtUic Include="..\PictureProcessX\PictureProcessX.ui" />
     <QtUic Include="..\VideoPlayerX\OptionDialog.ui" />

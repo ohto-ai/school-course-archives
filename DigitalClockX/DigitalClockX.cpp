@@ -12,8 +12,6 @@ DigitalClockX::DigitalClockX(QWidget *parent)
     digitalHeight = image.height();
     for (size_t i = 0; i < 11; i++)
         digitalImages[i] = image.copy(digitalWidth * i, 0, digitalWidth, digitalHeight);
-
-    //setFixedSize(background.width(), background.height());
     freshTimer = startTimer(10);
 }
 

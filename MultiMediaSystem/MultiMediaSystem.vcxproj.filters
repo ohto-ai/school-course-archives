@@ -141,9 +141,6 @@
     <QtUic Include="..\NotepadX\NotepadXWindow.ui">
       <Filter>Reference\NotepadX\Form Files</Filter>
     </QtUic>
-    <QtUic Include="..\PaintX\PaintWidget.ui">
-      <Filter>Reference\PaintX\Form Files</Filter>
-    </QtUic>
     <QtUic Include="..\PaintX\PaintX.ui">
       <Filter>Reference\PaintX\Form Files</Filter>
     </QtUic>
