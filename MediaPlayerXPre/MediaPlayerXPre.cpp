@@ -1,11 +1,11 @@
 ﻿#include "MediaPlayerXPre.h"
 #include <QKeyEvent>
 // TODO: 截屏
-// TODO: 窗口同步
+// TODO: 窗口同步 ×
 // TODO: 播放列表同步 √
-// TODO: 媒体信息显示 类型显示
+// TODO: 媒体信息显示 √ 类型显示
 // TODO: 字幕
-// TODO: 列表的保存与读取
+// TODO: 列表的保存与读取 √
 // TODO: 列表的删减 √
 
 
@@ -96,7 +96,7 @@ MediaPlayerXPre::MediaPlayerXPre(QWidget *parent)
     // 播放列表
     playListDialog.loadMediaPlaylist();
 
-    setScreenTip(QString::asprintf("%d media(s) loaded.", config::GlobalConfig["Playlist"]["media_list"].size()));
+    setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["medias_loaded"].get<std::string>().c_str(), config::GlobalConfig["Playlist"]["media_list"].size()));
 }
 
 void MediaPlayerXPre::closeEvent(QCloseEvent* e)

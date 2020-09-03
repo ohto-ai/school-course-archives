@@ -129,13 +129,11 @@ QToolTip {
 }
 QSlider#positionSlider::add-page:Horizontal
 {
-	background-color: rgb(87, 97, 106);
-	height:4px;
+	background-color: #575757;
 }
 QSlider#positionSlider::sub-page:Horizontal 
 {
-    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(231,80,229, 255), stop:1 rgba(7,208,255, 255));
-    height:4px;
+    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #E55EE5, stop:0.5 #5EE55E, stop:1 #07F0FF);
 }
 QSlider#positionSlider::groove:Horizontal 
 {

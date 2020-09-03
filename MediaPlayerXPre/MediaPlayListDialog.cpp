@@ -9,7 +9,8 @@ MediaPlayListDialog::MediaPlayListDialog(QWidget*parent)
 
 	setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
 	ui.playListTableWidget->setColumnWidth(0, 320);
-	ui.playListTableWidget->setColumnWidth(1, 100);
+	ui.playListTableWidget->setColumnWidth(1, 60);
+	ui.playListTableWidget->setColumnWidth(2, 50);
 
 	connect(ui.playListTableWidget, &QTableWidget::cellDoubleClicked, [&](int row, int)
 		{
@@ -38,6 +39,7 @@ void MediaPlayListDialog::addMedia(QString filePath)
 	playList->addMedia(QUrl::fromLocalFile(filePath));
 	ui.playListTableWidget->insertRow(ui.playListTableWidget->rowCount());
 	ui.playListTableWidget->setItem(ui.playListTableWidget->rowCount() - 1, 0, new QTableWidgetItem(QFileInfo(filePath).completeBaseName()));
+	ui.playListTableWidget->setItem(ui.playListTableWidget->rowCount() - 1, 2, new QTableWidgetItem(QFileInfo(filePath).suffix()));
 }
 
 void MediaPlayListDialog::customContextMenuRequested(const QPoint& pos)

@@ -30,6 +30,7 @@ namespace config
         configScreenTip["tip_delay"] = 1500;
         configScreenTip["forword_tip"] = "快进 %.3f(%.0lf%%)";
         configScreenTip["backword_tip"] = "快退 %.3f(%.0lf%%)";
+        configScreenTip["medias_loaded"] = "%d media(s) loaded.";
 
         auto& configPlayer = config::GlobalConfig["Player"];
         configPlayer["ImportDirectory"]["caption"] = "选择文件夹";
@@ -71,7 +72,7 @@ namespace config
         auto& configPlaylistDialog = config::GlobalConfig["PlaylistDialog"];
         configPlaylistDialog["x"] = 750;
         configPlaylistDialog["y"] = 200;
-        configPlaylistDialog["width"] = 460;
+        configPlaylistDialog["width"] = 480;
         configPlaylistDialog["height"] = 400;
         configPlaylistDialog["caption"] = "播放列表";
         configPlaylistDialog["CustomContextMenu"]["play"] = "播放此项";

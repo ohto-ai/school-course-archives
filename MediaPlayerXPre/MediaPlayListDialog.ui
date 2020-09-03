@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
+    <width>480</width>
     <height>400</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>460</width>
+    <width>480</width>
     <height>400</height>
    </size>
   </property>
@@ -116,13 +116,17 @@ QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
 }
 QTableWidget
 {
-	selection-background-color:#555;
+	selection-background-color:#3BC1E7;
 	color: #FFF;
 	background-color: #1E1E1E;
 	alternate-background-color: #3B3B3B;
 	padding: 2px 4px;
 }
-
+QTableWidget::item:hover
+{
+	color: #FF8;
+	selection-color:#FF8;
+}
 
 QHeaderView,QHeaderView::section
 {
@@ -201,7 +205,7 @@ QMenu::indicator {
       <bool>false</bool>
      </property>
      <property name="columnCount">
-      <number>2</number>
+      <number>3</number>
      </property>
      <attribute name="horizontalHeaderVisible">
       <bool>false</bool>
@@ -219,6 +223,7 @@ QMenu::indicator {
        <string>Time</string>
       </property>
      </column>
+     <column/>
     </widget>
    </item>
   </layout>

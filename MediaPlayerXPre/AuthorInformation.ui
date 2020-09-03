@@ -29,7 +29,7 @@
    <string notr="true">
 QWidget
 {
-	font: 12pt &quot;等线&quot;;
+	font: 10pt &quot;等线&quot;;
 	background-color:#2D2D2D;
 	color:#FFF;
 }
