@@ -7,20 +7,8 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>150</height>
+    <height>160</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>400</width>
-    <height>150</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>400</width>
-    <height>150</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Option</string>
@@ -30,10 +18,24 @@
     <normaloff>:/MediaPlayerXPre/res/option.png</normaloff>:/MediaPlayerXPre/res/option.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #1E1E1E;
-color:#FFF;
+   <string notr="true">QWidget
+{
+	background-color:#2D2D2D;
+	color:#FFF;
+}
 
-</string>
+QPushButton {
+}
+
+QPushButton:hover {
+	border: 1px solid #3E3E3E;
+}
+
+QPushButton:pressed {
+    background-color: #5E5E5E;
+    border-color: #3E3E3E;
+    color: yellow;
+}</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -102,6 +104,9 @@ QSlider::handle:horizontal
          <width>30</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="toolTip">
+        <string>重置</string>
        </property>
        <property name="text">
         <string/>
@@ -189,6 +194,9 @@ QSlider::handle:horizontal
          <height>30</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>重置</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -275,6 +283,9 @@ QSlider::handle:horizontal
          <height>30</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>重置</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -360,6 +371,9 @@ QSlider::handle:horizontal
          <width>30</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="toolTip">
+        <string>重置</string>
        </property>
        <property name="text">
         <string/>

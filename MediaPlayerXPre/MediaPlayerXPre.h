@@ -12,6 +12,7 @@
 #include "TBPushButton.h"
 #include <MediaPlayListDialog.h>
 #include "VideoControlWidget.h"
+#include "AuthorInformation.h"
 #include "OptionDialog.h"
 #include "GlobalConfig.h"
 #include "ui_MediaPlayerXPre.h"
@@ -32,10 +33,7 @@ private:
 
     Ui::MediaPlayerXPreClass ui;
 
-    void setConfig();
-    void resetConfig();
     void setScreenTip(QString tip);
-    void initMainwindowWidgets();
     void initMediaPlayer();
     void initSignals();
 
@@ -48,6 +46,7 @@ private:
     QString positionTime{ "00:00:00" };
     OptionDialog optionDialog{ this };
     MediaPlayListDialog playListDialog;
+    AuthorInformation authorInformation{ this };
 
     bool isPlayingBeforeTurnBackground{ false };
     bool isTurnBackground{ false };

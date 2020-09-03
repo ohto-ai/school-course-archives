@@ -7,6 +7,7 @@
 #include <QMenu>
 #include <QMediaPlaylist>
 #include <QMediaPlayer>
+#include "GlobalConfig.h"
 #include "ui_MediaPlayListDialog.h"
 
 class MediaPlayListDialog : public QDialog
@@ -30,9 +31,15 @@ protected:
 	void customContextMenuRequested(const QPoint& pos);
 	void onTaskBoxContextMenuEvent();
 	void setMediaPlayer(QMediaPlayer* player);
+	void moveEvent(QMoveEvent* e) override;
+	void resizeEvent(QResizeEvent* e) override;
+
+	void loadMediaPlaylist();
+	void saveMediaPlaylist()const;
 private:
 	int lastPlaylistIndex = -1;
+
 	QMediaPlayer* player;
-	QMediaPlaylist playList;
+	QMediaPlaylist* playList{ new QMediaPlaylist };
 	Ui::MediaPlayListDialog ui;
 };

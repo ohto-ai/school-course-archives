@@ -1,1 +1,91 @@
-{"MainWindow":{"height":634,"tip_delay":1500,"width":946,"x":614,"y":240}}
+{
+    "MainWindow": {
+        "height": 600,
+        "width": 950,
+        "x": 487,
+        "y": 188
+    },
+    "OptionDialog": {
+        "caption": "视频设置",
+        "height": 160,
+        "width": 400,
+        "x": 759,
+        "y": 409
+    },
+    "Player": {
+        "ImportDirectory": {
+            "caption": "选择文件夹",
+            "name_filters": [
+                "*.mp3",
+                "*.wav",
+                "*.wma",
+                "*.ogg",
+                "*.acc",
+                "*.flac",
+                "*.3gp",
+                "*.wmv",
+                "*.avi",
+                "*.mp4",
+                "*.mpeg",
+                "*.mkv",
+                "*.rmvb",
+                "*.flv"
+            ]
+        },
+        "ImportFiles": {
+            "caption": "选择媒体文件",
+            "filter": "支持的媒体文件(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac;*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv;*.3gp);;视频(*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv;*.3gp);;音频(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac);;全部(*.*)"
+        },
+        "playback_mode": "Loop",
+        "volume": 50
+    },
+    "Playlist": {
+        "media_list": null
+    },
+    "PlaylistDialog": {
+        "CustomContextMenu": {
+            "clear": "清空列表",
+            "locate": "打开目录",
+            "play": "播放此项",
+            "remove": "移除此项"
+        },
+        "caption": "播放列表",
+        "height": 400,
+        "width": 460,
+        "x": 750,
+        "y": 200
+    },
+    "ScreenTip": {
+        "PlaybackMode": {
+            "currentiteminloop": "单曲循环",
+            "loop": "列表循环",
+            "random": "随机播放",
+            "sequential": "顺序播放"
+        },
+        "VideoOption": {
+            "brightness": "亮度",
+            "caption": "视频设置",
+            "contrast": "对比度",
+            "hue": "色相",
+            "saturation": "饱和度"
+        },
+        "backword_tip": "快退 %.3f(%.0lf%%)",
+        "forword_tip": "快进 %.3f(%.0lf%%)",
+        "hide": "隐藏",
+        "muted": "静音",
+        "pause": "暂停",
+        "play": "播放",
+        "playlist": "播放列表",
+        "position": "进度",
+        "show": "显示",
+        "stop": "停止",
+        "tip_delay": 1500,
+        "volume": "音量"
+    },
+    "VideoOption": {
+        "brightness": 0,
+        "contrast": 0,
+        "hue": 0,
+        "saturation": 0
+    }
+}

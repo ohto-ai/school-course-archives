@@ -29,6 +29,21 @@
    <iconset resource="MediaPlayerXPre.qrc">
     <normaloff>:/MediaPlayerXPre/res/playlist.png</normaloff>:/MediaPlayerXPre/res/playlist.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">/* === QWidget === */
+QWidget:window {
+    background: #222222;
+    color: #BBBBBB;
+    font-family: &quot;Segoe UI&quot;;
+}
+
+/* === QToolTip === */
+QToolTip {
+    background-color: #000000;
+    border: 2px solid #333333;
+    color: yellow;
+}</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="leftMargin">
     <number>0</number>
@@ -96,7 +111,7 @@ QScrollBar::sub-line:vertical:hover
 }
 QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
 {
-    background:#0006;
+    background:rgba(,0,0,10%);
     border-radius:4px;
 }
 QTableWidget
@@ -115,6 +130,44 @@ QHeaderView,QHeaderView::section
 	color: #FFF;
 	background-color: #2E2E2E;
 	alternate-background-color: #3B3B3B;
+}
+QMenu {
+    background-color: black;
+    border: 1px solid gray;
+    color: white;
+    padding: 1px;
+}
+
+QMenu::item {
+    padding: 1px 25px 1px 20px;
+    border: 1px solid transparent;
+}
+
+QMenu::item:disabled {
+    color: #666666;
+}
+
+QMenu::item:selected {
+    border-color: gray;
+    background: #222222;
+}
+
+QMenu::icon:checked {
+
+}
+
+QMenu::separator {
+    height: 1px;
+    background: #222222;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+QMenu::indicator {
+    width: 13px;
+    height: 13px;
 }</string>
      </property>
      <property name="frameShape">

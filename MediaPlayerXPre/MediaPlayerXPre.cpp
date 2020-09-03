@@ -9,69 +9,115 @@
 // TODO: 列表的删减 √
 
 
+void from_json(const nlohmann::json& j, QString& s)
+{
+    s = QString::fromStdString(j.get<std::string>());
+}
+
+void from_json(const nlohmann::json& j, QMediaPlaylist::PlaybackMode& m)
+{
+    if (j == "CurrentItemOnce")
+        m = QMediaPlaylist::PlaybackMode::CurrentItemOnce;
+    else if (j == "CurrentItemInLoop")
+        m = QMediaPlaylist::PlaybackMode::CurrentItemInLoop;
+    else if (j == "Sequential")
+        m = QMediaPlaylist::PlaybackMode::Sequential;
+    else if (j == "Loop")
+        m = QMediaPlaylist::PlaybackMode::Loop;
+    else if (j == "Random")
+        m = QMediaPlaylist::PlaybackMode::Random;
+    else
+        m = QMediaPlaylist::PlaybackMode::Sequential;
+
+}
+
+void to_json(nlohmann::json& j, const QString& s)
+{
+    j = s.toStdString();
+}
+
+void to_json(nlohmann::json& j, const QMediaPlaylist::PlaybackMode& m)
+{
+    switch (m)
+    {
+    case QMediaPlaylist::PlaybackMode::CurrentItemInLoop:
+        j = "CurrentItemInLoop";
+        break;
+    case QMediaPlaylist::PlaybackMode::Sequential:
+        j = "Sequential";
+        break;
+    case QMediaPlaylist::PlaybackMode::Loop:
+        j = "Loop";
+        break;
+    case QMediaPlaylist::PlaybackMode::Random:
+        j = "Random";
+        break;
+    case QMediaPlaylist::PlaybackMode::CurrentItemOnce:
+    default:
+        j = "CurrentItemOnce";
+        break;
+    }
+}
 
 MediaPlayerXPre::MediaPlayerXPre(QWidget *parent)
     : QMainWindow(parent)
 {
-    try
-    {
-        setConfig();
-    }
-    catch (nlohmann::json::type_error e)
-    {
-        resetConfig();
-        setConfig();
-    }
-
-    initMainwindowWidgets();
-    initMediaPlayer();
+    ui.setupUi(this);
     
-
-
-}
-
-void MediaPlayerXPre::setConfig()
-{
-    config::loadConfig();
+    initMediaPlayer();
+    initSignals();
 
     // 主窗口设置
     auto& configMainWindow = config::GlobalConfig["MainWindow"];
-    move(configMainWindow["x"].get<int>(), configMainWindow["y"].get<int>());
-    resize(configMainWindow["width"].get<int>(), configMainWindow["height"].get<int>());
-    configMainWindow["tip_delay"].get_to<uint>(tipDelay);
-}
+    move(configMainWindow["x"], configMainWindow["y"]);
+    resize(configMainWindow["width"], configMainWindow["height"]);
 
-void MediaPlayerXPre::resetConfig()
-{
-    auto& configMainWindow = config::GlobalConfig["MainWindow"];
-    configMainWindow["x"] = 200;
-    configMainWindow["y"] = 200;
-    configMainWindow["width"] = 950;
-    configMainWindow["height"] = 600;
+    // 子窗口
+    auto& configPlaylistDialog = config::GlobalConfig["PlaylistDialog"];
+    playListDialog.move(configPlaylistDialog["x"], configPlaylistDialog["y"]);
+    playListDialog.resize(configPlaylistDialog["width"], configPlaylistDialog["height"]);
+    playListDialog.setWindowTitle(configPlaylistDialog["caption"]);
 
-    configMainWindow["tip_delay"] = 1500;
+    auto& configOptionDialog = config::GlobalConfig["OptionDialog"];
+    optionDialog.move(configOptionDialog["x"], configOptionDialog["y"]);
+    optionDialog.resize(configOptionDialog["width"], configOptionDialog["height"]);
+    optionDialog.setWindowTitle(configOptionDialog["caption"]);
 
-    config::saveConfig();
+    optionDialog.ui.brightnessSlider->setValue(config::GlobalConfig["VideoOption"]["brightness"]);
+    optionDialog.ui.contrastSlider->setValue(config::GlobalConfig["VideoOption"]["contrast"]);
+    optionDialog.ui.hueSlider->setValue(config::GlobalConfig["VideoOption"]["hue"]);
+    optionDialog.ui.saturationSlider->setValue(config::GlobalConfig["VideoOption"]["saturation"]);
+
+    ui.volumeSlider->setValue(config::GlobalConfig["Player"]["volume"]);
+    playListDialog.playList->setPlaybackMode(config::GlobalConfig["Player"]["playback_mode"]);
+
+    ui.pauseBtn->hide();
+
+    // 播放列表
+    playListDialog.loadMediaPlaylist();
+
+    setScreenTip(QString::asprintf("%d media(s) loaded.", config::GlobalConfig["Playlist"]["media_list"].size()));
 }
 
 void MediaPlayerXPre::closeEvent(QCloseEvent* e)
 {
     playListDialog.close();
+    playListDialog.saveMediaPlaylist();
     config::saveConfig();
 }
 
 void MediaPlayerXPre::resizeEvent(QResizeEvent* e)
 {
     auto& configMainWindow = config::GlobalConfig["MainWindow"];
-    configMainWindow["width"] = frameGeometry().width();
-    configMainWindow["height"] = frameGeometry().height();
+    configMainWindow["width"] = width();
+    configMainWindow["height"] = height();
 }
 
 void MediaPlayerXPre::moveEvent(QMoveEvent* e)
 {
     auto& configMainWindow = config::GlobalConfig["MainWindow"];
-    configMainWindow["x"] = frameGeometry().x();
-    configMainWindow["y"] = frameGeometry().y();
+    configMainWindow["x"] = x();
+    configMainWindow["y"] = y();
 }
 
 void MediaPlayerXPre::setScreenTip(QString tip)
@@ -79,12 +125,6 @@ void MediaPlayerXPre::setScreenTip(QString tip)
     ui.tipLabel->setText(tip);
     ui.tipLabel->show();
     tipTimer.start(tipDelay);
-}
-
-void MediaPlayerXPre::initMainwindowWidgets()
-{
-    ui.setupUi(this);
-    ui.pauseBtn->hide();
 }
 
 void MediaPlayerXPre::initMediaPlayer()
@@ -97,6 +137,7 @@ void MediaPlayerXPre::initMediaPlayer()
 
 void MediaPlayerXPre::initSignals()
 {
+    using config::GlobalConfig;
     // 定时器
     connect(&tipTimer, &QTimer::timeout, ui.tipLabel, &QLabel::hide);
 
@@ -110,17 +151,17 @@ void MediaPlayerXPre::initSignals()
             switch (state)
             {
             case QMediaPlayer::PausedState:
-                setScreenTip("暂停");
+                setScreenTip(GlobalConfig["ScreenTip"]["pause"]);
                 break;
             case QMediaPlayer::StoppedState:
-                setScreenTip("停止");
+                setScreenTip(GlobalConfig["ScreenTip"]["stop"]);
                 setWindowTitle("MediaPlayerXPre");
                 break;
             case QMediaPlayer::PlayingState:
             {
-                auto baseName{ QFileInfo(playListDialog.playList.currentMedia().canonicalUrl().toLocalFile()).baseName() };
-                setScreenTip(baseName);
-                setWindowTitle("MediaPlayerXPre - " + baseName);
+                auto completeBaseName{ QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).completeBaseName() };
+                setScreenTip(completeBaseName);
+                setWindowTitle("MediaPlayerXPre - " + completeBaseName);
             }
             break;
             }
@@ -137,11 +178,11 @@ void MediaPlayerXPre::initSignals()
             durationTime = QString::asprintf("%02d:%02d:%02d", hour, mins, secs);
             ui.positionLab->setText(positionTime + "/" + durationTime);
 
-            if (duration <= 0 || playListDialog.playList.isEmpty())
+            if (duration <= 0 || playListDialog.playList->isEmpty())
                 return;
-            auto item = playListDialog.ui.playListTableWidget->item(playListDialog.playList.currentIndex(), 1);
+            auto item = playListDialog.ui.playListTableWidget->item(playListDialog.playList->currentIndex(), 1);
             if (item == nullptr)
-                playListDialog.ui.playListTableWidget->setItem(playListDialog.playList.currentIndex(), 1, new QTableWidgetItem(durationTime));
+                playListDialog.ui.playListTableWidget->setItem(playListDialog.playList->currentIndex(), 1, new QTableWidgetItem(durationTime));
             else
                 item->setText(durationTime);
 
@@ -169,7 +210,7 @@ void MediaPlayerXPre::initSignals()
                 int hour = secs / 3600;
                 int mins = (secs / 60) % 60;
                 secs %= 60;
-                setScreenTip(QString::asprintf("进度：%02d:%02d:%02d.%03d(%.0lf%%)", hour, mins, secs, msec, (double)value / player->duration() * 100));
+                setScreenTip(GlobalConfig["ScreenTip"]["position"].get<QString>()+ QString::asprintf(": %02d:%02d:%02d.%03d(%.0lf%%)", hour, mins, secs, msec, (double)value / player->duration() * 100));
             }
         });
 
@@ -182,12 +223,16 @@ void MediaPlayerXPre::initSignals()
             player->setVolume(value);
             player->setMuted(value <= 0);
             ui.volumeBtn->setIcon(QIcon(QString::asprintf(":/MediaPlayerXPre/res/player_voice_%d.png", (value * 16 + 99) / 100)));
-            setScreenTip(QString::asprintf(value <= 0 ? "静音" : "音量：%d%%", value));
+            setScreenTip(value <= 0 ? GlobalConfig["ScreenTip"]["muted"] : GlobalConfig["ScreenTip"]["volume"].get<QString>() + QString::asprintf(": %d%%", value));
         });
     connect(ui.volumeBtn, &QPushButton::clicked, [&]
         {
             player->setMuted(!player->isMuted());
             ui.volumeSlider->setValue(player->isMuted() ? 0 : lastVolume);
+        });
+    connect(player, &QMediaPlayer::volumeChanged, [&](int volume)
+        {
+            config::GlobalConfig["Player"]["volume"] = volume;
         });
 
     // 文件打开
@@ -196,32 +241,38 @@ void MediaPlayerXPre::initSignals()
             QStringList filePaths;
 
 
-            filePaths = QFileDialog::getOpenFileNames(this, "Open", ""
-                , "Supported file types(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac;*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv;*.3gp);;\
-Videos(*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv;*.3gp);;\
-Sounds(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac);;\
-Any(*.*)");
+            filePaths = QFileDialog::getOpenFileNames(this, config::GlobalConfig["Player"]["ImportFiles"]["caption"]
+                , "", config::GlobalConfig["Player"]["ImportFiles"]["filter"]);
 
             if (filePaths.empty())
                 return;
             for (const auto& mediaFile : filePaths)
                 playListDialog.addMedia(mediaFile);
-            playListDialog.playList.setCurrentIndex(playListDialog.playList.mediaCount() - filePaths.size() - 1);
+            playListDialog.playList->setCurrentIndex(playListDialog.playList->mediaCount() - filePaths.size());
+            playListDialog.saveMediaPlaylist();
             player->play();
         });
     connect(ui.openBtn, &TBPushButton::rightClicked, [&]
         {
-            auto dir = QDir(QFileDialog::getExistingDirectory(this, "Open", ""));
+            QStringList list;
+            const auto& nameFilters{ config::GlobalConfig["Player"]["ImportDirectory"]["name_filters"] };
+            for (const auto& item : nameFilters)
+                list.push_back(item);
+            auto dirString = QFileDialog::getExistingDirectory(this, config::GlobalConfig["Player"]["ImportDirectory"]["caption"]);
+            if (dirString.isEmpty())
+                return;
+            auto dir = QDir(dirString);
             dir.setFilter(QDir::Files | QDir::NoSymLinks);
-            auto fileInfoList = dir.entryInfoList({ "*.mp3", "*.wav", "*.wma", "*.ogg", "*.acc", "*.flac", "*.3gp"
-                , "*.wmv", "*.avi", "*.mp4", "*.mpeg", "*.mkv", "*.rmvb", "*.flv" });
+            dir.setNameFilters(list);
+            auto fileInfoList = dir.entryInfoList(list);
 
             if (fileInfoList.empty())
                 return;
             for (const auto& mediaFileInfo : fileInfoList)
                 playListDialog.addMedia(mediaFileInfo.absoluteFilePath());
 
-            playListDialog.playList.setCurrentIndex(playListDialog.playList.mediaCount() - fileInfoList.size() - 1);
+            playListDialog.playList->setCurrentIndex(playListDialog.playList->mediaCount() - fileInfoList.size());
+            playListDialog.saveMediaPlaylist();
             player->play();
         });
 
@@ -233,15 +284,15 @@ Any(*.*)");
     connect(ui.leftBtn, &TBPushButton::leftClicked, [&]
         {
             ui.videoWidget->backword();
-            setScreenTip(QString::asprintf("快退 %.3f(%.0lf%%)", ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
+            setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["backword_tip"].get<std::string>().c_str(), ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
         });
     connect(ui.rightBtn, &TBPushButton::leftClicked, [&]
         {
             ui.videoWidget->forword();
-            setScreenTip(QString::asprintf("快进 %.3f(%.0lf%%)", ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
+            setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["forword_tip"].get<std::string>().c_str(), ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
         });
-    connect(ui.leftBtn, &TBPushButton::rightClicked, &playListDialog.playList, &QMediaPlaylist::previous);
-    connect(ui.rightBtn, &TBPushButton::rightClicked, &playListDialog.playList, &QMediaPlaylist::next);
+    connect(ui.leftBtn, &TBPushButton::rightClicked, playListDialog.playList, &QMediaPlaylist::previous);
+    connect(ui.rightBtn, &TBPushButton::rightClicked, playListDialog.playList, &QMediaPlaylist::next);
 
     // 全屏
     connect(ui.fullscreenBtn, &QPushButton::clicked, [&] {ui.videoWidget->setFullScreen(true); });
@@ -249,83 +300,83 @@ Any(*.*)");
     // 循环状态
     connect(ui.playbackModePushButton, &TBPushButton::leftClicked, [&]
         {
-            switch (playListDialog.playList.playbackMode())
+            switch (playListDialog.playList->playbackMode())
             {
             case QMediaPlaylist::PlaybackMode::CurrentItemInLoop:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
                 break;
             case QMediaPlaylist::PlaybackMode::Sequential:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Loop);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Loop);
                 break;
             case QMediaPlaylist::PlaybackMode::Loop:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Random);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Random);
                 break;
             case QMediaPlaylist::PlaybackMode::Random:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::CurrentItemInLoop);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::CurrentItemInLoop);
                 break;
             default:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
                 break;
             }
 
         });
     connect(ui.playbackModePushButton, &TBPushButton::rightClicked, [&]
         {
-            switch (playListDialog.playList.playbackMode())
+            switch (playListDialog.playList->playbackMode())
             {
             case QMediaPlaylist::PlaybackMode::CurrentItemInLoop:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Random);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Random);
                 break;
             case QMediaPlaylist::PlaybackMode::Sequential:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::CurrentItemInLoop);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::CurrentItemInLoop);
                 break;
             case QMediaPlaylist::PlaybackMode::Loop:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
                 break;
             case QMediaPlaylist::PlaybackMode::Random:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Loop);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Loop);
                 break;
             default:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
                 break;
             }
 
         });
-    connect(&playListDialog.playList, &QMediaPlaylist::playbackModeChanged, [&]
+    connect(playListDialog.playList, &QMediaPlaylist::playbackModeChanged, [&]
         {
-            switch (playListDialog.playList.playbackMode())
+            config::GlobalConfig["Player"]["playback_mode"] = playListDialog.playList->playbackMode();
+            switch (playListDialog.playList->playbackMode())
             {
             case QMediaPlaylist::PlaybackMode::CurrentItemInLoop:
                 ui.playbackModePushButton->setIcon(QIcon(":/MediaPlayerXPre/res/currentiteminloop.png"));
-                setScreenTip("单曲循环");
-                ui.playbackModePushButton->setToolTip("单曲循环");
+                setScreenTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["currentiteminloop"]);
+                ui.playbackModePushButton->setToolTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["currentiteminloop"]);
                 break;
             case QMediaPlaylist::PlaybackMode::Sequential:
                 ui.playbackModePushButton->setIcon(QIcon(":/MediaPlayerXPre/res/sequential.png"));
-                setScreenTip("顺序播放");
-                ui.playbackModePushButton->setToolTip("顺序播放");
+                setScreenTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["sequential"]);
+                ui.playbackModePushButton->setToolTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["sequential"]);
                 break;
             case QMediaPlaylist::PlaybackMode::Loop:
                 ui.playbackModePushButton->setIcon(QIcon(":/MediaPlayerXPre/res/loop.png"));
-                setScreenTip("列表循环");
-                ui.playbackModePushButton->setToolTip("列表循环");
+                setScreenTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["loop"]);
+                ui.playbackModePushButton->setToolTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["loop"]);
                 break;
             case QMediaPlaylist::PlaybackMode::Random:
                 ui.playbackModePushButton->setIcon(QIcon(":/MediaPlayerXPre/res/random.png"));
-                setScreenTip("随机播放");
-                ui.playbackModePushButton->setToolTip("随机播放");
+                setScreenTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["random"]);
+                ui.playbackModePushButton->setToolTip(config::GlobalConfig["ScreenTip"]["PlaybackMode"]["random"]);
                 break;
             default:
-                playListDialog.playList.setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
+                playListDialog.playList->setPlaybackMode(QMediaPlaylist::PlaybackMode::Sequential);
                 break;
             }
         });
-    connect(&playListDialog.playList, &QMediaPlaylist::currentIndexChanged, [&](int index)
+    connect(playListDialog.playList, &QMediaPlaylist::currentIndexChanged, [&](int index)
         {
-            setScreenTip(QFileInfo(playListDialog.playList.currentMedia().canonicalUrl().toLocalFile()).fileName());
-            setWindowTitle("MediaPlayerXPre - " + QFileInfo(playListDialog.playList.currentMedia().canonicalUrl().toLocalFile()).baseName());
+            setScreenTip(QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).fileName());
+            setWindowTitle("MediaPlayerXPre - " + QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).completeBaseName());
         });
-
 
     // 视频设置
     connect(ui.optionButton, &QPushButton::clicked, [&]
@@ -334,28 +385,35 @@ Any(*.*)");
                 optionDialog.hide();
             else
                 optionDialog.show();
-            setScreenTip(QString::asprintf("视频设置：%s", optionDialog.isVisible() ? "显示" : "隐藏"));
+            setScreenTip(QString::asprintf("%s: %s",config::GlobalConfig["ScreenTip"]["VideoOption"]["caption"].get<std::string>().c_str()
+                , optionDialog.isVisible() 
+                ? config::GlobalConfig["ScreenTip"]["show"].get<std::string>().c_str() 
+                : config::GlobalConfig["ScreenTip"]["hide"].get<std::string>().c_str()));
         });
 
     connect(optionDialog.ui.brightnessSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setBrightness(value);
-            setScreenTip(QString::asprintf("亮度 %+d%%", value));
+            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["brightness"].get<std::string>().c_str(), value));
+            GlobalConfig["VideoOption"]["brightness"] = value;
         });
     connect(optionDialog.ui.contrastSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setContrast(value);
-            setScreenTip(QString::asprintf("对比度 %+d%%", value));
+            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["contrast"].get<std::string>().c_str(), value));
+            GlobalConfig["VideoOption"]["contrast"] = value;
         });
     connect(optionDialog.ui.hueSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setHue(value);
-            setScreenTip(QString::asprintf("色相 %+d%%", value));
+            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["hue"].get<std::string>().c_str(), value));
+            GlobalConfig["VideoOption"]["hue"] = value;
         });
     connect(optionDialog.ui.saturationSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setSaturation(value);
-            setScreenTip(QString::asprintf("饱和度 %+d%%", value));
+            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["saturation"].get<std::string>().c_str(), value));
+            GlobalConfig["VideoOption"]["saturation"] = value;
         });
     connect(optionDialog.ui.brightnessDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.brightnessSlider->setValue(0); });
     connect(optionDialog.ui.contrastDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.contrastSlider->setValue(0); });
@@ -369,6 +427,19 @@ Any(*.*)");
                 playListDialog.hide();
             else
                 playListDialog.show();
-            setScreenTip(QString::asprintf("播放列表：%s", playListDialog.isVisible() ? "显示" : "隐藏"));
+            setScreenTip(QString::asprintf("%s: %s", config::GlobalConfig["ScreenTip"]["playlist"].get<std::string>().c_str()
+                , playListDialog.isVisible()
+                ? config::GlobalConfig["ScreenTip"]["show"].get<std::string>().c_str()
+                : config::GlobalConfig["ScreenTip"]["hide"].get<std::string>().c_str()));
+        });
+
+
+    // 作者
+    connect(ui.btnAbout, &QPushButton::clicked, [&]
+        {
+            if (authorInformation.isVisible())
+                authorInformation.hide();
+            else
+                authorInformation.show();
         });
 }

@@ -39,6 +39,9 @@
     <QtMoc Include="TBPushButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="AuthorInformation.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -59,6 +62,9 @@
     <ClCompile Include="GlobalConfig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AuthorInformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="VideoControlWidget.h">
@@ -73,6 +79,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="MediaPlayListDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="AuthorInformation.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

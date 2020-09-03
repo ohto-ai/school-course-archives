@@ -6,8 +6,17 @@
     <file>res/up_d.png</file>
     <file>res/playlist.png</file>
     <file>res/ic_range_thumb.png</file>
+    <file>res/clear.png</file>
+    <file>res/remove.png</file>
+    <file>res/folder.png</file>
     <file>res/music.png</file>
     <file>res/loop.png</file>
+    <file>res/boy.png</file>
+    <file>res/github.png</file>
+    <file>res/mail.png</file>
+    <file>res/tel.png</file>
+    <file>res/thatboy.svg</file>
+    <file>res/thatboy-text-vector.svg</file>
     <file>res/currentiteminloop.png</file>
     <file>res/ic_volume_thumb.png</file>
     <file>res/random.png</file>
@@ -20,7 +29,7 @@
     <file>res/play.png</file>
     <file>res/option.png</file>
     <file>res/open.png</file>
-    <file>res/forward.png</file>
+    <file>res/forword.png</file>
     <file>res/backward.png</file>
     <file>res/fullscreen.png</file>
     <file>res/player_voice_0.png</file>

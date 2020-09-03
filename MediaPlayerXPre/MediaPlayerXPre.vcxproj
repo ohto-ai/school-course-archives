@@ -92,10 +92,12 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <QtUic Include="AuthorInformation.ui" />
     <QtUic Include="MediaPlayListDialog.ui" />
     <QtUic Include="OptionDialog.ui" />
     <QtUic Include="MediaPlayerXPre.ui" />
     <QtMoc Include="MediaPlayerXPre.h" />
+    <ClCompile Include="AuthorInformation.cpp" />
     <ClCompile Include="GlobalConfig.cpp" />
     <ClCompile Include="MediaPlayListDialog.cpp" />
     <ClCompile Include="OptionDialog.cpp" />
@@ -113,6 +115,7 @@
   <ItemGroup>
     <QtMoc Include="TBPushButton.h" />
     <QtMoc Include="MediaPlayListDialog.h" />
+    <QtMoc Include="AuthorInformation.h" />
     <ClInclude Include="GlobalConfig.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
