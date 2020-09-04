@@ -52,6 +52,7 @@ namespace config
         configScreenTip["PlaybackMode"]["sequential"] = "顺序播放";
         configScreenTip["PlaybackMode"]["loop"] = "列表循环";
         configScreenTip["PlaybackMode"]["random"] = "随机播放";
+        configScreenTip["capture"] = "图像已存入剪切板";
 
         configScreenTip["show"] = "显示";
         configScreenTip["hide"] = "隐藏";

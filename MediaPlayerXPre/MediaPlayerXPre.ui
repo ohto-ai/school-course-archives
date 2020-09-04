@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>944</width>
-    <height>602</height>
+    <width>1089</width>
+    <height>686</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -564,6 +564,12 @@ QPushButton:pressed {
        </item>
        <item>
         <widget class="QLabel" name="positionLab">
+         <property name="maximumSize">
+          <size>
+           <width>160</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">color:white;</string>
          </property>
@@ -826,6 +832,17 @@ font: 2000 9pt &quot;等线&quot;;</string>
    </property>
    <property name="shortcut">
     <string>F1</string>
+   </property>
+  </action>
+  <action name="actionCapture">
+   <property name="text">
+    <string>Capture</string>
+   </property>
+   <property name="toolTip">
+    <string>截图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+C</string>
    </property>
   </action>
  </widget>

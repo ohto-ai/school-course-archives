@@ -1,13 +1,7 @@
 ﻿#include "MediaPlayerXPre.h"
 #include <QKeyEvent>
-// TODO: 截屏
-// TODO: 窗口同步 ×
-// TODO: 播放列表同步 √
-// TODO: 媒体信息显示 √ 类型显示
-// TODO: 字幕
-// TODO: 列表的保存与读取 √
-// TODO: 列表的删减 √
-
+#include <QClipboard>
+#include <QScreen>
 
 void from_json(const nlohmann::json& j, QString& s)
 {
@@ -141,6 +135,24 @@ void MediaPlayerXPre::initSignals()
     // 定时器
     connect(&tipTimer, &QTimer::timeout, ui.tipLabel, &QLabel::hide);
 
+    // 截图
+    connect(ui.actionCapture, &QAction::triggered, [&]
+        {
+            auto clip{ QApplication::clipboard() };
+            auto screen{ QGuiApplication::primaryScreen() };
+            auto pixmap = screen->grabWindow(0);
+            QRect appGeo = this->geometry();
+            QRect geo = ui.videoWidget->geometry(); // 播放视频在图片中的位置。
+            QRect copyGeo;
+            copyGeo.setX(appGeo.x() + geo.x());
+            copyGeo.setY(appGeo.y() + geo.y());
+            copyGeo.setWidth(geo.width());
+            copyGeo.setHeight(geo.height());
+
+            clip->setPixmap(pixmap.copy(copyGeo));
+            setScreenTip(GlobalConfig["ScreenTip"]["capture"]);
+        }
+    );
     // 按钮状态切换
     connect(player, &QMediaPlayer::stateChanged, [&](QMediaPlayer::State state)
         {
@@ -295,7 +307,8 @@ void MediaPlayerXPre::initSignals()
     connect(ui.rightBtn, &TBPushButton::rightClicked, playListDialog.playList, &QMediaPlaylist::next);
 
     // 全屏
-    connect(ui.fullscreenBtn, &QPushButton::clicked, [&] {ui.videoWidget->setFullScreen(true); });
+    connect(ui.fullscreenBtn, &TBPushButton::leftClicked, [&] {ui.videoWidget->setFullScreen(true); });
+    connect(ui.fullscreenBtn, &TBPushButton::rightClicked, ui.actionCapture, &QAction::trigger);
 
     // 循环状态
     connect(ui.playbackModePushButton, &TBPushButton::leftClicked, [&]
@@ -435,7 +448,7 @@ void MediaPlayerXPre::initSignals()
 
 
     // 作者
-    connect(ui.btnAbout, &QPushButton::clicked, [&]
+    connect(ui.actionAbout, &QAction::triggered, [&]
         {
             if (authorInformation.isVisible())
                 authorInformation.hide();
