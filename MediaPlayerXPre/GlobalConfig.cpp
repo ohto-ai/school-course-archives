@@ -30,7 +30,7 @@ namespace config
         configScreenTip["tip_delay"] = 1500;
         configScreenTip["forword_tip"] = "快进 %.3f(%.0lf%%)";
         configScreenTip["backword_tip"] = "快退 %.3f(%.0lf%%)";
-        configScreenTip["medias_loaded"] = "%d media(s) loaded.";
+        configScreenTip["medias_loaded"] = "%d个媒体文件已载入";
 
         auto& configPlayer = config::GlobalConfig["Player"];
         configPlayer["ImportDirectory"]["caption"] = "选择文件夹";

@@ -66,31 +66,38 @@ MediaPlayerXPre::MediaPlayerXPre(QWidget *parent)
     move(configMainWindow["x"], configMainWindow["y"]);
     resize(configMainWindow["width"], configMainWindow["height"]);
 
-    // 子窗口
+    // 播放列表窗口
     auto& configPlaylistDialog = config::GlobalConfig["PlaylistDialog"];
     playListDialog.move(configPlaylistDialog["x"], configPlaylistDialog["y"]);
     playListDialog.resize(configPlaylistDialog["width"], configPlaylistDialog["height"]);
     playListDialog.setWindowTitle(configPlaylistDialog["caption"]);
 
+    // 视频设置窗口
     auto& configOptionDialog = config::GlobalConfig["OptionDialog"];
     optionDialog.move(configOptionDialog["x"], configOptionDialog["y"]);
     optionDialog.resize(configOptionDialog["width"], configOptionDialog["height"]);
     optionDialog.setWindowTitle(configOptionDialog["caption"]);
 
+    // 视频设置状态【bug:在播放之前设置视频属性是无效的】
     optionDialog.ui.brightnessSlider->setValue(config::GlobalConfig["VideoOption"]["brightness"]);
     optionDialog.ui.contrastSlider->setValue(config::GlobalConfig["VideoOption"]["contrast"]);
     optionDialog.ui.hueSlider->setValue(config::GlobalConfig["VideoOption"]["hue"]);
     optionDialog.ui.saturationSlider->setValue(config::GlobalConfig["VideoOption"]["saturation"]);
 
+    // 音量
     ui.volumeSlider->setValue(config::GlobalConfig["Player"]["volume"]);
     playListDialog.playList->setPlaybackMode(config::GlobalConfig["Player"]["playback_mode"]);
 
+    // 隐藏暂停按钮
     ui.pauseBtn->hide();
 
-    // 播放列表
+    // 载入播放列表
     playListDialog.loadMediaPlaylist();
+    // 媒体载入信息
+    setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["medias_loaded"].get<std::string>().c_str()
+        , config::GlobalConfig["Playlist"]["media_list"].size()));
 
-    setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["medias_loaded"].get<std::string>().c_str(), config::GlobalConfig["Playlist"]["media_list"].size()));
+
 }
 
 void MediaPlayerXPre::closeEvent(QCloseEvent* e)
@@ -139,17 +146,13 @@ void MediaPlayerXPre::initSignals()
     connect(ui.actionCapture, &QAction::triggered, [&]
         {
             auto clip{ QApplication::clipboard() };
-            auto screen{ QGuiApplication::primaryScreen() };
-            auto pixmap = screen->grabWindow(0);
-            QRect appGeo = this->geometry();
-            QRect geo = ui.videoWidget->geometry(); // 播放视频在图片中的位置。
-            QRect copyGeo;
-            copyGeo.setX(appGeo.x() + geo.x());
-            copyGeo.setY(appGeo.y() + geo.y());
-            copyGeo.setWidth(geo.width());
-            copyGeo.setHeight(geo.height());
-
-            clip->setPixmap(pixmap.copy(copyGeo));
+            auto screenPixmap = QGuiApplication::primaryScreen()->grabWindow(0);
+            QRect mainWindowGeometry = this->geometry();
+            QRect videoWidgetGeometry = ui.videoWidget->geometry();
+            clip->setPixmap(screenPixmap.copy(mainWindowGeometry.x() + videoWidgetGeometry.x()
+                , mainWindowGeometry.y() + videoWidgetGeometry.y()
+                , videoWidgetGeometry.width()
+                , videoWidgetGeometry.height()));
             setScreenTip(GlobalConfig["ScreenTip"]["capture"]);
         }
     );
@@ -171,7 +174,8 @@ void MediaPlayerXPre::initSignals()
                 break;
             case QMediaPlayer::PlayingState:
             {
-                auto completeBaseName{ QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).completeBaseName() };
+                auto completeBaseName{ 
+                    QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).completeBaseName() };
                 setScreenTip(completeBaseName);
                 setWindowTitle("MediaPlayerXPre - " + completeBaseName);
             }
@@ -194,7 +198,8 @@ void MediaPlayerXPre::initSignals()
                 return;
             auto item = playListDialog.ui.playListTableWidget->item(playListDialog.playList->currentIndex(), 1);
             if (item == nullptr)
-                playListDialog.ui.playListTableWidget->setItem(playListDialog.playList->currentIndex(), 1, new QTableWidgetItem(durationTime));
+                playListDialog.ui.playListTableWidget->setItem(playListDialog.playList->currentIndex()
+                    , 1, new QTableWidgetItem(durationTime));
             else
                 item->setText(durationTime);
 
@@ -222,7 +227,9 @@ void MediaPlayerXPre::initSignals()
                 int hour = secs / 3600;
                 int mins = (secs / 60) % 60;
                 secs %= 60;
-                setScreenTip(GlobalConfig["ScreenTip"]["position"].get<QString>()+ QString::asprintf(": %02d:%02d:%02d.%03d(%.0lf%%)", hour, mins, secs, msec, (double)value / player->duration() * 100));
+                setScreenTip(GlobalConfig["ScreenTip"]["position"].get<QString>()
+                    + QString::asprintf(": %02d:%02d:%02d.%03d(%.0lf%%)", hour, mins, secs, msec
+                        , (double)value / player->duration() * 100));
             }
         });
 
@@ -234,8 +241,10 @@ void MediaPlayerXPre::initSignals()
                 lastVolume = value;
             player->setVolume(value);
             player->setMuted(value <= 0);
-            ui.volumeBtn->setIcon(QIcon(QString::asprintf(":/MediaPlayerXPre/res/player_voice_%d.png", (value * 16 + 99) / 100)));
-            setScreenTip(value <= 0 ? GlobalConfig["ScreenTip"]["muted"] : GlobalConfig["ScreenTip"]["volume"].get<QString>() + QString::asprintf(": %d%%", value));
+            ui.volumeBtn->setIcon(QIcon(QString::asprintf(":/MediaPlayerXPre/res/player_voice_%d.png"
+                , (value * 16 + 99) / 100)));
+            setScreenTip(value <= 0 ? GlobalConfig["ScreenTip"]["muted"] 
+                : GlobalConfig["ScreenTip"]["volume"].get<QString>() + QString::asprintf(": %d%%", value));
         });
     connect(ui.volumeBtn, &QPushButton::clicked, [&]
         {
@@ -270,7 +279,8 @@ void MediaPlayerXPre::initSignals()
             const auto& nameFilters{ config::GlobalConfig["Player"]["ImportDirectory"]["name_filters"] };
             for (const auto& item : nameFilters)
                 list.push_back(item);
-            auto dirString = QFileDialog::getExistingDirectory(this, config::GlobalConfig["Player"]["ImportDirectory"]["caption"]);
+            auto dirString = QFileDialog::getExistingDirectory(this
+                , config::GlobalConfig["Player"]["ImportDirectory"]["caption"]);
             if (dirString.isEmpty())
                 return;
             auto dir = QDir(dirString);
@@ -296,12 +306,14 @@ void MediaPlayerXPre::initSignals()
     connect(ui.leftBtn, &TBPushButton::leftClicked, [&]
         {
             ui.videoWidget->backword();
-            setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["backword_tip"].get<std::string>().c_str(), ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
+            setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["backword_tip"].get<std::string>().c_str()
+                , ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
         });
     connect(ui.rightBtn, &TBPushButton::leftClicked, [&]
         {
             ui.videoWidget->forword();
-            setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["forword_tip"].get<std::string>().c_str(), ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
+            setScreenTip(QString::asprintf(config::GlobalConfig["ScreenTip"]["forword_tip"].get<std::string>().c_str()
+                , ui.videoWidget->fwbfStepLength() / 1000.0, (double)player->position() / player->duration() * 100));
         });
     connect(ui.leftBtn, &TBPushButton::rightClicked, playListDialog.playList, &QMediaPlaylist::previous);
     connect(ui.rightBtn, &TBPushButton::rightClicked, playListDialog.playList, &QMediaPlaylist::next);
@@ -388,7 +400,8 @@ void MediaPlayerXPre::initSignals()
     connect(playListDialog.playList, &QMediaPlaylist::currentIndexChanged, [&](int index)
         {
             setScreenTip(QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).fileName());
-            setWindowTitle("MediaPlayerXPre - " + QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).completeBaseName());
+            setWindowTitle("MediaPlayerXPre - " 
+                + QFileInfo(playListDialog.playList->currentMedia().canonicalUrl().toLocalFile()).completeBaseName());
         });
 
     // 视频设置
@@ -398,7 +411,8 @@ void MediaPlayerXPre::initSignals()
                 optionDialog.hide();
             else
                 optionDialog.show();
-            setScreenTip(QString::asprintf("%s: %s",config::GlobalConfig["ScreenTip"]["VideoOption"]["caption"].get<std::string>().c_str()
+            setScreenTip(QString::asprintf("%s: %s"
+                , config::GlobalConfig["ScreenTip"]["VideoOption"]["caption"].get<std::string>().c_str()
                 , optionDialog.isVisible() 
                 ? config::GlobalConfig["ScreenTip"]["show"].get<std::string>().c_str() 
                 : config::GlobalConfig["ScreenTip"]["hide"].get<std::string>().c_str()));
@@ -407,31 +421,39 @@ void MediaPlayerXPre::initSignals()
     connect(optionDialog.ui.brightnessSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setBrightness(value);
-            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["brightness"].get<std::string>().c_str(), value));
+            setScreenTip(QString::asprintf("%s %+d%%"
+                , config::GlobalConfig["ScreenTip"]["VideoOption"]["brightness"].get<std::string>().c_str(), value));
             GlobalConfig["VideoOption"]["brightness"] = value;
         });
     connect(optionDialog.ui.contrastSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setContrast(value);
-            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["contrast"].get<std::string>().c_str(), value));
+            setScreenTip(QString::asprintf("%s %+d%%"
+                , config::GlobalConfig["ScreenTip"]["VideoOption"]["contrast"].get<std::string>().c_str(), value));
             GlobalConfig["VideoOption"]["contrast"] = value;
         });
     connect(optionDialog.ui.hueSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setHue(value);
-            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["hue"].get<std::string>().c_str(), value));
+            setScreenTip(QString::asprintf("%s %+d%%"
+                , config::GlobalConfig["ScreenTip"]["VideoOption"]["hue"].get<std::string>().c_str(), value));
             GlobalConfig["VideoOption"]["hue"] = value;
         });
     connect(optionDialog.ui.saturationSlider, &QSlider::valueChanged, [&](int value)
         {
             ui.videoWidget->setSaturation(value);
-            setScreenTip(QString::asprintf("%s %+d%%", config::GlobalConfig["ScreenTip"]["VideoOption"]["saturation"].get<std::string>().c_str(), value));
+            setScreenTip(QString::asprintf("%s %+d%%"
+                , config::GlobalConfig["ScreenTip"]["VideoOption"]["saturation"].get<std::string>().c_str(), value));
             GlobalConfig["VideoOption"]["saturation"] = value;
         });
-    connect(optionDialog.ui.brightnessDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.brightnessSlider->setValue(0); });
-    connect(optionDialog.ui.contrastDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.contrastSlider->setValue(0); });
-    connect(optionDialog.ui.hueDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.hueSlider->setValue(0); });
-    connect(optionDialog.ui.saturationDefaultBtn, &QPushButton::clicked, [&] {optionDialog.ui.saturationSlider->setValue(0); });
+    connect(optionDialog.ui.brightnessDefaultBtn, &QPushButton::clicked
+        , [&] {optionDialog.ui.brightnessSlider->setValue(0); });
+    connect(optionDialog.ui.contrastDefaultBtn, &QPushButton::clicked
+        , [&] {optionDialog.ui.contrastSlider->setValue(0); });
+    connect(optionDialog.ui.hueDefaultBtn, &QPushButton::clicked
+        , [&] {optionDialog.ui.hueSlider->setValue(0); });
+    connect(optionDialog.ui.saturationDefaultBtn, &QPushButton::clicked
+        , [&] {optionDialog.ui.saturationSlider->setValue(0); });
 
     // 播放列表
     connect(ui.playListButton, &QPushButton::clicked, [&]
@@ -440,7 +462,8 @@ void MediaPlayerXPre::initSignals()
                 playListDialog.hide();
             else
                 playListDialog.show();
-            setScreenTip(QString::asprintf("%s: %s", config::GlobalConfig["ScreenTip"]["playlist"].get<std::string>().c_str()
+            setScreenTip(QString::asprintf("%s: %s"
+                , config::GlobalConfig["ScreenTip"]["playlist"].get<std::string>().c_str()
                 , playListDialog.isVisible()
                 ? config::GlobalConfig["ScreenTip"]["show"].get<std::string>().c_str()
                 : config::GlobalConfig["ScreenTip"]["hide"].get<std::string>().c_str()));

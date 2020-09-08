@@ -331,7 +331,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>btnWebsite</tabstop>
  </tabstops>
  <resources>
-  <include location="AuthorInformation.qrc"/>
   <include location="MediaPlayerXPre.qrc"/>
  </resources>
  <connections/>

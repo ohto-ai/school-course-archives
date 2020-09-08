@@ -1,16 +1,16 @@
 {
     "MainWindow": {
-        "height": 600,
-        "width": 950,
+        "height": 768,
+        "width": 1114,
         "x": 414,
-        "y": 134
+        "y": 159
     },
     "OptionDialog": {
         "caption": "视频设置",
         "height": 160,
         "width": 400,
-        "x": 759,
-        "y": 397
+        "x": 497,
+        "y": 310
     },
     "Player": {
         "ImportDirectory": {
@@ -80,8 +80,8 @@
         "caption": "播放列表",
         "height": 400,
         "width": 480,
-        "x": 750,
-        "y": 200
+        "x": 714,
+        "y": 263
     },
     "ScreenTip": {
         "PlaybackMode": {
@@ -101,7 +101,7 @@
         "capture": "图像已存入剪切板",
         "forword_tip": "快进 %.3f(%.0lf%%)",
         "hide": "隐藏",
-        "medias_loaded": "%d media(s) loaded.",
+        "medias_loaded": "%d个媒体文件已载入",
         "muted": "静音",
         "pause": "暂停",
         "play": "播放",
@@ -115,7 +115,7 @@
     "VideoOption": {
         "brightness": 0,
         "contrast": 0,
-        "hue": 0,
+        "hue": 62,
         "saturation": 0
     }
 }
