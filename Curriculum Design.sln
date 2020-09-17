@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "图形学", "图形学", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClockContrast", "图形学\ClockContrast\ClockContrast.vcxproj", "{2D048CC2-DCDD-4A51-9788-A653A28E9696}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C语言课程设计_图书管理系统", "C语言\C语言课程设计_图书管理系统.vcxproj", "{898DDADD-238F-4642-BE0F-5BDE6A83BEC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C语言", "C语言", "{93E96D74-F4A1-4CEA-9C00-FEB3DAE28B49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -93,6 +97,12 @@ Global
 		{2D048CC2-DCDD-4A51-9788-A653A28E9696}.Release|x64.Build.0 = Release|x64
 		{2D048CC2-DCDD-4A51-9788-A653A28E9696}.Release|x86.ActiveCfg = Release|Win32
 		{2D048CC2-DCDD-4A51-9788-A653A28E9696}.Release|x86.Build.0 = Release|Win32
+		{898DDADD-238F-4642-BE0F-5BDE6A83BEC4}.Debug|x64.ActiveCfg = Debug|Win32
+		{898DDADD-238F-4642-BE0F-5BDE6A83BEC4}.Debug|x86.ActiveCfg = Debug|Win32
+		{898DDADD-238F-4642-BE0F-5BDE6A83BEC4}.Debug|x86.Build.0 = Debug|Win32
+		{898DDADD-238F-4642-BE0F-5BDE6A83BEC4}.Release|x64.ActiveCfg = Release|Win32
+		{898DDADD-238F-4642-BE0F-5BDE6A83BEC4}.Release|x86.ActiveCfg = Release|Win32
+		{898DDADD-238F-4642-BE0F-5BDE6A83BEC4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +115,7 @@ Global
 		{BF80B1B9-5E2F-4913-BF64-14C04DB6FD8E} = {2CE6DEE1-E824-4A8A-85A4-1BE9062E4CA2}
 		{C573BD9E-F1B2-4B86-A5BA-F454B86CFFDF} = {D9EE320B-1784-449A-A93E-CE5A1D55B500}
 		{2D048CC2-DCDD-4A51-9788-A653A28E9696} = {3CB5AA6A-CF11-4548-825B-50D084908FDD}
+		{898DDADD-238F-4642-BE0F-5BDE6A83BEC4} = {93E96D74-F4A1-4CEA-9C00-FEB3DAE28B49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A29185D-C7B0-43FC-A908-086401A8AABB}

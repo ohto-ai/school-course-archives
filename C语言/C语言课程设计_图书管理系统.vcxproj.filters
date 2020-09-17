@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7b006c0a-1122-4a5d-ac52-d30f89a4987d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7f08b79a-26b1-4a68-97d4-8d506569a8c7}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3adfeff3-ea4c-46f2-9198-873a0740a337}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InputSet.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OutPutSet.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncAdd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncCalculate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncFind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncInit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncModify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncRemove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibDef_FuncShow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LibDef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RES.RC">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
