@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/Debug
+/Release
+/x64
+/数据库/BankDepositCardManagementSystem/x64/Debug
+/数据库/BankDepositCardManagementSystem/x64/Release
