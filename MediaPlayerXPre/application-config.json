@@ -1,16 +1,16 @@
 {
     "MainWindow": {
-        "height": 768,
-        "width": 1114,
+        "height": 600,
+        "width": 950,
         "x": 414,
-        "y": 159
+        "y": 166
     },
     "OptionDialog": {
         "caption": "视频设置",
         "height": 160,
         "width": 400,
-        "x": 497,
-        "y": 310
+        "x": 759,
+        "y": 429
     },
     "Player": {
         "ImportDirectory": {
@@ -36,39 +36,11 @@
             "caption": "选择媒体文件",
             "filter": "支持的媒体文件(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac;*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv;*.3gp);;视频(*.wmv;*.avi;*.mp4;*.mpeg;*.mkv;*.rmvb;*.flv;*.3gp);;音频(*.mp3;*.wav;*.wma;*.ogg;*.acc;*.flac);;全部(*.*)"
         },
-        "playback_mode": "CurrentItemInLoop",
+        "playback_mode": "Sequential",
         "volume": 50
     },
     "Playlist": {
-        "media_list": [
-            "E:/Documents/Overwatch/videos/overwatch/thatboy1_19-08-25_13-14-47.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy又一次的亮眼表现_19-03-09_13-53-13.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy多次之一的亮眼表现_19-03-07_23-02-17.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_19-07-26_22-30-04.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_19-09-23_22-00-57.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_19-12-25_22-46-53.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_19-12-29_15-43-29.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-01-16_22-34-00.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-02-02_11-56-24.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-02-02_12-05-26.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-02-10_23-36-04.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-03-03_23-50-53.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-04-06_01-26-46.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-05-21_23-56-14.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-06-11_01-07-37.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-06-22_23-51-41.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-06-23_21-47-12.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/thatboy的亮眼表现_20-06-26_14-38-18.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/ttt的亮眼表现_19-03-09_22-50-30.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/周欢的亮眼表现_18-04-14_22-45-51.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/堡垒的亮眼表现_19-06-23_14-15-27.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/小小怪下士的亮眼表现_20-07-05_00-53-03.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/小小怪下士的亮眼表现_20-07-05_02-01-17.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/小小怪下士的亮眼表现_20-07-07_23-31-14.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/我不想开玩笑的亮眼表现_19-06-23_14-21-16.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/我不想开玩笑的亮眼表现_19-06-23_14-28-43.mp4",
-            "E:/Documents/Overwatch/videos/overwatch/的亮眼表现_19-03-09_22-49-23.mp4"
-        ]
+        "media_list": null
     },
     "PlaylistDialog": {
         "CustomContextMenu": {
@@ -80,8 +52,8 @@
         "caption": "播放列表",
         "height": 400,
         "width": 480,
-        "x": 714,
-        "y": 263
+        "x": 750,
+        "y": 200
     },
     "ScreenTip": {
         "PlaybackMode": {
@@ -115,7 +87,7 @@
     "VideoOption": {
         "brightness": 0,
         "contrast": 0,
-        "hue": 62,
+        "hue": 0,
         "saturation": 0
     }
 }
