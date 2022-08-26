@@ -1,0 +1,25 @@
+name: Update days
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Update README.md
+        run: |
+          date_start=2021-06-23
+          date_start_second=`date -d"$date_start" +"%s"`
+          date_end_second=`date +"%s"`
+          interval=$[$date_end_second-$date_start_second]
+          interval_days=$[$interval/86400]
+          # todo sed
+
+      - name: Push to GitHub
+        uses: EndBug/add-and-commit@v7.2.1
+        with:
+          branch: master
+          message: "Update days"
