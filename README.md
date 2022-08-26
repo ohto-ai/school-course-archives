@@ -1,7 +1,7 @@
 # Course in school
 课程相关代码
 
-![Leave School][leaving-date:badge]
+![Leave School][leaving-date:badge]  
 ![Last Modify][last-modify:badge]
 
 [email:badge]: https://img.shields.io/badge/mail-ohtoai.choo@gmail.com-blue.svg?&style=for-the-badge
