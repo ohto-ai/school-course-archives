@@ -13,8 +13,9 @@ jobs:
         id: update_readme
         run: |
           date_start=${{secrets.LEAVE_DATE}}
-          last_modify_time_badge_content=`date +"%Y--%m--%d_%H:%M:%S"`
-          date_end=`date +"%Y-%m-%d"`
+          time_zone_diff=${{secrets.TIME_ZONE_DIFF}}
+          last_modify_time_badge_content=`date -d "$time_zone_diff hours" +"%Y--%m--%d_%H:%M:%S"`
+          date_end=`date -d "$time_zone_diff hours" +"%Y-%m-%d"`
           date_start_second=`date -d"$date_start" +"%s"`
           date_end_second=`date -d"$date_end" +"%s"`
           interval=$[$date_end_second-$date_start_second]
