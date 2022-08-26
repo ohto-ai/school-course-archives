@@ -27,3 +27,4 @@ jobs:
         with:
           branch: master
           message: "Update ${{ steps.update_readme.outputs.interval_days }} days"
+          default_author: user_info
