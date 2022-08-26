@@ -10,16 +10,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
       - name: Update README.md
+        id: update_readme
         run: |
           date_start=2021-06-23
           date_start_second=`date -d"$date_start" +"%s"`
           date_end_second=`date +"%s"`
           interval=$[$date_end_second-$date_start_second]
           interval_days=$[$interval/86400]
-          # todo sed
-
+          echo "::set-output name=interval_days::$interval_days"
+          sed -i -r "s#leave-[0-9]+_days#leave-${interval_days}_days#g" README.md
       - name: Push to GitHub
         uses: EndBug/add-and-commit@v7.2.1
         with:
           branch: master
-          message: "Update days"
+          message: "Update ${{ steps.package.outputs.interval_days }} days"
