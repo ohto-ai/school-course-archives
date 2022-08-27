@@ -7,7 +7,7 @@
 [email:badge]: https://img.shields.io/badge/mail-ohtoai.choo@gmail.com-blue.svg?&style=for-the-badge
 [email]: mailto:ohtoai.choo@gmail.com?subject=Feedback&body=This%20is%20a%20test%20feedback.
 [leaving-date:badge]: https://img.shields.io/badge/leave-430_days-green.svg?&style=for-the-badge
-[last-modify:badge]: https://img.shields.io/badge/last--modify-2022--08--27_03:49:11-orange.svg?&style=for-the-badge
+[last-modify:badge]: https://img.shields.io/badge/last--modify-2022--08--27_10:31:23-orange.svg?&style=for-the-badge
 
 |课程|内容|
 |:-:|:--|
