@@ -1,9 +1,11 @@
 # Course in school
 > 课程相关代码
 
-| Update | License | Issues | Stargazers | Pulls | Contributors | Commit Activity |
-| ------ | ------- | ------ | ---------- | ----- | ------------ | --------------- |
-|[![Update days][update-days:badge]][update-days]|[![License][license:badge]](/LICENSE)|[![Issues][issues:badge]][issues]|[![Stargazers][stargazers:badge]][stargazers]|[![Pulls][pulls:badge]][pulls] |[![Contributors][contributors:badge]][contributors]|[![Commit Activity][commit-activity:badge]][commit-activity]|
+| Update | [![Update days][update-days:badge]][update-days] |
+| ------ | ------------------------------------------------ |
+|[![License][license:badge]](/LICENSE)|[![Issues][issues:badge]][issues]|
+|[![Stargazers][stargazers:badge]][stargazers]|[![Pulls][pulls:badge]][pulls]|
+|[![Contributors][contributors:badge]][contributors]|[![Commit Activity][commit-activity:badge]][commit-activity]|
 
 ![Leave School][leaving-date:badge]  
 ![Last Modify][last-modify:badge]
@@ -29,19 +31,19 @@
 [update-days:badge]: https://github.com/Ohto-Ai/course-in-school/actions/workflows/update-days.yaml/badge.svg
 [update-days]: https://github.com/Ohto-Ai/course-in-school/actions/workflows/update-days.yaml
 
-[license:badge]: https://img.shields.io/github/license/Ohto-Ai/course-in-school?logo=github
+[license:badge]: https://img.shields.io/github/license/Ohto-Ai/course-in-school?logo=github&style=for-the-badge
 
-[issues:badge]: https://img.shields.io/github/issues/Ohto-Ai/course-in-school?logo=github
+[issues:badge]: https://img.shields.io/github/issues/Ohto-Ai/course-in-school?logo=github&style=for-the-badge
 [issues]: https://github.com/Ohto-Ai/course-in-school/issues
 
-[stargazers:badge]: https://img.shields.io/github/stars/Ohto-Ai/course-in-school?logo=github
+[stargazers:badge]: https://img.shields.io/github/stars/Ohto-Ai/course-in-school?logo=github&style=for-the-badge
 [stargazers]: https://github.com/Ohto-Ai/course-in-school/stargazers
 
-[pulls:badge]: https://img.shields.io/github/issues-pr/Ohto-Ai/course-in-school?logo=github&color=0088ff
+[pulls:badge]: https://img.shields.io/github/issues-pr/Ohto-Ai/course-in-school?logo=github&color=0088ff&style=for-the-badge
 [pulls]: https://github.com/Ohto-Ai/course-in-school/pulls
 
-[commit-activity:badge]: https://img.shields.io/github/commit-activity/m/Ohto-Ai/course-in-school?logo=github
+[commit-activity:badge]: https://img.shields.io/github/commit-activity/m/Ohto-Ai/course-in-school?logo=github&style=for-the-badge
 [commit-activity]: https://github.com/Ohto-Ai/course-in-school/pulse
 
-[contributors:badge]: https://img.shields.io/github/contributors/Ohto-Ai/course-in-school?logo=github
+[contributors:badge]: https://img.shields.io/github/contributors/Ohto-Ai/course-in-school?logo=github&style=for-the-badge
 [contributors]: https://github.com/Ohto-Ai/course-in-school/contributors
