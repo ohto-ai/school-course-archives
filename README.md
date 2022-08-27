@@ -12,13 +12,13 @@
 
 |项目|地址|
 |:-:|:--|
-|[VR](course/virtual-reality-course)|虚拟现实课程|
-|[Multi Media](course/multi-media-course)|多媒体技术课程|
-|[Clock Contrast](course/clock-contrast)|图形学 - 多功能时钟|
-|[Color Quantization](course/color-quantization)|数字图像处理  - 颜色量化|
-|[Encryption Design](course/design-of-file-encryption-algorithm)|操作系统 - 文件加密算法设计|
-|[其他课程](course/school-course-archives)|其他课程资料|
-|[其他课程2](course/school-part-course)|其他课程资料|
+|[VR](https://github.com/Ohto-Ai/virtual-reality-course)|虚拟现实课程|
+|[Multi Media](https://github.com/Ohto-Ai/multi-media-course)|多媒体技术课程|
+|[Clock Contrast](https://github.com/Ohto-Ai/clock-contrast)|图形学 - 多功能时钟|
+|[Color Quantization](https://github.com/Ohto-Ai/color-quantization)|数字图像处理  - 颜色量化|
+|[Encryption Design](https://github.com/Ohto-Ai/design-of-file-encryption-algorithm)|操作系统 - 文件加密算法设计|
+|[其他课程](https://github.com/Ohto-Ai/school-course-archives)|其他课程资料|
+|[其他课程2](https://github.com/Ohto-Ai/school-part-course)|其他课程资料|
 
 [![Feedback][email:badge]][email]
 
