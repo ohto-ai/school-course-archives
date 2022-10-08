@@ -25,8 +25,8 @@
 [email:badge]: https://img.shields.io/badge/mail-ohtoai.choo@gmail.com-blue.svg?style=for-the-badge
 [email]: mailto:ohtoai.choo@gmail.com?subject=Feedback&body=This%20is%20a%20test%20feedback.
 
-[leaving-date:badge]: https://img.shields.io/badge/leave-471_days-green.svg?style=for-the-badge
-[last-modify:badge]: https://img.shields.io/badge/last_modify-2022--10--07_10:32:57-orange.svg?style=for-the-badge
+[leaving-date:badge]: https://img.shields.io/badge/leave-472_days-green.svg?style=for-the-badge
+[last-modify:badge]: https://img.shields.io/badge/last_modify-2022--10--08_10:11:19-orange.svg?style=for-the-badge
 
 [update-days:badge]: https://github.com/Ohto-Ai/course-in-school/actions/workflows/update-days.yaml/badge.svg
 [update-days]: https://github.com/Ohto-Ai/course-in-school/actions/workflows/update-days.yaml
