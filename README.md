@@ -1,12 +1,6 @@
 # Course in school
 > 课程相关代码
 
-| Update | [![Update days][update-days:badge]][update-days] |
-| ------ | ------------------------------------------------ |
-|[![License][license:badge]](/LICENSE)|[![Issues][issues:badge]][issues]|
-|[![Stargazers][stargazers:badge]][stargazers]|[![Pulls][pulls:badge]][pulls]|
-|[![Contributors][contributors:badge]][contributors]|[![Commit Activity][commit-activity:badge]][commit-activity]|
-
 ![Leave School][leaving-date:badge]  
 ![Last Modify][last-modify:badge]
 
@@ -27,9 +21,6 @@
 
 [leaving-date:badge]: https://github.com/Ohto-Ai-Dev/res/raw/master/assets/course-in-school/leave_days_badge.svg
 [last-modify:badge]: https://github.com/Ohto-Ai-Dev/res/raw/master/assets/course-in-school/last_modify_time_badge.svg
-
-[update-days:badge]: https://github.com/Ohto-Ai/course-in-school/actions/workflows/update-days.yaml/badge.svg
-[update-days]: https://github.com/Ohto-Ai/course-in-school/actions/workflows/update-days.yaml
 
 [license:badge]: https://img.shields.io/github/license/Ohto-Ai/course-in-school?logo=github&style=for-the-badge
 
