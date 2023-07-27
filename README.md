@@ -1,9 +1,6 @@
 # Course in school
 > 课程相关代码
 
-![Leave School][leaving-date:badge]  
-![Last Modify][last-modify:badge]
-
 |项目|地址|
 |:-:|:--|
 |[VR](https://github.com/Ohto-Ai/virtual-reality-course)|虚拟现实课程|
