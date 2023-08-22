@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AbstractHitbox" Collapsed="true">
+    <Position X="5.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAQAACABAAAAAAAAgAAwgIAACAAQAAgAAQgAA=</HashCode>
+      <FileName>AbstractHitbox.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="6.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAQAAAAAAAAAAgAKAAIAAAEAAAAMQQgBAAAQFAA=</HashCode>
+      <FileName>Bullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletHitbox" Collapsed="true">
+    <Position X="3" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAAAAAAAAAAAAAAAAAAAwAAAACAARAAAAAAAAA=</HashCode>
+      <FileName>BulletHitbox.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionHelper" Collapsed="true">
+    <Position X="1" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAgAggAAgAAAAAAEAA=</HashCode>
+      <FileName>CollisionHelper.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DocumentDoor" Collapsed="true">
+    <Position X="9" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAEAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>DocumentDoor.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Door" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UABAACQAAAAAJEAACCBAQAIAAAQAAAEIAQABAAhQAAI=</HashCode>
+      <FileName>Door.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Elevator" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAACCAAqAQAIAQAABADCAIAABEAACQAgAoACIGUEQA=</HashCode>
+      <FileName>Elevator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElevatorDeathbox" Collapsed="true">
+    <Position X="1.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEACIgAQiAAAAAAAIAAAAAwAAAACAAQAAAAAQAAA=</HashCode>
+      <FileName>ElevatorDeathbox.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElevatorExit" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAEAAAQAABAAABAAAAIAAAEQAAAAAQAAAAAQAgA=</HashCode>
+      <FileName>ElevatorExit.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElevatorHitbox" Collapsed="true">
+    <Position X="4.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAgAAQAAAAAAAAAAwAAAACIAQAAAAIAAAA=</HashCode>
+      <FileName>ElevatorHitbox.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkEBAgQIACAAAAWAQAASAAIAgAEAABAABAAABAAQEgA=</HashCode>
+      <FileName>Enemy.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyBullet" Collapsed="true">
+    <Position X="7.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAACAAAI=</HashCode>
+      <FileName>EnemyBullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyDoor" Collapsed="true">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OEAAAAEAIAAAAAAAAAgAQCIAAAAAAAAAAAIAAAAgCAA=</HashCode>
+      <FileName>EnemyDoor.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyHitbox" Collapsed="true">
+    <Position X="10" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAwAAAACAAQAAAAAIAAI=</HashCode>
+      <FileName>EnemyHitbox.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExtraLife" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAQgQAAAAAIACAIAAAAAAAAABAAQAAA=</HashCode>
+      <FileName>ExtraLife.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="2.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAJAAACIEAIIAAmAABARABCAAAAQAAI=</HashCode>
+      <FileName>Game.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameState" Collapsed="true">
+    <Position X="11.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAgAAAAMAAAAAAAQIAA=</HashCode>
+      <FileName>GameState.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateExit" Collapsed="true">
+    <Position X="10.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAACAAAAAAAIAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>GameStateExit.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateGameOver" Collapsed="true">
+    <Position X="12" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAQAAIAAAIAAAAAAACAAAAACAAQAAA=</HashCode>
+      <FileName>GameStateGameOver.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateInGame" Collapsed="true">
+    <Position X="14" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAJAAAAAACAAAAAAAAAQAAA=</HashCode>
+      <FileName>GameStateInGame.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateMainMenu" Collapsed="true">
+    <Position X="13.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAIAEAUgABAIIAAAAAAhEAAAAEABQAAA=</HashCode>
+      <FileName>GameStateMainMenu.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStates" Collapsed="true">
+    <Position X="4.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAEAAAAAAAAIAAAAAAgAAAAAAAECEAAAI=</HashCode>
+      <FileName>GameStates.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateScoreboard" Collapsed="true">
+    <Position X="8.25" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAIAAAAAAAAIAAAARAAAAAAAACAAQAAA=</HashCode>
+      <FileName>GameStateScoreboard.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hitbox" Collapsed="true">
+    <Position X="6.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQEAAAAAgAAAAAAAwAEAACAAQAAAAgAAAA=</HashCode>
+      <FileName>Hitbox.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAixAAICSbQEASQgxIAAAAIFQRCEAAIDAICADCAQAgI=</HashCode>
+      <FileName>Level.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelManager" Collapsed="true">
+    <Position X="1" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAACAAAEAIAiAEAAAAIAAAAAAASAAA=</HashCode>
+      <FileName>LevelManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelObject" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAIAAAAAAAABAEBAAgAQAAA=</HashCode>
+      <FileName>LevelObject.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Levels" Collapsed="true">
+    <Position X="2.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABQAAAAAAAAAA=</HashCode>
+      <FileName>Levels.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Platform" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAIAAAAAAAAACAAACAEQAQA=</HashCode>
+      <FileName>Platform.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBEAQIACAoAAUARAAaAAIIQAMAAJAABABgDQEQchA=</HashCode>
+      <FileName>Player.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerBullet" Collapsed="true">
+    <Position X="5.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>PlayerBullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerHitbox" Collapsed="true">
+    <Position X="8.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAwEAAACBAQAAAAAAAAA=</HashCode>
+      <FileName>PlayerHitbox.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerSpawnPoint" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIFAABAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>PlayerSpawnPoint.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SingleFloorLevelObject" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAABAAgAAAAAAA=</HashCode>
+      <FileName>SingleFloorLevelObject.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Usable" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Usable.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserInput" Collapsed="true">
+    <Position X="4.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAACAAAAAAAAAAAAABAIAAAABAAAAgAAgAA=</HashCode>
+      <FileName>UserInput.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wall" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIACAAAAAQAAAAAAAAQAAA=</HashCode>
+      <FileName>Wall.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
