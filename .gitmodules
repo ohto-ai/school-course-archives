@@ -1,0 +1,21 @@
+[submodule "course/multi-media-course"]
+	path = course/multi-media-course
+	url = git@github.com:Ohto-Ai/multi-media-course.git
+[submodule "course/school-part-course"]
+	path = course/school-part-course
+	url = git@github.com:Ohto-Ai/school-part-course.git
+[submodule "course/school-course-archives"]
+	path = course/school-course-archives
+	url = git@github.com:Ohto-Ai/school-course-archives.git
+[submodule "course/virtual-reality-course"]
+	path = course/virtual-reality-course
+	url = git@github.com:Ohto-Ai/virtual-reality-course.git
+[submodule "course/color-quantization"]
+	path = course/color-quantization
+	url = git@github.com:Ohto-Ai/color-quantization.git
+[submodule "course/clock-contrast"]
+	path = course/clock-contrast
+	url = git@github.com:Ohto-Ai/clock-contrast.git
+[submodule "course/design-of-file-encryption-algorithm"]
+	path = course/design-of-file-encryption-algorithm
+	url = git@github.com:Ohto-Ai/design-of-file-encryption-algorithm.git
