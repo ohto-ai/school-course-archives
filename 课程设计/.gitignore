@@ -1,0 +1,10 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/Debug
+/Release
+/x64
+/数据库/BankDepositCardManagementSystem/x64/Debug
+/数据库/BankDepositCardManagementSystem/x64/Release
