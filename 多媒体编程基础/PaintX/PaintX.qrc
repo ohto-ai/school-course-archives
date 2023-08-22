@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="PaintX">
+    <file>res/export.png</file>
+    <file>res/clear.png</file>
+    <file>PaintX.qrc</file>
+    <file>res/roundrectangle.png</file>
+    <file>res/arrow.png</file>
+    <file>res/circle.png</file>
+    <file>res/ellipse.png</file>
+    <file>res/line.png</file>
+    <file>res/penceil.png</file>
+    <file>res/rectangle.png</file>
+    <file>res/polygon.png</file>
+    <file>res/about.png</file>
+  </qresource>
+</RCC>

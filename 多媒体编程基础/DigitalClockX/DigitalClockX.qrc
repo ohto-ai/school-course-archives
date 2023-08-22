@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="DigitalClockX">
+    <file>DigitalClockX.qrc</file>
+    <file>res/关于.png</file>
+    <file>res/bk.jpg</file>
+    <file>res/digital.png</file>
+  </qresource>
+</RCC>

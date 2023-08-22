@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AuthorInformationClass</class>
+ <widget class="QMainWindow" name="AuthorInformationClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>431</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>431</width>
+    <height>280</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>431</width>
+    <height>280</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>AuthorInformation</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QWidget
+{
+	font: 10pt &quot;等线&quot;;
+	background-color:#2D2D2D;
+	color:#FFF;
+}
+
+QPushButton {
+}
+
+QPushButton:hover {
+	border: 1px solid #3E3E3E;
+}
+
+QPushButton:pressed {
+    background-color: #5E5E5E;
+    border-color: #3E3E3E;
+    color: yellow;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>411</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>100</height>
+     </size>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body  style=&quot; font-family:'Dengxian','等线';&quot;&gt;&lt;p&gt;班级：数嵌172&lt;/p&gt;&lt;p&gt;学号：202170638&lt;/p&gt;&lt;p&gt;擅长语言：C++&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Dengxian','等线'; font-size:14pt;&quot;&gt;多媒体编程基础&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Dengxian','等线'; font-size:14pt;&quot;&gt;课程设计&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="labelAvatar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>142</width>
+      <height>142</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>142</width>
+      <height>142</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>142</width>
+      <height>142</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+border-image: url(:/MediaPlayerXPre/res/boy.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>261</width>
+      <height>96</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="btnGithub">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>48</y>
+       <width>250</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">text-align:left;
+font-family:'Arial';</string>
+     </property>
+     <property name="text">
+      <string>thatboy-echo</string>
+     </property>
+     <property name="icon">
+      <iconset resource="MediaPlayerXPre.qrc">
+       <normaloff>:/MediaPlayerXPre/res/github.png</normaloff>:/MediaPlayerXPre/res/github.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMail">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>24</y>
+       <width>250</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">text-align:left;
+font-family:'Arial';</string>
+     </property>
+     <property name="text">
+      <string>zhu.thatboy@outlook.com</string>
+     </property>
+     <property name="icon">
+      <iconset resource="MediaPlayerXPre.qrc">
+       <normaloff>:/MediaPlayerXPre/res/mail.png</normaloff>:/MediaPlayerXPre/res/mail.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnWebsite">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>72</y>
+       <width>250</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">text-align:left;
+font-family:'Arial';</string>
+     </property>
+     <property name="text">
+      <string>https://thatboy.info</string>
+     </property>
+     <property name="icon">
+      <iconset resource="MediaPlayerXPre.qrc">
+       <normaloff>:/MediaPlayerXPre/res/boy.png</normaloff>:/MediaPlayerXPre/res/boy.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnTelAddr">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>0</y>
+       <width>250</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">text-align:left;
+font-family:'Arial';</string>
+     </property>
+     <property name="text">
+      <string>13771042166, Jiangsu, China</string>
+     </property>
+     <property name="icon">
+      <iconset resource="MediaPlayerXPre.qrc">
+       <normaloff>:/MediaPlayerXPre/res/tel.png</normaloff>:/MediaPlayerXPre/res/tel.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>171</x>
+      <y>20</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Dengxian','等线'; font-size:14pt;&quot;&gt;朱广锋&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc, F1</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>btnTelAddr</tabstop>
+  <tabstop>btnMail</tabstop>
+  <tabstop>btnGithub</tabstop>
+  <tabstop>btnWebsite</tabstop>
+ </tabstops>
+ <resources>
+  <include location="MediaPlayerXPre.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="AuthorInformation">
+    <file>AuthorInformation.qrc</file>
+    <file>res/photo.png</file>
+    <file>res/tel.png</file>
+    <file>res/boy.png</file>
+    <file>res/thatboy-text-vector.svg</file>
+    <file>res/github.png</file>
+    <file>res/mail.png</file>
+  </qresource>
+</RCC>

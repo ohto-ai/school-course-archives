@@ -1,0 +1,27 @@
+<RCC>
+  <qresource prefix="ui">
+    <file>Resources/about.png</file>
+    <file>Resources/color.png</file>
+    <file>Resources/boy-border.png</file>
+    <file>Resources/strikeout.png</file>
+    <file>Resources/underline.png</file>
+    <file>Resources/redo.png</file>
+    <file>Resources/undo.png</file>
+    <file>Resources/A-.png</file>
+    <file>Resources/A+.png</file>
+    <file>Resources/font.png</file>
+    <file>Resources/enlarge.png</file>
+    <file>Resources/lessen.png</file>
+    <file>Resources/bold.png</file>
+    <file>Resources/copy.png</file>
+    <file>Resources/cut.png</file>
+    <file>Resources/italic.png</file>
+    <file>Resources/new.png</file>
+    <file>Resources/open.png</file>
+    <file>Resources/paste.png</file>
+    <file>Resources/print.png</file>
+    <file>Resources/nosynchronize.png</file>
+    <file>Resources/synchronize.png</file>
+    <file>Resources/save.png</file>
+  </qresource>
+</RCC>

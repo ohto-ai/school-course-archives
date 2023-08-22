@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="PictureProcessX">
+    <file>PictureProcessX.qrc</file>
+    <file>res/about.png</file>
+  </qresource>
+</RCC>

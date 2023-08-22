@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OptionDialog</class>
+ <widget class="QDialog" name="OptionDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>160</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Option</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MediaPlayerXPre.qrc">
+    <normaloff>:/MediaPlayerXPre/res/option.png</normaloff>:/MediaPlayerXPre/res/option.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+	background-color:#2D2D2D;
+	color:#FFF;
+}
+
+QPushButton {
+}
+
+QPushButton:hover {
+	border: 1px solid #3E3E3E;
+}
+
+QPushButton:pressed {
+    background-color: #5E5E5E;
+    border-color: #3E3E3E;
+    color: yellow;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>亮度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSlider" name="brightnessSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider
+{
+    background-color: #1E1E1E;
+    min-height:5px;
+    max-height:5px;
+    border:5px solid #1E1E1E;
+}
+QSlider::add-page:horizontal
+{ 
+    background-color: #57616A;
+    height:4px;
+}
+QSlider::sub-page:horizontal 
+{
+    background-color: #25A8C6;
+    height:4px;
+}
+QSlider::groove:horizontal 
+{
+	background:transparent;
+    height:6px;
+}
+QSlider::handle:horizontal 
+{
+    height: 13px;
+    width:13px;
+    border-image: url(:/MediaPlayerXPre/res/ic_volume_thumb.png);
+    margin: -4px -0; 
+}</string>
+       </property>
+       <property name="minimum">
+        <number>-100</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="brightnessDefaultBtn">
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>重置</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="MediaPlayerXPre.qrc">
+         <normaloff>:/MediaPlayerXPre/res/restore.png</normaloff>:/MediaPlayerXPre/res/restore.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>对比度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSlider" name="contrastSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider
+{
+    background-color: #1E1E1E;
+    min-height:5px;
+    max-height:5px;
+    border:5px solid #1E1E1E;
+}
+QSlider::add-page:horizontal
+{ 
+    background-color: #57616A;
+    height:4px;
+}
+QSlider::sub-page:horizontal 
+{
+    background-color: #25A8C6;
+    height:4px;
+}
+QSlider::groove:horizontal 
+{
+	background:transparent;
+    height:6px;
+}
+QSlider::handle:horizontal 
+{
+    height: 13px;
+    width:13px;
+    border-image: url(:/MediaPlayerXPre/res/ic_volume_thumb.png);
+    margin: -4px -0; 
+}</string>
+       </property>
+       <property name="minimum">
+        <number>-100</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="contrastDefaultBtn">
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>重置</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="MediaPlayerXPre.qrc">
+         <normaloff>:/MediaPlayerXPre/res/restore.png</normaloff>:/MediaPlayerXPre/res/restore.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>色相</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QSlider" name="hueSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider
+{
+    background-color: #1E1E1E;
+    min-height:5px;
+    max-height:5px;
+    border:5px solid #1E1E1E;
+}
+QSlider::add-page:horizontal
+{ 
+    background-color: #57616A;
+    height:4px;
+}
+QSlider::sub-page:horizontal 
+{
+    background-color: #25A8C6;
+    height:4px;
+}
+QSlider::groove:horizontal 
+{
+	background:transparent;
+    height:6px;
+}
+QSlider::handle:horizontal 
+{
+    height: 13px;
+    width:13px;
+    border-image: url(:/MediaPlayerXPre/res/ic_volume_thumb.png);
+    margin: -4px -0; 
+}</string>
+       </property>
+       <property name="minimum">
+        <number>-100</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="hueDefaultBtn">
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>重置</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="MediaPlayerXPre.qrc">
+         <normaloff>:/MediaPlayerXPre/res/restore.png</normaloff>:/MediaPlayerXPre/res/restore.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>饱和度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSlider" name="saturationSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider
+{
+    background-color: #1E1E1E;
+    min-height:5px;
+    max-height:5px;
+    border:5px solid #1E1E1E;
+}
+QSlider::add-page:horizontal
+{ 
+    background-color: #57616A;
+    height:4px;
+}
+QSlider::sub-page:horizontal 
+{
+    background-color: #25A8C6;
+    height:4px;
+}
+QSlider::groove:horizontal 
+{
+	background:transparent;
+    height:6px;
+}
+QSlider::handle:horizontal 
+{
+    height: 13px;
+    width:13px;
+    border-image: url(:/MediaPlayerXPre/res/ic_volume_thumb.png);
+    margin: -4px -0; 
+}</string>
+       </property>
+       <property name="minimum">
+        <number>-100</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="saturationDefaultBtn">
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>重置</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="MediaPlayerXPre.qrc">
+         <normaloff>:/MediaPlayerXPre/res/restore.png</normaloff>:/MediaPlayerXPre/res/restore.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MediaPlayerXPre.qrc"/>
+ </resources>
+ <connections/>
+</ui>

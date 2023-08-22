@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MediaPlayListDialog</class>
+ <widget class="QDialog" name="MediaPlayListDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>460</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Play List</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MediaPlayerXPre.qrc">
+    <normaloff>:/MediaPlayerXPre/res/playlist.png</normaloff>:/MediaPlayerXPre/res/playlist.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* === QWidget === */
+QWidget:window {
+    background: #222222;
+    color: #BBBBBB;
+    font-family: &quot;Segoe UI&quot;;
+}
+
+/* === QToolTip === */
+QToolTip {
+    background-color: #000000;
+    border: 2px solid #333333;
+    color: yellow;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QTableWidget" name="playListTableWidget">
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QScrollBar:vertical
+{
+    width:8px;
+    background:rgba(200,200,200,8%);
+    margin:0px,0px,0px,0px;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+QScrollBar::handle:vertical
+{
+    width:8px;
+    background:rgba(255,255,255,8%);
+    border-radius:4px;
+    min-height:20;
+}
+QScrollBar::handle:vertical:hover
+{
+    width:8px;
+    background:rgba(255,255,255,30%);
+    border-radius:4px;
+    min-height:20;
+}
+QScrollBar::add-line:vertical
+{
+    height:9px;width:8px;
+    border-image:url(:/MediaPlayerXPre/res/down.png);
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical
+{
+    height:9px;width:8px;
+    border-image:url(:/MediaPlayerXPre/res/up.png);
+    subcontrol-position:top;
+}
+QScrollBar::add-line:vertical:hover
+{
+    height:9px;width:8px;
+    border-image:url(:/MediaPlayerXPre/res/down_d.png);
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical:hover
+{
+    height:9px;width:8px;
+    border-image:url(:/MediaPlayerXPre/res/up_d.png);
+    subcontrol-position:top;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+    background:rgba(,0,0,10%);
+    border-radius:4px;
+}
+QTableWidget
+{
+	selection-background-color:#3BC1E7;
+	color: #FFF;
+	background-color: #1E1E1E;
+	alternate-background-color: #3B3B3B;
+	padding: 2px 4px;
+}
+QTableWidget::item:hover
+{
+	color: #FF8;
+	selection-color:#FF8;
+}
+
+QHeaderView,QHeaderView::section
+{
+	border: none;
+	color: #FFF;
+	background-color: #2E2E2E;
+	alternate-background-color: #3B3B3B;
+}
+QMenu {
+    background-color: black;
+    border: 1px solid gray;
+    color: white;
+    padding: 1px;
+}
+
+QMenu::item {
+    padding: 1px 25px 1px 20px;
+    border: 1px solid transparent;
+}
+
+QMenu::item:disabled {
+    color: #666666;
+}
+
+QMenu::item:selected {
+    border-color: gray;
+    background: #222222;
+}
+
+QMenu::icon:checked {
+
+}
+
+QMenu::separator {
+    height: 1px;
+    background: #222222;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+QMenu::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="dragDropOverwriteMode">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>File</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Time</string>
+      </property>
+     </column>
+     <column/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MediaPlayerXPre.qrc"/>
+ </resources>
+ <connections/>
+</ui>

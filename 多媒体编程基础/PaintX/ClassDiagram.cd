@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="thatboy::qt::PaintObject">
+    <Position X="5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::PaintShapeObject" Collapsed="true">
+    <Position X="5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::LineObject">
+    <Position X="7.25" Y="8" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIBAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::RectangleObject">
+    <Position X="7.25" Y="1.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAQAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::CircleObject">
+    <Position X="7.25" Y="4.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAIAEAAAAAAAAAAAAEABAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::EllipseObject">
+    <Position X="7.25" Y="9.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::RoundedRectangleObject">
+    <Position X="7.25" Y="3" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAIAEAAAAAAAAAMAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::PolygonObject">
+    <Position X="7.25" Y="6.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="thatboy::qt::PolylineObject">
+    <Position X="7.25" Y="11" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PaintObject.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
